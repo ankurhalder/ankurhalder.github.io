@@ -4,7 +4,7 @@ function Navbar() {
     <Fragment>
       <div className="navbar">
         {/* sidebar */}
-        <div className="navbar-wrapper">
+        <div className="wrapper">
           <span>Ankur Halder</span>
           <div className="social">
             <a href="#">
@@ -22,7 +22,6 @@ function Navbar() {
           </div>
         </div>
       </div>
-      ;
     </Fragment>
   );
 }

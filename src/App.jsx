@@ -4,9 +4,12 @@ import { Navbar } from "../container";
 function App() {
   return (
     <Fragment>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <section>
-        <a href="hero">Hero</a>
+        {/* <a href="hero">Hero</a>
+        
+        */}
+        <Navbar></Navbar>
       </section>
       <section>
         <a href="parallex">Parallex</a>
