@@ -1,9 +1,18 @@
-import Layout from "./Layout";
+// import Layout from "./Layout";
+
 function App() {
   return (
     <div>
-      <h1>Ankur Halder</h1>
-      <Layout />
+      <section>Hero</section>
+      <section>parallex</section>
+      <section>Services</section>
+      <section>Parallex</section>
+      <section>Portfolio1</section>
+      <section>Portfolio2</section>
+      <section>Portfolio3</section>
+      <section>Contact</section>
+
+      {/* <Layout /> */}
     </div>
   );
 }

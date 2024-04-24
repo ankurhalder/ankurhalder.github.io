@@ -5,3 +5,16 @@
 @import "containers/manifest";
 @import "components/manifest";
 @import "pages/manifest";
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #0c0c1d;
+  color: lightgray;
+}
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+}
