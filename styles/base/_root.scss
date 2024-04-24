@@ -1,0 +1,32 @@
+:root {
+  html {
+    scroll-behavior: smooth;
+  }
+  .none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .seo {
+    display: none;
+  }
+  //
+  .wrapper {
+    width: 100%;
+    max-width: max(900px, 60%);
+    min-height: 100dvh;
+    margin: 2.5% auto 2.5% auto;
+    @media (max-width: $breakpoint-desktop-wide) {
+    }
+    @media (max-width: $breakpoint-desktop) {
+      max-width: max(800px, 60%);
+    }
+    @media (max-width: $breakpoint-large-tablet) {
+      max-width: max(600px, 60%);
+    }
+    @media (max-width: $breakpoint-tablet) {
+      max-width: max(300px, 60%);
+    }
+    @media (max-width: $breakpoint-phone) {
+    }
+  }
+}

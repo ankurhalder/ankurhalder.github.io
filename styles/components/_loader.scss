@@ -1,0 +1,66 @@
+$cyan: darken(#ffa544, 10%);
+$tiles: 5;
+
+.loader {
+  $parent: &;
+
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100vh;
+  transition: width 0s 1.4s ease;
+
+  #{$parent}__icon {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    svg {
+      transform-origin: 0 0;
+    }
+  }
+
+  #{$parent}__tile {
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 20%;
+    background-color: $cyan; // Use the defined variable here
+    transition: width 0.7s ease;
+
+    @for $i from 0 through $tiles {
+      &:nth-child(#{$i}) {
+        top: calc(#{$i - 1} * 20%);
+        transition-delay: #{($i - 1) * 0.2s};
+      }
+    }
+  }
+
+  &--active {
+    width: 100%;
+    transition-delay: 0s;
+
+    #{$parent}__icon {
+      opacity: 1;
+      transition: opacity 0.5s 0s ease; /* Change transition delay here */
+    }
+
+    #{$parent}__tile {
+      width: 100%;
+
+      @for $i from 0 through $tiles {
+        &:nth-child(#{$i}) {
+          transition-delay: #{($i - 1) *
+            0.2s +
+            0.7s}; /* Adjust transition delay here */
+        }
+      }
+    }
+  }
+}

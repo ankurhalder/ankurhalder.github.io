@@ -1,0 +1,100 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background: linear-gradient(to bottom, #2c3e50, #4a6078);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: width 0.3s ease, margin-left 0.3s ease;
+
+  &.show {
+    width: 250px;
+  }
+
+  .sidebar-header {
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    border-bottom: 1px solid #34495e;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    h3 {
+      margin: 0;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      a {
+        display: block;
+        padding: 15px;
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        transition: color 0.3s ease, transform 0.3s ease;
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            to right,
+            rgba(255, 140, 0, 0.5),
+            transparent
+          );
+          z-index: -1;
+          transition: transform 0.3s ease;
+          transform: translateX(-100%);
+        }
+
+        &:hover {
+          color: #ff8c00;
+          transform: translateX(5px) rotateY(5deg);
+          &:before {
+            transform: translateX(0);
+          }
+          &:after {
+            animation: pulse 1s infinite alternate;
+          }
+        }
+
+        &.active {
+          box-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+          transform: rotateY(5deg);
+          &:after {
+            animation: pulse 1s infinite alternate;
+          }
+        }
+
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+.mainContent {
+  transition: margin-left 0.3s ease;
+  margin-left: 0;
+
+  &.shift {
+    margin-left: 250px;
+  }
+}
