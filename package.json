@@ -3,6 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": {
+    "name": "Ankur Halder",
+    "email": "ankur.halder12345@gmail.com"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
