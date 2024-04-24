@@ -4,34 +4,16 @@ import { Navbar } from "../container";
 function App() {
   return (
     <Fragment>
-      {/* <Navbar></Navbar> */}
-      <section>
-        {/* <a href="hero">Hero</a>
-        
-        */}
-        <Navbar></Navbar>
+      {/* <Cursor /> */}
+      <section id="Homepage">
+        <Navbar />
+        {/* <Hero /> */}
       </section>
-      <section>
-        <a href="parallex">Parallex</a>
-      </section>
-      <section>
-        <a href="services">Services</a>
-      </section>
-      <section>
-        <a href="parallex">Parallex</a>
-      </section>
-      <section>
-        <a href="portfolio1">Portfolio1</a>
-      </section>
-      <section>
-        <a href="portfolio2">Portfolio2</a>
-      </section>
-      <section>
-        <a href="portfolio3">Portfolio3</a>
-      </section>
-      <section>
-        <a href="contact">Contact</a>
-      </section>
+      <section id="Services">{/* <Parallax type="services" /> */}</section>
+      <section>{/* <Services /> */}</section>
+      <section id="Portfolio">{/* <Parallax type="portfolio" /> */}</section>
+      {/* <Portfolio /> */}
+      <section id="Contact">{/* <Contact /> */}</section>
     </Fragment>
   );
 }
