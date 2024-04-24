@@ -1,7 +1,7 @@
 // import Layout from "./Layout";
 import { Fragment } from "react";
 import { Navbar, Hero } from "../container";
-import { Parallax } from "../components";
+import { Parallax, Services } from "../components";
 function App() {
   return (
     <Fragment>
@@ -14,7 +14,9 @@ function App() {
         {" "}
         <Parallax type="services" />
       </section>
-      <section>{/* <Services /> */}</section>
+      <section>
+        <Services />
+      </section>
       <section id="Portfolio">
         <Parallax type="portfolio" />
       </section>
