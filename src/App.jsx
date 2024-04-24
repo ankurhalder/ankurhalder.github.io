@@ -1,8 +1,10 @@
 // import Layout from "./Layout";
-
+import { Fragment } from "react";
+import { Navbar } from "../container";
 function App() {
   return (
-    <div>
+    <Fragment>
+      <Navbar></Navbar>
       <section>
         <a href="hero">Hero</a>
       </section>
@@ -27,7 +29,7 @@ function App() {
       <section>
         <a href="contact">Contact</a>
       </section>
-    </div>
+    </Fragment>
   );
 }
 
