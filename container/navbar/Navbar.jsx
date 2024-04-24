@@ -1,11 +1,14 @@
 import { Fragment } from "react";
+import { motion } from "framer-motion";
+
 function Navbar() {
   return (
     <Fragment>
       <div className="navbar">
         {/* sidebar */}
         <div className="wrapper">
-          <span>Ankur Halder</span>
+          <motion.span>Ankur Halder</motion.span>
+
           <div className="social">
             <a href="#">
               <img src="/social/github.png" alt="github" />
