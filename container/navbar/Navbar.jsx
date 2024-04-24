@@ -1,11 +1,11 @@
 import { Fragment } from "react";
 import { motion } from "framer-motion";
-
+import Sidebar from "../sidebar/Sidebar";
 function Navbar() {
   return (
     <Fragment>
       <div className="navbar">
-        {/* sidebar */}
+        <Sidebar></Sidebar>
         <div className="wrapper">
           <motion.span
             initial={{ opacity: 0, scale: 0.5 }}
