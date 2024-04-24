@@ -7,7 +7,13 @@ function Navbar() {
       <div className="navbar">
         {/* sidebar */}
         <div className="wrapper">
-          <motion.span>Ankur Halder</motion.span>
+          <motion.span
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            Ankur Halder
+          </motion.span>
 
           <div className="social">
             <a href="#">
