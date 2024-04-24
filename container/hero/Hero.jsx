@@ -46,9 +46,9 @@ const Hero = () => {
           initial="initial"
           animate="animate"
         >
-          <motion.h2 variants={textVariants}>HARVEY TYLER</motion.h2>
+          <motion.h2 variants={textVariants}>Ankur Halder</motion.h2>
           <motion.h1 variants={textVariants}>
-            Web developer and UI designer
+            Full-stack Web Developer
           </motion.h1>
           <motion.div variants={textVariants} className="buttons">
             <motion.button variants={textVariants}>
@@ -59,7 +59,7 @@ const Hero = () => {
           <motion.img
             variants={textVariants}
             animate="scrollButton"
-            src="/scroll.png"
+            src="/hero/scroll.png"
             alt=""
           />
         </motion.div>
@@ -70,10 +70,10 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        Writer Content Creator Influencer
+        Web Dev Fullstack
       </motion.div>
       <div className="imageContainer">
-        <img src="/ankurhalder.png" alt="Ankur Halder" />
+        <img src="/hero/ankurhalder.png" alt="Ankur Halder" />
       </div>
     </div>
   );

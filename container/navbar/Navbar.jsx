@@ -12,7 +12,7 @@ function Navbar() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            Ankur Halder
+            <img src="/apple-icon.png" alt="" />
           </motion.span>
 
           <div className="social">
