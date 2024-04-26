@@ -1,15 +1,15 @@
 .navbar {
   height: 100px;
+  margin: 0.5% 0 0 0;
   .wrapper {
     max-width: 1366px;
-    margin: auto;
     display: flex;
-    // align-items: center;
     justify-content: space-between;
     height: 100%;
-    span {
-      font-size: 1.5rem;
-      font-weight: 700;
+    .logo {
+      margin: 0 0 0 1%;
+      width: 50px;
+      height: 50px;
     }
     .social {
       display: flex;
