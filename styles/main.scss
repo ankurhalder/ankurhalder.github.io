@@ -11,8 +11,9 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: #0c0c1d;
+  background-color: var(--background-color);
   color: lightgray;
+  transition: all 0.5s ease-in-out;
 }
 section {
   height: 100vh;

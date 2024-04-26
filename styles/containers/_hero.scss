@@ -3,7 +3,12 @@
   // height: 100vh;
   height: 100dvh;
   overflow: hidden;
-  background: linear-gradient(180deg, #0c0c1d, #111132);
+  // background: linear-gradient(
+  //   180deg,
+  //   var(--background-color),
+  //   var(--background-color-2)
+  // );
+  // background-color: var(--background-color);
   position: relative;
 
   .wrapper {
