@@ -1,11 +1,13 @@
 // import Layout from "./Layout";
 import { Fragment } from "react";
-import { Navbar, Hero } from "../container";
+import { Navbar, Hero, Sidebar } from "../container";
 import { Parallax, Services, Cursor, Portfolio } from "../components";
+
 function App() {
   return (
     <Fragment>
       <Cursor />
+      <Sidebar />
       <section id="Homepage">
         <Navbar />
         <Hero />

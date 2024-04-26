@@ -1,27 +1,31 @@
 .navbar {
-  height: 100px;
-  margin: 0.5% 0 0 0;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  z-index: 1;
 
-  .wrapper {
-    max-width: 1366px;
+  width: 100%;
+
+  .logo {
+    width: 80px;
+  }
+
+  .social {
     display: flex;
-    justify-content: space-between;
 
-    .logo {
-      margin: 0 0 0 1%;
-      width: 50px;
-      height: 50px;
-    }
+    a {
+      margin-right: 10px;
 
-    .social {
-      display: flex;
-      gap: 1rem;
+      img {
+        transition: transform 0.3s ease;
+        width: 30px;
+        height: 30px;
+      }
 
-      a {
-        img {
-          width: 18px;
-          height: 18px;
-        }
+      &:hover img {
+        transform: scale(1.2);
       }
     }
   }
