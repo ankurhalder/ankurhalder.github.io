@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Links from "./links/Links";
-
 import ToggleButton from "./toogleButtom/ToggleButton";
 
 const variants = {
@@ -13,7 +12,7 @@ const variants = {
     },
   },
   closed: {
-    clipPath: "circle(30px at 50px 50px)",
+    clipPath: "circle(0px at 50px 50px)",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -22,12 +21,16 @@ const variants = {
     },
   },
 };
+
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <motion.div className="sidebar" animate={open ? "open" : "closed"}>
-      <motion.div className="bg" variants={variants}>
+      <motion.div
+        className={`bg ${open ? "open" : "closed"}`}
+        variants={variants}
+      >
         <Links />
       </motion.div>
       <ToggleButton setOpen={setOpen} />
