@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
-import Sidebar from "../sidebar/Sidebar";
-
+import { Sidebar } from "../index";
+import { ToggleBar } from "../../pieces";
 function Navbar() {
   const logoControls = useAnimation();
   const socialControls = useAnimation();
@@ -39,7 +39,7 @@ function Navbar() {
             src="/apple-icon.png"
             alt=""
           />
-
+          <ToggleBar></ToggleBar>
           <div className="social">
             <motion.a
               href="#"
