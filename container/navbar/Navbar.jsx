@@ -4,15 +4,28 @@ import { useEffect } from "react";
 import Sidebar from "../sidebar/Sidebar";
 
 function Navbar() {
-  const controls = useAnimation();
+  const logoControls = useAnimation();
+  const socialControls = useAnimation();
 
   useEffect(() => {
-    controls.start({
+    logoControls.start({
       opacity: 1,
       scale: 1,
       transition: { duration: 0.5, type: "spring", stiffness: 200 },
     });
-  }, [controls]);
+
+    socialControls.start({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, delay: 0.1, ease: "easeOut" },
+    });
+  }, [logoControls, socialControls]);
+
+  const socialVariants = {
+    hover: {
+      scale: 1.2,
+    },
+  };
 
   return (
     <Fragment>
@@ -22,24 +35,48 @@ function Navbar() {
           <motion.img
             className="logo"
             initial={{ opacity: 0, scale: 0.5 }}
-            animate={controls}
+            animate={logoControls}
             src="/apple-icon.png"
             alt=""
           />
 
           <div className="social">
-            <a href="#">
+            <motion.a
+              href="#"
+              variants={socialVariants}
+              whileHover="hover"
+              initial={{ opacity: 0, y: 20 }}
+              animate={socialControls}
+            >
               <img src="/social/github.png" alt="github" />
-            </a>
-            <a href="#">
+            </motion.a>
+            <motion.a
+              href="#"
+              variants={socialVariants}
+              whileHover="hover"
+              initial={{ opacity: 0, y: 20 }}
+              animate={socialControls}
+            >
               <img src="/social/linkedin.png" alt="linkedin" />
-            </a>
-            <a href="#">
+            </motion.a>
+            <motion.a
+              href="#"
+              variants={socialVariants}
+              whileHover="hover"
+              initial={{ opacity: 0, y: 20 }}
+              animate={socialControls}
+            >
               <img src="/social/facebook.png" alt="facebook" />
-            </a>
-            <a href="#">
+            </motion.a>
+            <motion.a
+              href="#"
+              variants={socialVariants}
+              whileHover="hover"
+              initial={{ opacity: 0, y: 20 }}
+              animate={socialControls}
+            >
               <img src="/social/instagram.png" alt="instagram" />
-            </a>
+            </motion.a>
           </div>
         </div>
       </div>

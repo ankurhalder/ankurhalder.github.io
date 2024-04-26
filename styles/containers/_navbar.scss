@@ -1,22 +1,27 @@
 .navbar {
   height: 100px;
   margin: 0.5% 0 0 0;
+
   .wrapper {
     max-width: 1366px;
     display: flex;
     justify-content: space-between;
-    height: 100%;
+
     .logo {
       margin: 0 0 0 1%;
       width: 50px;
       height: 50px;
     }
+
     .social {
       display: flex;
       gap: 1rem;
-      img {
-        width: 18px;
-        height: 18px;
+
+      a {
+        img {
+          width: 18px;
+          height: 18px;
+        }
       }
     }
   }
