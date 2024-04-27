@@ -31,7 +31,7 @@ const Sidebar = () => {
         className={`bg ${open ? "open" : "closed"}`}
         variants={variants}
       >
-        <span>Ankur Halder</span>
+        <h1>Ankur Halder</h1>
         <Links />
       </motion.div>
       <ToggleButton setOpen={setOpen} />
