@@ -24,11 +24,11 @@ const ToggleBar = ({ onToggle }) => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       onClick={toggleMode}
-      style={{ backgroundColor: isDarkMode ? "#000" : "#fff" }}
+      style={{ backgroundColor: isDarkMode ? "#000" : "gray" }}
     >
       <motion.div
         className="toggle-button"
-        animate={{ marginLeft: isDarkMode ? "0px" : "20px" }}
+        animate={{ marginLeft: isDarkMode ? "0px" : "30px" }}
       >
         {isDarkMode ? (
           <svg

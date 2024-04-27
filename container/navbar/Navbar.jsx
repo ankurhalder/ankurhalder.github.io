@@ -75,7 +75,7 @@ function Navbar() {
             <img src="/social/instagram.svg" alt="instagram" />
           </motion.a>
         </div>
-        <div>{/* placeholver for sidenaav toogle */}</div>
+        <div>{/* placeholver for sidenav toogle */}</div>
       </div>
     </Fragment>
   );
