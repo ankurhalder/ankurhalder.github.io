@@ -1,31 +1,64 @@
 .navbar {
-  // background-color: transparent;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-container(row, nowrap, space-between, center);
   padding: 10px;
   z-index: 1;
-
-  width: 100%;
-
+  @media (max-width: $breakpoint-desktop-wide) {
+  }
+  @media (max-width: $breakpoint-desktop) {
+  }
+  @media (max-width: $breakpoint-large-tablet) {
+  }
+  @media (max-width: $breakpoint-tablet) {
+  }
+  @media (max-width: $breakpoint-phone) {
+  }
   .logo {
-    width: 80px;
+    width: 100%;
+    max-width: 70px;
+    @media (max-width: $breakpoint-desktop-wide) {
+    }
+    @media (max-width: $breakpoint-desktop) {
+    }
+    @media (max-width: $breakpoint-large-tablet) {
+    }
+    @media (max-width: $breakpoint-tablet) {
+    }
+    @media (max-width: $breakpoint-phone) {
+    }
   }
 
   .social {
-    display: flex;
-
+    @include flex-container(row, nowrap, center, center);
+    gap: 20px;
+    @media (max-width: $breakpoint-desktop-wide) {
+    }
+    @media (max-width: $breakpoint-desktop) {
+    }
+    @media (max-width: $breakpoint-large-tablet) {
+    }
+    @media (max-width: $breakpoint-tablet) {
+    }
+    @media (max-width: $breakpoint-phone) {
+    }
     a {
-      margin-right: 10px;
-
       img {
-        transition: transform 0.3s ease;
-        width: 30px;
-        height: 30px;
+        transition: transform 1s ease;
+        width: 100%;
+        max-width: 40px;
+        @media (max-width: $breakpoint-desktop-wide) {
+        }
+        @media (max-width: $breakpoint-desktop) {
+        }
+        @media (max-width: $breakpoint-large-tablet) {
+        }
+        @media (max-width: $breakpoint-tablet) {
+        }
+        @media (max-width: $breakpoint-phone) {
+        }
       }
 
       &:hover img {
-        transform: scale(1.2);
+        transform: scale(1.1);
       }
     }
   }
