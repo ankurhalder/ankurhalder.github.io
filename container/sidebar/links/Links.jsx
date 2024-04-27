@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 const variants = {
   open: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.3,
     },
   },
   closed: {
     transition: {
-      staggerChildren: 0.05,
+      staggerChildren: 0.2,
       staggerDirection: -1,
     },
   },
@@ -25,7 +25,14 @@ const itemVariants = {
 };
 
 const Links = () => {
-  const items = ["Homepage", "Services", "Portfolio", "Contact", "About"];
+  const items = [
+    "Homepage",
+    "Skills",
+    "Projects",
+    "Internships",
+    "Certifications",
+    "Contact",
+  ];
 
   return (
     <motion.div className="links" variants={variants}>

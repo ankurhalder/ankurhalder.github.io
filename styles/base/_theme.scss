@@ -1,9 +1,9 @@
 :root {
   .theme-dark {
     --background-color: #0c0c1d;
-    // --background-color-2: #111132;
     --background: white;
     --text-color: white;
+    --text-color-inverse: black;
     --shadow-1: rgba(255, 255, 255, 0.1);
     --shadow-2: rgba(255, 255, 255, 0.2);
     --shadow-3: rgba(255, 255, 255, 0.3);
@@ -19,8 +19,9 @@
 
   .theme-light {
     --background-color: #e6f7ff;
-    --text-color: black;
     --background: black;
+    --text-color: black;
+    --text-color-inverse: white;
     --shadow-1: rgba(0, 0, 0, 0.1);
     --shadow-2: rgba(0, 0, 0, 0.2);
     --shadow-3: rgba(0, 0, 0, 0.3);
