@@ -4,33 +4,39 @@
   position: relative;
 
   .wrapper {
-    max-width: 1366px;
     height: 100%;
     margin: auto;
-
     .textContainer {
       width: 50%;
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
+
       gap: 40px;
+      @media (max-width: $breakpoint-desktop-wide) {
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
+        height: 50%;
+        width: 100%;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+      }
 
-      //   @include mobile {
-      //     height: 50%;
-      //     width: 100%;
-      //     gap: 20px;
-      //     align-items: center;
-      //     text-align: center;
-      //   }
-
-      h2 {
+      h1 {
         font-size: 30px;
         color: rebeccapurple;
         letter-spacing: 10px;
       }
 
-      h1 {
+      h2 {
         font-size: 88px;
 
         // @include mobile {
@@ -62,13 +68,20 @@
     position: absolute;
     top: 0;
     right: 0;
-
-    //   @include mobile {
-    //     height: 50%;
-    //     width: 100%;
-    //     top: unset;
-    //     bottom: 0;
-    //   }
+    @media (max-width: $breakpoint-desktop-wide) {
+    }
+    @media (max-width: $breakpoint-desktop) {
+    }
+    @media (max-width: $breakpoint-large-tablet) {
+    }
+    @media (max-width: $breakpoint-tablet) {
+    }
+    @media (max-width: $breakpoint-phone) {
+      height: 50%;
+      width: 100%;
+      top: unset;
+      bottom: 0;
+    }
 
     img {
       width: 100%;
