@@ -24,7 +24,7 @@ const ToggleBar = ({ onToggle }) => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       onClick={toggleMode}
-      style={{ backgroundColor: isDarkMode ? "#000" : "gray" }}
+      style={{ backgroundColor: isDarkMode ? "#000" : "lightgray" }}
     >
       <motion.div
         className="toggle-button"
