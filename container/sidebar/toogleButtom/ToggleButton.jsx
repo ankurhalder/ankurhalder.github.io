@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
 const ToggleButton = ({ setOpen }) => {
   return (
@@ -7,7 +7,7 @@ const ToggleButton = ({ setOpen }) => {
       <svg width="23" height="23" viewBox="0 0 23 23">
         <motion.path
           strokeWidth="3"
-          stroke="white"
+          stroke="var(--background)"
           strokeLinecap="round"
           variants={{
             closed: { d: "M 2 2.5 L 20 2.5" },
@@ -16,7 +16,7 @@ const ToggleButton = ({ setOpen }) => {
         />
         <motion.path
           strokeWidth="3"
-          stroke="white"
+          stroke="var(--background)"
           strokeLinecap="round"
           d="M 2 9.423 L 20 9.423"
           variants={{
@@ -26,7 +26,7 @@ const ToggleButton = ({ setOpen }) => {
         />
         <motion.path
           strokeWidth="3"
-          stroke="white"
+          stroke="var(--background)"
           strokeLinecap="round"
           variants={{
             closed: { d: "M 2 16.346 L 20 16.346" },
@@ -37,5 +37,7 @@ const ToggleButton = ({ setOpen }) => {
     </button>
   );
 };
-
+ToggleButton.propTypes = {
+  setOpen: PropTypes.func.isRequired,
+};
 export default ToggleButton;

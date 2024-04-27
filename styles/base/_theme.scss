@@ -1,10 +1,8 @@
-
 :root {
-
   .theme-dark {
     --background-color: #0c0c1d;
     // --background-color-2: #111132;
-    --background: white:
+    --background: white;
     --text-color: white;
     --shadow-1: rgba(255, 255, 255, 0.1);
     --shadow-2: rgba(255, 255, 255, 0.2);
@@ -18,7 +16,7 @@
     --shadow-10: rgba(255, 255, 255, 1);
     --inverse-shadow-9: rgba(255, 255, 255, 0.9);
   }
-  
+
   .theme-light {
     --background-color: #e6f7ff;
     --text-color: black;
@@ -34,5 +32,5 @@
     --shadow-9: rgba(0, 0, 0, 0.9);
     --shadow-10: rgba(0, 0, 0, 1);
     --inverse-shadow-9: rgba(0, 0, 0, 0.9);
-  } 
+  }
 }
