@@ -38,7 +38,7 @@ const sliderVariants = {
 
 const Hero = () => {
   return (
-    <div className="hero">
+    <div className="hero none">
       <div className="wrapper">
         <motion.div
           className="textContainer"

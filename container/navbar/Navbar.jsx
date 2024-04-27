@@ -28,7 +28,7 @@ function Navbar() {
 
   return (
     <Fragment>
-      <div className="navbar">
+      <div className="navbar none">
         <motion.img
           className="logo"
           initial={{ opacity: 0, scale: 0.5 }}
