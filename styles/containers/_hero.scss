@@ -102,6 +102,7 @@
 
       img {
         width: 70px;
+        color: var(--text-color);
         @media (max-width: $breakpoint-desktop-wide) {
         }
         @media (max-width: $breakpoint-desktop) {
@@ -164,7 +165,7 @@
     bottom: -120px;
     white-space: nowrap;
     width: 50%;
-    // font-weight: bold;
+
     @media (max-width: $breakpoint-desktop-wide) {
     }
     @media (max-width: $breakpoint-desktop) {
