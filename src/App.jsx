@@ -2,10 +2,11 @@
 import { Fragment } from "react";
 import { Navbar, Hero, Sidebar } from "../container";
 import { Parallax, Services, Cursor, Portfolio } from "../components";
-
+import { MetaTags } from "../pieces";
 function App() {
   return (
     <Fragment>
+      <MetaTags />
       <Cursor />
       <Sidebar />
       <section id="Homepage">
