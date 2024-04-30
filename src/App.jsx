@@ -1,7 +1,7 @@
 // import Layout from "./Layout";
 import { Fragment } from "react";
 import { Navbar, Hero, Sidebar } from "../container";
-import { Parallax, Services, Cursor, Portfolio } from "../components";
+import { Parallax, Skills, Cursor, Portfolio } from "../components";
 import { MetaTags } from "../pieces";
 function App() {
   return (
@@ -13,11 +13,11 @@ function App() {
         <Navbar />
         <Hero />
       </section>
-      <section id="Services">
-        <Parallax type="services" />
+      <section id="Skills">
+        <Parallax type="Skills" />
       </section>
       <section>
-        <Services />
+        <Skills />
       </section>
       <section id="Portfolio">
         <Parallax type="portfolio" />
