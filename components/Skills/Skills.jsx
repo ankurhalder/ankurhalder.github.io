@@ -26,22 +26,18 @@ const variants = {
 const Skills = () => {
   const ref = useRef();
 
-  // const isInView = useInView(ref, { margin: "-100px" });
-
   return (
     <motion.div
       className="services"
       variants={variants}
       initial="initial"
-      // animate="animate"
-      // whileInView="animate"
       ref={ref}
       animate={"animate"}
     >
       <motion.div className="textContainer" variants={variants}>
         <p>
-          I focus on helping your brand grow
-          <br /> and move forward
+          Ready to Elevate Your Projects with My Skills?
+          <br /> Explore My Skills
         </p>
         <hr />
       </motion.div>
@@ -49,15 +45,14 @@ const Skills = () => {
         <div className="title">
           <img src="/people.webp" alt="" />
           <h1>
-            <motion.b whileHover={{ color: "orange" }}>Unique</motion.b> Ideas
+            <motion.b whileHover={{ color: "orange" }}>Explore</motion.b> My
           </h1>
         </div>
         <div className="title">
           <h1>
-            <motion.b whileHover={{ color: "orange" }}>For Your</motion.b>{" "}
-            Business.
+            <motion.b whileHover={{ color: "orange" }}>Skills</motion.b>
           </h1>
-          <button>WHAT WE DO?</button>
+          <button>Download My CV</button>
         </div>
       </motion.div>
       <Swiper
