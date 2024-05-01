@@ -45,12 +45,13 @@ const Skills = () => {
         <div className="title">
           <img src="/skills/skills.svg" alt="Skills" />
           <h1>
-            <motion.b whileHover={{ color: "orange" }}>Explore</motion.b> My
+            <motion.span whileHover={{ color: "orange" }}>Explore</motion.span>{" "}
+            My
           </h1>
         </div>
         <div className="title">
           <h1>
-            <motion.b whileHover={{ color: "orange" }}>Skills</motion.b>
+            <motion.span whileHover={{ color: "orange" }}>Skills</motion.span>
           </h1>
           <button>Download My CV</button>
         </div>

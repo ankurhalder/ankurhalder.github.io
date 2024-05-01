@@ -15,7 +15,7 @@
   .textContainer {
     @include flex-container(column, nowrap, center, center);
     flex: 1;
-    gap: 20px;
+    gap: 0px;
     align-self: flex-end;
     @media (max-width: $breakpoint-desktop-wide) {
     }
@@ -32,10 +32,13 @@
     }
 
     p {
-      font-weight: 200;
-      font-size: 20px;
+      font-family: var(--font-elianto);
+      font-size: var(--font-11);
+      color: var(--text-color-3);
       color: gray;
+      letter-spacing: 0px;
       text-align: right;
+      margin: 5% 0 0 0;
       @media (max-width: $breakpoint-desktop-wide) {
       }
       @media (max-width: $breakpoint-desktop) {
@@ -67,9 +70,8 @@
   }
   .titleContainer {
     flex: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-container(column, nowrap, flex-start, center);
+    gap: 20px;
     @media (max-width: $breakpoint-desktop-wide) {
     }
     @media (max-width: $breakpoint-desktop) {
@@ -83,8 +85,7 @@
     }
 
     .title {
-      display: flex;
-      align-items: center;
+      @include flex-container(row, nowrap, center, center);
       gap: 50px;
       @media (max-width: $breakpoint-desktop-wide) {
       }
@@ -120,8 +121,15 @@
       }
 
       h1 {
-        font-size: 96px;
-        font-weight: 100;
+        font-family: var(--font-tektur);
+        font-size: var(--font-3);
+        color: var(--text-color-3);
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        font-weight: 200;
+        span {
+          font-weight: 600;
+        }
         @media (max-width: $breakpoint-desktop-wide) {
         }
         @media (max-width: $breakpoint-desktop) {
@@ -139,9 +147,13 @@
         width: 300px;
         height: 100px;
         border-radius: 50px;
+        color: var(--text-color);
         background-color: orange;
+        font-family: var(--font-roboto);
+        font-size: var(--font-11);
+        letter-spacing: 2px;
+        font-weight: 400;
         border: none;
-        font-size: 24px;
         cursor: pointer;
         @media (max-width: $breakpoint-desktop-wide) {
         }
@@ -155,83 +167,6 @@
           font-size: 16px;
           width: 150px;
           height: 50px;
-        }
-      }
-    }
-  }
-  .listContainer {
-    flex: 2;
-    display: flex;
-    max-width: 1366px;
-    margin: auto;
-    @media (max-width: $breakpoint-desktop-wide) {
-    }
-    @media (max-width: $breakpoint-desktop) {
-    }
-    @media (max-width: $breakpoint-large-tablet) {
-    }
-    @media (max-width: $breakpoint-tablet) {
-    }
-    @media (max-width: $breakpoint-phone) {
-      flex-direction: column;
-      width: 100%;
-    }
-
-    .box {
-      padding: 50px;
-      border: 0.5px solid gray;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      @media (max-width: $breakpoint-desktop-wide) {
-      }
-      @media (max-width: $breakpoint-desktop) {
-      }
-      @media (max-width: $breakpoint-large-tablet) {
-      }
-      @media (max-width: $breakpoint-tablet) {
-      }
-      @media (max-width: $breakpoint-phone) {
-        border: none;
-        align-items: center;
-        gap: 20px;
-        padding: 10px;
-      }
-
-      p {
-        @media (max-width: $breakpoint-desktop-wide) {
-        }
-        @media (max-width: $breakpoint-desktop) {
-        }
-        @media (max-width: $breakpoint-large-tablet) {
-        }
-        @media (max-width: $breakpoint-tablet) {
-        }
-        @media (max-width: $breakpoint-phone) {
-          display: none;
-        }
-      }
-
-      button {
-        padding: 10px;
-        background-color: orange;
-        border: none;
-        cursor: pointer;
-        @media (max-width: $breakpoint-desktop-wide) {
-        }
-        @media (max-width: $breakpoint-desktop) {
-        }
-        @media (max-width: $breakpoint-large-tablet) {
-        }
-        @media (max-width: $breakpoint-tablet) {
-        }
-        @media (max-width: $breakpoint-phone) {
-          background-color: transparent;
-          border: 1px solid orange;
-          border-radius: 5px;
-          color: orange;
-          width: 50%;
-          padding: 5px;
         }
       }
     }
