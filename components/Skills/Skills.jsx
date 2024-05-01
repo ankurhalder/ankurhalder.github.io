@@ -72,7 +72,10 @@ const Skills = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          {/* <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+           */}
+          <img src="/skills/javascript.svg" alt="" />
+          {/* <h1></h1> */}
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
