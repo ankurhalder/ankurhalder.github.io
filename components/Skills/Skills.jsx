@@ -75,7 +75,8 @@ const Skills = () => {
         <SwiperSlide>
           <div className="card">
             <img src="/skills/javascript.svg" alt="JavaScript" />
-            <h2>JavaScript</h2>
+            <span>JavaScript</span>
+            <button>show more</button>
           </div>
         </SwiperSlide>
         <SwiperSlide>

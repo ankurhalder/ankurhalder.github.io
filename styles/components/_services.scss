@@ -173,7 +173,7 @@
   }
   .card {
     position: relative;
-    @include flex-container(row, nowrap, center, center);
+    @include flex-container(row, nowrap, center, space-between);
     @media (max-width: $breakpoint-desktop-wide) {
     }
     @media (max-width: $breakpoint-desktop) {
@@ -184,11 +184,16 @@
     }
     @media (max-width: $breakpoint-phone) {
     }
-    h2 {
+    span {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 0;
+      // top: 50%;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
+    }
+    button {
+      position: absolute;
+      bottom: 0;
     }
   }
 }
