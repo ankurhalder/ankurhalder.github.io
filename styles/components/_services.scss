@@ -1,17 +1,36 @@
 .services {
-  background: linear-gradient(180deg, #0c0c1d, #111132);
+  // background: linear-gradient(180deg, #0c0c1d, #111132);
+  background-color: var(--background-color);
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  @media (max-width: $breakpoint-desktop-wide) {
+  }
+  @media (max-width: $breakpoint-desktop) {
+  }
+  @media (max-width: $breakpoint-large-tablet) {
+  }
+  @media (max-width: $breakpoint-tablet) {
+  }
+  @media (max-width: $breakpoint-phone) {
+  }
   .textContainer {
     flex: 1;
     align-self: flex-end;
     display: flex;
     align-items: center;
     gap: 20px;
-
+    @media (max-width: $breakpoint-desktop-wide) {
+    }
+    @media (max-width: $breakpoint-desktop) {
+    }
+    @media (max-width: $breakpoint-large-tablet) {
+    }
+    @media (max-width: $breakpoint-tablet) {
+    }
+    @media (max-width: $breakpoint-phone) {
+    }
     // @include mobile {
     //   align-self: center;
     //   text-align: center;
@@ -23,13 +42,32 @@
       font-size: 20px;
       color: gray;
       text-align: right;
+      @media (max-width: $breakpoint-desktop-wide) {
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
+      }
     }
 
     hr {
       width: 500px;
       border: none;
       border-top: 0.5px solid gray;
-
+      @media (max-width: $breakpoint-desktop-wide) {
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
+      }
       // @include mobile {
       //   width: 300px;
       // }
@@ -40,7 +78,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    @media (max-width: $breakpoint-desktop-wide) {
+    }
+    @media (max-width: $breakpoint-desktop) {
+    }
+    @media (max-width: $breakpoint-large-tablet) {
+    }
+    @media (max-width: $breakpoint-tablet) {
+    }
+    @media (max-width: $breakpoint-phone) {
+    }
     // @include mobile {
     //   width: 100%;
     // }
@@ -49,7 +96,16 @@
       display: flex;
       align-items: center;
       gap: 50px;
-
+      @media (max-width: $breakpoint-desktop-wide) {
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
+      }
       // @include mobile {
       //   flex-direction: column;
       //   text-align: center;
@@ -61,7 +117,16 @@
         height: 100px;
         border-radius: 50px;
         object-fit: cover;
-
+        @media (max-width: $breakpoint-desktop-wide) {
+        }
+        @media (max-width: $breakpoint-desktop) {
+        }
+        @media (max-width: $breakpoint-large-tablet) {
+        }
+        @media (max-width: $breakpoint-tablet) {
+        }
+        @media (max-width: $breakpoint-phone) {
+        }
         // @include mobile {
         //   width: 200px;
         //   height: 50px;
@@ -71,7 +136,16 @@
       h1 {
         font-size: 96px;
         font-weight: 100;
-
+        @media (max-width: $breakpoint-desktop-wide) {
+        }
+        @media (max-width: $breakpoint-desktop) {
+        }
+        @media (max-width: $breakpoint-large-tablet) {
+        }
+        @media (max-width: $breakpoint-tablet) {
+        }
+        @media (max-width: $breakpoint-phone) {
+        }
         // @include mobile {
         //   font-size: 36px;
         // }
@@ -85,7 +159,16 @@
         border: none;
         font-size: 24px;
         cursor: pointer;
-
+        @media (max-width: $breakpoint-desktop-wide) {
+        }
+        @media (max-width: $breakpoint-desktop) {
+        }
+        @media (max-width: $breakpoint-large-tablet) {
+        }
+        @media (max-width: $breakpoint-tablet) {
+        }
+        @media (max-width: $breakpoint-phone) {
+        }
         // @include mobile {
         //   font-size: 16px;
         //   width: 150px;
@@ -99,7 +182,16 @@
     display: flex;
     max-width: 1366px;
     margin: auto;
-
+    @media (max-width: $breakpoint-desktop-wide) {
+    }
+    @media (max-width: $breakpoint-desktop) {
+    }
+    @media (max-width: $breakpoint-large-tablet) {
+    }
+    @media (max-width: $breakpoint-tablet) {
+    }
+    @media (max-width: $breakpoint-phone) {
+    }
     // @include mobile {
     //   flex-direction: column;
     //   width: 100%;
@@ -111,7 +203,16 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-
+      @media (max-width: $breakpoint-desktop-wide) {
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
+      }
       // @include mobile {
       //   border: none;
       //   align-items: center;
@@ -130,7 +231,16 @@
         background-color: orange;
         border: none;
         cursor: pointer;
-
+        @media (max-width: $breakpoint-desktop-wide) {
+        }
+        @media (max-width: $breakpoint-desktop) {
+        }
+        @media (max-width: $breakpoint-large-tablet) {
+        }
+        @media (max-width: $breakpoint-tablet) {
+        }
+        @media (max-width: $breakpoint-phone) {
+        }
         // @include mobile {
         //   background-color: transparent;
         //   border: 1px solid orange;
@@ -147,6 +257,16 @@
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
+  @media (max-width: $breakpoint-desktop-wide) {
+  }
+  @media (max-width: $breakpoint-desktop) {
+  }
+  @media (max-width: $breakpoint-large-tablet) {
+  }
+  @media (max-width: $breakpoint-tablet) {
+  }
+  @media (max-width: $breakpoint-phone) {
+  }
 }
 
 .swiper-slide {
@@ -154,9 +274,29 @@
   background-size: cover;
   width: 300px;
   height: 300px;
+  @media (max-width: $breakpoint-desktop-wide) {
+  }
+  @media (max-width: $breakpoint-desktop) {
+  }
+  @media (max-width: $breakpoint-large-tablet) {
+  }
+  @media (max-width: $breakpoint-tablet) {
+  }
+  @media (max-width: $breakpoint-phone) {
+  }
 }
 
 .swiper-slide img {
   display: block;
   width: 100%;
+  @media (max-width: $breakpoint-desktop-wide) {
+  }
+  @media (max-width: $breakpoint-desktop) {
+  }
+  @media (max-width: $breakpoint-large-tablet) {
+  }
+  @media (max-width: $breakpoint-tablet) {
+  }
+  @media (max-width: $breakpoint-phone) {
+  }
 }

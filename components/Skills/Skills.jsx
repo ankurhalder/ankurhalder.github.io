@@ -43,7 +43,7 @@ const Skills = () => {
       </motion.div>
       <motion.div className="titleContainer" variants={variants}>
         <div className="title">
-          <img src="/people.webp" alt="" />
+          <img src="/skills/skills.svg" alt="Skills" />
           <h1>
             <motion.b whileHover={{ color: "orange" }}>Explore</motion.b> My
           </h1>
@@ -74,7 +74,8 @@ const Skills = () => {
         <SwiperSlide>
           {/* <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
            */}
-          <img src="/skills/javascript.svg" alt="" />
+          <img src="/skills/javascript.svg" alt="javaScript" />
+
           {/* <h1></h1> */}
         </SwiperSlide>
         <SwiperSlide>
