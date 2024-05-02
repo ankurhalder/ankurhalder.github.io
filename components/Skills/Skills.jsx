@@ -120,7 +120,6 @@ const Skills = () => {
             <span>java</span>
           </div>
         </SwiperSlide>
-
         <SwiperSlide>
           <div className="card">
             <img src="/skills/c.svg" alt="c" />
@@ -151,7 +150,6 @@ const Skills = () => {
             <span>django</span>
           </div>
         </SwiperSlide>
-
         <SwiperSlide>
           <div className="card">
             <img src="/skills/github.svg" alt="GitHub" />
