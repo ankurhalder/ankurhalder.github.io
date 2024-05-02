@@ -16,7 +16,7 @@
   @media (max-width: $breakpoint-phone) {
   }
   h1 {
-    margin: 4% 0 0 0;
+    margin: 1% 0 0 0;
     font-family: var(--font-oswald);
     font-size: var(--font-1);
     font-weight: 600;
@@ -64,6 +64,7 @@
     height: 100%;
     position: absolute;
     z-index: 2;
+    margin: 6% 0 0 0;
     @media (max-width: $breakpoint-desktop-wide) {
     }
     @media (max-width: $breakpoint-desktop) {
