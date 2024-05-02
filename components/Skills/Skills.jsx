@@ -28,7 +28,7 @@ const Skills = () => {
 
   return (
     <motion.div
-      className="services"
+      className="services none"
       variants={variants}
       initial="initial"
       ref={ref}
@@ -79,28 +79,84 @@ const Skills = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          <div className="card">
+            <img src="/skills/reactjs.svg" alt="React" />
+            <span>React</span>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <div className="card">
+            <img src="/skills/nodejs.svg" alt="Node.js" />
+            <span>Node.js</span>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          <div className="card">
+            <img src="/skills/mongodb.svg" alt="MongoDB" />
+            <span>MongoDB</span>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          <div className="card">
+            <img src="/skills/sql.svg" alt="MySQL" />
+            <span>SQL</span>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+          <div className="card">
+            <img src="/skills/next.svg" alt="next" />
+            <span>next</span>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+          <div className="card">
+            <img src="/skills/python.svg" alt="python" />
+            <span>python</span>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+          <div className="card">
+            <img src="/skills/java.svg" alt="java" />
+            <span>java</span>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="card">
+            <img src="/skills/c.svg" alt="c" />
+            <span>c</span>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+          <div className="card">
+            <img src="/skills/html.svg" alt="HTML" />
+            <span>HTML</span>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="card">
+            <img src="/skills/css3.svg" alt="CSS" />
+            <span>CSS</span>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="card">
+            <img src="/skills/scss.svg" alt="scss" />
+            <span>scss</span>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="card">
+            <img src="/skills/django.svg" alt="django" />
+            <span>django</span>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="card">
+            <img src="/skills/github.svg" alt="GitHub" />
+            <span>GitHub</span>
+          </div>
         </SwiperSlide>
       </Swiper>
     </motion.div>
