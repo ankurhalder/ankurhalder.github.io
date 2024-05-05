@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import { useRef } from "react";
+import PropTypes from "prop-types";
 
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
@@ -8,19 +8,19 @@ const items = [
     id: 1,
     title: "Space Otaku",
     img: "/projects/spaceotaku.png",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
+    desc: "Space Otaku – your ultimate destination for staying up-to-date with the latest space news, astronaut activities, satellite locations, solar system details, and much more! This project combines the power of Next.js, Sass, and the Dialogflow chatbot to provide you with a seamless and interactive experience.",
   },
   {
     id: 2,
     title: "Adcomsys",
     img: "/projects/adcomsys.png",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
+    desc: "eveloped the official website for the First International Conference on Advanced Computing and Systems, AdComSys 2024, organized by UEM. Collaborated with Vidit Modi to create a seamless digital experience facilitating knowledge exchange and collaboration in cutting-edge technologies.",
   },
   {
     id: 3,
     title: "Eduversa",
     img: "/projects/eduversa.png",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
+    desc: "Discover Eduversa: the ultimate student management solution. Empowering students with data access and aiding teachers in attendance and student info management. Utilizing Next-gen tech for seamless operation.",
   },
   {
     id: 4,
@@ -32,7 +32,14 @@ const items = [
 
 const Single = ({ item }) => {
   const ref = useRef();
-
+  Single.propTypes = {
+    item: PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      img: PropTypes.string.isRequired,
+      desc: PropTypes.string.isRequired,
+    }).isRequired,
+  };
   const { scrollYProgress } = useScroll({
     target: ref,
   });
