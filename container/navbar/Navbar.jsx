@@ -39,7 +39,8 @@ function Navbar() {
         <ToggleBar></ToggleBar>
         <div className="social">
           <motion.a
-            href="#"
+            href="https://github.com/ankurhalder"
+            target="_blank"
             variants={socialVariants}
             whileHover="hover"
             initial={{ opacity: 0, y: 20 }}
@@ -48,7 +49,8 @@ function Navbar() {
             <img src="/social/github.svg" alt="github" />
           </motion.a>
           <motion.a
-            href="#"
+            href="https://www.linkedin.com/in/ankurhalder"
+            target="_blank"
             variants={socialVariants}
             whileHover="hover"
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +59,8 @@ function Navbar() {
             <img src="/social/linkedin.svg" alt="linkedin" />
           </motion.a>
           <motion.a
-            href="#"
+            href="https://www.facebook.com/ankur.roxx.9"
+            target="_blank"
             variants={socialVariants}
             whileHover="hover"
             initial={{ opacity: 0, y: 20 }}
@@ -66,7 +69,7 @@ function Navbar() {
             <img src="/social/facebook.svg" alt="facebook" />
           </motion.a>
           <motion.a
-            href="#"
+            href="https://www.instagram.com/halder_ankur"
             variants={socialVariants}
             whileHover="hover"
             initial={{ opacity: 0, y: 20 }}
