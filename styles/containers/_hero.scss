@@ -15,11 +15,25 @@
   .wrapper {
     height: 100%;
     margin: auto;
+    @media (max-width: $breakpoint-desktop-wide) {
+    }
+    @media (max-width: $breakpoint-desktop) {
+      max-width: max(1200px, 60%);
+    }
+    @media (max-width: $breakpoint-large-tablet) {
+      max-width: max(1000px, 60%);
+    }
+    @media (max-width: $breakpoint-tablet) {
+      max-width: max(800px, 60%);
+    }
+    @media (max-width: $breakpoint-phone) {
+    }
     .textContainer {
       width: 50%;
       height: 100%;
       @include flex-container(column, nowrap center, center);
       gap: 40px;
+
       @media (max-width: $breakpoint-desktop-wide) {
       }
       @media (max-width: $breakpoint-desktop) {
@@ -27,13 +41,13 @@
       @media (max-width: $breakpoint-large-tablet) {
       }
       @media (max-width: $breakpoint-tablet) {
-      }
-      @media (max-width: $breakpoint-phone) {
         height: 50%;
         width: 100%;
         gap: 20px;
         align-items: center;
         text-align: center;
+      }
+      @media (max-width: $breakpoint-phone) {
       }
 
       h1 {
@@ -130,12 +144,12 @@
     @media (max-width: $breakpoint-large-tablet) {
     }
     @media (max-width: $breakpoint-tablet) {
-    }
-    @media (max-width: $breakpoint-phone) {
       height: 50%;
       width: 100%;
       top: unset;
       bottom: 0;
+    }
+    @media (max-width: $breakpoint-phone) {
     }
 
     img {
