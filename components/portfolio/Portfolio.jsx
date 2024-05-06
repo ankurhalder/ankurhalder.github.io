@@ -16,7 +16,7 @@ const items = [
     id: 2,
     title: "Adcomsys",
     img: "/projects/adcomsys.png",
-    desc: "eveloped the official website for the First International Conference on Advanced Computing and Systems, AdComSys 2024, organized by UEM. Collaborated with Vidit Modi to create a seamless digital experience facilitating knowledge exchange and collaboration in cutting-edge technologies.",
+    desc: "Developed the official website for the First International Conference on Advanced Computing and Systems, AdComSys 2024, organized by UEM. Collaborated with Vidit Modi to create a seamless digital experience facilitating knowledge exchange and collaboration in cutting-edge technologies.",
     githubLink: "https://github.com/uem-conference/uem-conference.github.io",
     demoLink: "https://adcomsys.uem.edu.in",
   },
@@ -32,14 +32,7 @@ const items = [
 
 const Single = ({ item }) => {
   const ref = useRef();
-  Single.propTypes = {
-    item: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      img: PropTypes.string.isRequired,
-      desc: PropTypes.string.isRequired,
-    }).isRequired,
-  };
+
   const { scrollYProgress } = useScroll({
     target: ref,
   });
@@ -56,13 +49,33 @@ const Single = ({ item }) => {
           <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
-            <button>See Github</button>
-            <button>See Demo</button>
+            {item.githubLink && (
+              <a href={item.githubLink} target="_blank">
+                <button>See Github</button>
+              </a>
+            )}
+
+            {item.demoLink && (
+              <a href={item.demoLink} target="_blank">
+                <button>See Demo</button>
+              </a>
+            )}
           </motion.div>
         </div>
       </div>
     </section>
   );
+};
+
+Single.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    githubLink: PropTypes.string,
+    demoLink: PropTypes.string,
+  }).isRequired,
 };
 
 const Portfolio = () => {
