@@ -5,19 +5,33 @@
     position: sticky;
     top: 0;
     left: 0;
-    padding-top: 50px;
+    padding-top: 20px;
     text-align: center;
-    color: orange;
-    font-size: 36px;
-
-    // @include mobile {
-    //   padding-top: calc(100vh - 100px);
-    //   font-size: 24px;
-    // }
-
+    // color: var(--blue-1);
+    background: linear-gradient(to right, var(--blue-2), var(--blue-1));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: var(--font-oswald);
+    font-size: var(--font-7);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 100;
+    @media (max-width: $breakpoint-desktop-wide) {
+    }
+    @media (max-width: $breakpoint-desktop) {
+    }
+    @media (max-width: $breakpoint-large-tablet) {
+    }
+    @media (max-width: $breakpoint-tablet) {
+    }
+    @media (max-width: $breakpoint-phone) {
+      padding-top: calc(100vh - 100px);
+      font-size: 24px;
+    }
     .progressBar {
       height: 10px;
-      background-color: white;
+      background-color: var(--text-color);
     }
   }
 
