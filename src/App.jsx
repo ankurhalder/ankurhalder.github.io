@@ -19,8 +19,8 @@ function App() {
       <section>
         <Skills />
       </section>
-      <section id="Portfolio">
-        <Parallax type="portfolio" />
+      <section id="Projects">
+        <Parallax type="projects" />
       </section>
       <Portfolio />
       <section id="Contact">{/* <Contact /> */}</section>
