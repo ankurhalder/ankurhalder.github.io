@@ -39,6 +39,7 @@
     @media (max-width: $breakpoint-tablet) {
     }
     @media (max-width: $breakpoint-phone) {
+      gap: 15px;
     }
     a {
       img {
@@ -54,6 +55,7 @@
         @media (max-width: $breakpoint-tablet) {
         }
         @media (max-width: $breakpoint-phone) {
+          max-width: 25px;
         }
       }
 

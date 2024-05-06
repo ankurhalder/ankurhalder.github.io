@@ -114,6 +114,8 @@
     @media (max-width: $breakpoint-tablet) {
     }
     @media (max-width: $breakpoint-phone) {
+      right: 5px;
+      top: 23px;
     }
   }
 }
