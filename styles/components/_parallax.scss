@@ -31,8 +31,10 @@
     @media (max-width: $breakpoint-large-tablet) {
     }
     @media (max-width: $breakpoint-tablet) {
+      font-size: var(--font-4);
     }
     @media (max-width: $breakpoint-phone) {
+      font-size: var(--font-3);
     }
   }
 
