@@ -19,10 +19,11 @@ const Parallax = ({ type }) => {
       className="parallax"
       ref={ref}
       style={{
-        background:
-          type === "Skills"
-            ? "linear-gradient(180deg, #111132, #0c0c1d)"
-            : "linear-gradient(180deg, #111132, #505064)",
+        // background:
+        //   type === "Skills"
+        //     ? "linear-gradient(180deg, #111132, #0c0c1d)"
+        //     : "linear-gradient(180deg, #111132, #505064)",
+        backgroundColor: "var(--background-color)",
       }}
     >
       <motion.h1 style={{ y: yText }}>

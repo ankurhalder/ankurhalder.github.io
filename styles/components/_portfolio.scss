@@ -7,7 +7,6 @@
     left: 0;
     padding-top: 20px;
     text-align: center;
-    color: var(--yellow);
     // background: linear-gradient(to right, var(--blue-2), var(--blue-1));
     // -webkit-text-fill-color: transparent;
     // -webkit-background-clip: text;
@@ -15,6 +14,7 @@
     h1 {
       font-weight: 400;
       font-family: var(--font-tektur);
+      color: var(--text-color-3);
       font-size: var(--font-3);
       letter-spacing: 5px;
       text-transform: uppercase;
@@ -33,7 +33,7 @@
     }
     .progressBar {
       height: 10px;
-      background-color: var(--text-color);
+      background-color: var(--text-color-3);
     }
   }
 
@@ -46,7 +46,7 @@
     .wrapper {
       max-width: 1366px;
       height: 100%;
-      margin: 0 auto;
+      margin: 1% auto;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -99,8 +99,7 @@
 
       .textContainer {
         flex: 1;
-        display: flex;
-        flex-direction: column;
+        @include flex-container(column, nowrap, center, flex-start);
         gap: 30px;
         @media (max-width: $breakpoint-desktop-wide) {
         }
@@ -118,7 +117,10 @@
         }
 
         h2 {
-          font-size: 72px;
+          font-family: var(--font-elianto);
+          letter-spacing: 2px;
+          font-size: var(--font-3);
+          color: var(--text-color);
           @media (max-width: $breakpoint-desktop-wide) {
           }
           @media (max-width: $breakpoint-desktop) {
