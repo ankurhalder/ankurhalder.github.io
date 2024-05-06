@@ -9,18 +9,24 @@ const items = [
     title: "Space Otaku",
     img: "/projects/spaceotaku.png",
     desc: "Space Otaku – your ultimate destination for staying up-to-date with the latest space news, astronaut activities, satellite locations, solar system details, and much more! This project combines the power of Next.js, Sass, and the Dialogflow chatbot to provide you with a seamless and interactive experience.",
+    githubLink: "https://github.com/ankurhalder/spaceotaku",
+    demoLink: "https://www.spaceotaku.online",
   },
   {
     id: 2,
     title: "Adcomsys",
     img: "/projects/adcomsys.png",
     desc: "eveloped the official website for the First International Conference on Advanced Computing and Systems, AdComSys 2024, organized by UEM. Collaborated with Vidit Modi to create a seamless digital experience facilitating knowledge exchange and collaboration in cutting-edge technologies.",
+    githubLink: "https://github.com/uem-conference/uem-conference.github.io",
+    demoLink: "https://adcomsys.uem.edu.in",
   },
   {
     id: 3,
     title: "Eduversa",
     img: "/projects/eduversa.png",
     desc: "Discover Eduversa: the ultimate student management solution. Empowering students with data access and aiding teachers in attendance and student info management. Utilizing Next-gen tech for seamless operation.",
+    githubLink: "https://github.com/eduversa/eduversa.github.io",
+    demoLink: "https://www.eduversa.in",
   },
 ];
 
