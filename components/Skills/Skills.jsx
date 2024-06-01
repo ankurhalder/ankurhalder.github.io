@@ -28,7 +28,7 @@ const Skills = () => {
 
   return (
     <motion.div
-      className="services none"
+      className="skills none"
       variants={variants}
       initial="initial"
       ref={ref}
@@ -77,6 +77,7 @@ const Skills = () => {
           <div className="card">
             <img src="/skills/javascript.svg" alt="JavaScript" />
             <span>JavaScript</span>
+            <button>See More</button>
           </div>
         </SwiperSlide>
         <SwiperSlide>
