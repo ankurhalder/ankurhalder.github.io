@@ -13,7 +13,7 @@ const AnkurHalderAnimation = () => {
         d="M100 50L70 0H40L10 50H40L50 30H70L80 50H100Z"
         variants={letterVariants}
         initial="hidden"
-        animate="visible"
+        // animate="visible"
         transition={{ duration: 1 }}
       />
       {/* Letter n */}
