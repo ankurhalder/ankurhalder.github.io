@@ -5,7 +5,7 @@
 @import "containers/manifest";
 @import "components/manifest";
 @import "pages/manifest";
-
+@import "pieces/manifest";
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;

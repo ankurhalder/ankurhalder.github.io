@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
+import { Modal } from "../../pieces";
 
 const variants = {
   initial: {
@@ -25,10 +26,17 @@ const variants = {
 
 const Skills = () => {
   const [selectedSkill, setSelectedSkill] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const ref = useRef();
 
   const handleSeeMoreClick = (skill) => {
-    setSelectedSkill(selectedSkill === skill ? null : skill);
+    setSelectedSkill(skill);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedSkill(null);
   };
 
   return (
@@ -104,32 +112,39 @@ const Skills = () => {
               <span>{skill.text}</span>
               <button
                 className="seeMoreButton"
-                onClick={() => handleSeeMoreClick(skill.text)}
+                onClick={() => handleSeeMoreClick(skill)}
                 aria-label={`See more about ${skill.text}`}
               >
                 See More
               </button>
-              {selectedSkill === skill.text && (
-                <p className="detailsPanel">
-                  {skill.text === "JavaScript" && (
-                    <>
-                      I have experience in building web applications using
-                      JavaScript. I have also worked on various projects using
-                      JavaScript. Lorem ipsum dolor sit amet, consectetur
-                      adipisicing elit. Quaerat est delectus nisi soluta dolores
-                      blanditiis sequi culpa, modi voluptatem nam asperiores
-                      possimus nobis voluptate odio ex harum? Nisi doloribus,
-                      sint architecto quidem fuga necessitatibus amet vitae at
-                      officia iure iste dolorum mollitia voluptatum quaerat
-                      optio itaque.
-                    </>
-                  )}
-                </p>
-              )}
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+      <Modal
+        show={isModalOpen}
+        onClose={closeModal}
+        content={
+          selectedSkill && (
+            <>
+              <h2>{selectedSkill.text}</h2>
+              {selectedSkill.text === "JavaScript" && (
+                <p>
+                  I have experience in building web applications using
+                  JavaScript. I have also worked on various projects using
+                  JavaScript. Lorem ipsum dolor sit amet, consectetur
+                  adipisicing elit. Quaerat est delectus nisi soluta dolores
+                  blanditiis sequi culpa, modi voluptatem nam asperiores
+                  possimus nobis voluptate odio ex harum? Nisi doloribus, sint
+                  architecto quidem fuga necessitatibus amet vitae at officia
+                  iure iste dolorum mollitia voluptatum quaerat optio itaque.
+                </p>
+              )}
+              {/* Add more detailed content for each skill here */}
+            </>
+          )
+        }
+      />
     </motion.div>
   );
 };

@@ -1,7 +1,10 @@
 .skills {
   background-color: var(--background-color);
   height: 100%;
-  @include flex-container(column, nowrap, space-between, center);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   @media (max-width: $breakpoint-desktop-wide) {
   }
   @media (max-width: $breakpoint-desktop) {
@@ -13,7 +16,10 @@
   @media (max-width: $breakpoint-phone) {
   }
   .textContainer {
-    @include flex-container(column, nowrap, center, center);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     flex: 1;
     gap: 0px;
     align-self: flex-end;
@@ -70,7 +76,10 @@
   }
   .titleContainer {
     flex: 2;
-    @include flex-container(column, nowrap, flex-start, center);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     gap: 20px;
     @media (max-width: $breakpoint-desktop-wide) {
     }
@@ -85,7 +94,10 @@
     }
 
     .title {
-      @include flex-container(row, nowrap, center, center);
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
       gap: 50px;
       @media (max-width: $breakpoint-desktop-wide) {
       }
@@ -115,21 +127,14 @@
         @media (max-width: $breakpoint-tablet) {
         }
         @media (max-width: $breakpoint-phone) {
-          width: 200px;
-          height: 50px;
         }
       }
 
       h1 {
-        font-family: var(--font-tektur);
-        font-size: var(--font-3);
+        font-family: var(--font-interstate);
+        font-size: var(--font-12);
+        font-weight: 900;
         color: var(--text-color-3);
-        text-transform: uppercase;
-        letter-spacing: 10px;
-        font-weight: 200;
-        span {
-          font-weight: 600;
-        }
         @media (max-width: $breakpoint-desktop-wide) {
         }
         @media (max-width: $breakpoint-desktop) {
@@ -137,25 +142,25 @@
         @media (max-width: $breakpoint-large-tablet) {
         }
         @media (max-width: $breakpoint-tablet) {
+          font-size: var(--font-13);
         }
         @media (max-width: $breakpoint-phone) {
-          // font-size: 36px;
+        }
+
+        span {
+          color: var(--text-color-4);
         }
       }
 
       button {
-        width: 300px;
-        height: 100px;
-        border-radius: 50px;
-        color: var(--text-color);
-        background-color: var(--blue-1);
-        font-family: var(--font-roboto);
-        font-size: var(--font-11);
-        letter-spacing: 3px;
-        font-weight: 400;
-        border: none;
-        cursor: pointer;
-        object-fit: cover;
+        width: 250px;
+        height: 80px;
+        background-color: var(--primary-color-3);
+        color: var(--text-color-4);
+        font-size: var(--font-8);
+        border: 1px solid var(--text-color-4);
+        border-radius: 40px;
+        font-family: var(--font-interstate);
         @media (max-width: $breakpoint-desktop-wide) {
         }
         @media (max-width: $breakpoint-desktop) {
@@ -163,95 +168,78 @@
         @media (max-width: $breakpoint-large-tablet) {
         }
         @media (max-width: $breakpoint-tablet) {
-          font-size: var(--font-9);
         }
         @media (max-width: $breakpoint-phone) {
-          width: 200px;
-          height: 50px;
+        }
+
+        &:hover {
+          background-color: var(--text-color-4);
+          color: var(--primary-color-3);
+          border: 1px solid var(--primary-color-3);
+          transition: background-color 0.3s ease, color 0.3s ease,
+            border 0.3s ease;
         }
       }
     }
   }
-  .card {
-    position: relative;
-    @include flex-container(row, nowrap, center, space-between);
-    @media (max-width: $breakpoint-desktop-wide) {
-    }
-    @media (max-width: $breakpoint-desktop) {
-    }
-    @media (max-width: $breakpoint-large-tablet) {
-    }
-    @media (max-width: $breakpoint-tablet) {
-    }
-    @media (max-width: $breakpoint-phone) {
-    }
-    span {
-      position: absolute;
-      top: 0;
-      font-family: var(--font-roboto);
-      font-size: var(--font-9);
-      letter-spacing: 2px;
-      color: var(--text-color);
-      font-weight: 400;
-      @media (max-width: $breakpoint-desktop-wide) {
+  .mySwiper {
+    width: 80%;
+    height: 60%;
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .card {
+        width: 300px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--card-background-color);
+        border-radius: 20px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        img {
+          width: 100px;
+          height: 100px;
+          object-fit: contain;
+          margin-bottom: 20px;
+        }
+        span {
+          font-size: var(--font-10);
+          color: var(--text-color-4);
+          margin-bottom: 20px;
+        }
+        .seeMoreButton {
+          display: none;
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 10px 20px;
+          background-color: var(--primary-color-3);
+          color: var(--text-color-4);
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          &:hover {
+            background-color: var(--text-color-4);
+            color: var(--primary-color-3);
+          }
+        }
+        &:hover .seeMoreButton {
+          display: block;
+        }
+        .detailsPanel {
+          margin-top: 20px;
+          text-align: left;
+          font-size: var(--font-10);
+          color: var(--text-color-4);
+        }
       }
-      @media (max-width: $breakpoint-desktop) {
-      }
-      @media (max-width: $breakpoint-large-tablet) {
-      }
-      @media (max-width: $breakpoint-tablet) {
-      }
-      @media (max-width: $breakpoint-phone) {
-      }
     }
-  }
-}
-.swiper {
-  width: 100%;
-  padding-top: 10px;
-  padding-bottom: 50px;
-  @media (max-width: $breakpoint-desktop-wide) {
-  }
-  @media (max-width: $breakpoint-desktop) {
-  }
-  @media (max-width: $breakpoint-large-tablet) {
-  }
-  @media (max-width: $breakpoint-tablet) {
-  }
-  @media (max-width: $breakpoint-phone) {
-  }
-}
-
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 300px;
-  height: 300px;
-  @media (max-width: $breakpoint-desktop-wide) {
-  }
-  @media (max-width: $breakpoint-desktop) {
-  }
-  @media (max-width: $breakpoint-large-tablet) {
-    width: 200px;
-    height: 200px;
-  }
-  @media (max-width: $breakpoint-tablet) {
-  }
-  @media (max-width: $breakpoint-phone) {
-  }
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  @media (max-width: $breakpoint-desktop-wide) {
-  }
-  @media (max-width: $breakpoint-desktop) {
-  }
-  @media (max-width: $breakpoint-large-tablet) {
-  }
-  @media (max-width: $breakpoint-tablet) {
-  }
-  @media (max-width: $breakpoint-phone) {
   }
 }
