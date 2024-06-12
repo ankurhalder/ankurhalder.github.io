@@ -78,6 +78,15 @@ const Skills = () => {
             <img src="/skills/javascript.svg" alt="JavaScript" />
             <span>JavaScript</span>
             <button>See More</button>
+            <p>
+              I have experience in building web applications using JavaScript. I
+              have also worked on various projects using JavaScript. Lorem ipsum
+              dolor sit amet, consectetur adipisicing elit. Quaerat est delectus
+              nisi soluta dolores blanditiis sequi culpa, modi voluptatem nam
+              asperiores possimus nobis voluptate odio ex harum? Nisi doloribus,
+              sint architecto quidem fuga necessitatibus amet vitae at officia
+              iure iste dolorum mollitia voluptatum quaerat optio itaque
+            </p>
           </div>
         </SwiperSlide>
         <SwiperSlide>
