@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -24,7 +24,12 @@ const variants = {
 };
 
 const Skills = () => {
+  const [selectedSkill, setSelectedSkill] = useState(null);
   const ref = useRef();
+
+  const handleSeeMoreClick = (skill) => {
+    setSelectedSkill(selectedSkill === skill ? null : skill);
+  };
 
   return (
     <motion.div
@@ -32,7 +37,7 @@ const Skills = () => {
       variants={variants}
       initial="initial"
       ref={ref}
-      animate={"animate"}
+      animate="animate"
     >
       <motion.div className="textContainer" variants={variants}>
         <p>
@@ -53,15 +58,15 @@ const Skills = () => {
           <h1>
             <motion.span whileHover={{ color: "orange" }}>Skills</motion.span>
           </h1>
-          <button>Download My CV</button>
+          <button aria-label="Download My CV">Download My CV</button>
         </div>
       </motion.div>
       <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={"auto"}
-        loop={true}
+        effect="coverflow"
+        grabCursor
+        centeredSlides
+        slidesPerView="auto"
+        loop
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -69,104 +74,61 @@ const Skills = () => {
           modifier: 1,
           slideShadows: true,
         }}
-        pagination={true}
+        pagination
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <div className="card">
-            <img src="/skills/javascript.svg" alt="JavaScript" />
-            <span>JavaScript</span>
-            <button>See More</button>
-            <p>
-              I have experience in building web applications using JavaScript. I
-              have also worked on various projects using JavaScript. Lorem ipsum
-              dolor sit amet, consectetur adipisicing elit. Quaerat est delectus
-              nisi soluta dolores blanditiis sequi culpa, modi voluptatem nam
-              asperiores possimus nobis voluptate odio ex harum? Nisi doloribus,
-              sint architecto quidem fuga necessitatibus amet vitae at officia
-              iure iste dolorum mollitia voluptatum quaerat optio itaque
-            </p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card">
-            <img src="/skills/reactjs.svg" alt="React" />
-            <span>React</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card">
-            <img src="/skills/nodejs.svg" alt="Node.js" />
-            <span>Node.js</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card">
-            <img src="/skills/mongodb.svg" alt="MongoDB" />
-            <span>MongoDB</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card">
-            <img src="/skills/sql.svg" alt="MySQL" />
-            <span>SQL</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card">
-            <img src="/skills/next.svg" alt="next" />
-            <span>next</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card">
-            <img src="/skills/python.svg" alt="python" />
-            <span>python</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card">
-            <img src="/skills/java.svg" alt="java" />
-            <span>java</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card">
-            <img src="/skills/c.svg" alt="c" />
-            <span>c</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card">
-            <img src="/skills/html.svg" alt="HTML" />
-            <span>HTML</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card">
-            <img src="/skills/css3.svg" alt="CSS" />
-            <span>CSS</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card">
-            <img src="/skills/scss.svg" alt="scss" />
-            <span>scss</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card">
-            <img src="/skills/django.svg" alt="django" />
-            <span>django</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card">
-            <img src="/skills/github.svg" alt="GitHub" />
-            <span>GitHub</span>
-          </div>
-        </SwiperSlide>
+        {[
+          {
+            src: "/skills/javascript.svg",
+            alt: "JavaScript",
+            text: "JavaScript",
+          },
+          { src: "/skills/reactjs.svg", alt: "React", text: "React" },
+          { src: "/skills/nodejs.svg", alt: "Node.js", text: "Node.js" },
+          { src: "/skills/mongodb.svg", alt: "MongoDB", text: "MongoDB" },
+          { src: "/skills/sql.svg", alt: "MySQL", text: "SQL" },
+          { src: "/skills/next.svg", alt: "Next.js", text: "Next.js" },
+          { src: "/skills/python.svg", alt: "Python", text: "Python" },
+          { src: "/skills/java.svg", alt: "Java", text: "Java" },
+          { src: "/skills/c.svg", alt: "C", text: "C" },
+          { src: "/skills/html.svg", alt: "HTML", text: "HTML" },
+          { src: "/skills/css3.svg", alt: "CSS", text: "CSS" },
+          { src: "/skills/scss.svg", alt: "SCSS", text: "SCSS" },
+          { src: "/skills/django.svg", alt: "Django", text: "Django" },
+          { src: "/skills/github.svg", alt: "GitHub", text: "GitHub" },
+        ].map((skill, index) => (
+          <SwiperSlide key={index}>
+            <div className="card">
+              <img src={skill.src} alt={skill.alt} loading="lazy" />
+              <span>{skill.text}</span>
+              <button
+                className="seeMoreButton"
+                onClick={() => handleSeeMoreClick(skill.text)}
+                aria-label={`See more about ${skill.text}`}
+              >
+                See More
+              </button>
+              {selectedSkill === skill.text && (
+                <p className="detailsPanel">
+                  {skill.text === "JavaScript" && (
+                    <>
+                      I have experience in building web applications using
+                      JavaScript. I have also worked on various projects using
+                      JavaScript. Lorem ipsum dolor sit amet, consectetur
+                      adipisicing elit. Quaerat est delectus nisi soluta dolores
+                      blanditiis sequi culpa, modi voluptatem nam asperiores
+                      possimus nobis voluptate odio ex harum? Nisi doloribus,
+                      sint architecto quidem fuga necessitatibus amet vitae at
+                      officia iure iste dolorum mollitia voluptatum quaerat
+                      optio itaque.
+                    </>
+                  )}
+                </p>
+              )}
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </motion.div>
   );
