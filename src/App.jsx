@@ -23,7 +23,7 @@ function App() {
         <Parallax type="projects" />
       </section>
       <Projects />
-      <section id="Contact">{/* <Contact /> */}</section>
+      <section id="Contact"></section>
     </Fragment>
   );
 }
