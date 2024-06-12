@@ -190,55 +190,49 @@
       justify-content: center;
       align-items: center;
       .card {
-        width: 300px;
-        height: 400px;
+        position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        background-color: var(--card-background-color);
-        border-radius: 20px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        justify-content: center;
+        background: #f9f9f9;
+        border-radius: 12px;
         padding: 20px;
-        text-align: center;
-        position: relative;
-        img {
-          width: 100px;
-          height: 100px;
-          object-fit: contain;
-          margin-bottom: 20px;
-        }
-        span {
-          font-size: var(--font-10);
-          color: var(--text-color-4);
-          margin-bottom: 20px;
-        }
-        .seeMoreButton {
-          display: none;
-          position: absolute;
-          bottom: 20px;
-          left: 50%;
-          transform: translateX(-50%);
-          padding: 10px 20px;
-          background-color: var(--primary-color-3);
-          color: var(--text-color-4);
-          border: none;
-          border-radius: 10px;
-          cursor: pointer;
-          &:hover {
-            background-color: var(--text-color-4);
-            color: var(--primary-color-3);
-          }
-        }
-        &:hover .seeMoreButton {
-          display: block;
-        }
-        .detailsPanel {
-          margin-top: 20px;
-          text-align: left;
-          font-size: var(--font-10);
-          color: var(--text-color-4);
-        }
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .card img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .card span {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #333;
+      }
+
+      .card .seeMoreButton {
+        margin-top: 15px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .card .seeMoreButton:hover {
+        background-color: #0056b3;
       }
     }
   }

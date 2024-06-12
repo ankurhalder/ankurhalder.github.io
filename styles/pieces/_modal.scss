@@ -14,10 +14,12 @@
 .modal-content {
   background: white;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   width: 80%;
   max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   position: relative;
+  transition: transform 0.3s ease-in-out;
 }
 
 .close-button {
@@ -28,6 +30,7 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
+  color: #333;
 }
 
 .modal-body {
