@@ -1,7 +1,7 @@
 // import Layout from "./Layout";
 import { Fragment } from "react";
-import { Navbar, Hero, Sidebar } from "../container";
-import { Parallax, Skills, Cursor, Portfolio } from "../components";
+import { Navbar, Sidebar } from "../container";
+import { Parallax, Skills, Cursor, Portfolio, Hero } from "../components";
 import { MetaTags } from "../pieces";
 function App() {
   return (
