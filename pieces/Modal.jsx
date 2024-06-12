@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
 const Modal = ({ show, onClose, content }) => {
   if (!show) {
@@ -15,9 +15,9 @@ const Modal = ({ show, onClose, content }) => {
     >
       <motion.div
         className="modal-content"
-        initial={{ scale: 0.5 }}
-        animate={{ scale: 1 }}
-        exit={{ scale: 0.5 }}
+        initial={{ scale: 0.8, y: 50 }}
+        animate={{ scale: 1, y: 0 }}
+        exit={{ scale: 0.8, y: 50 }}
       >
         <button className="close-button" onClick={onClose}>
           ×
@@ -26,6 +26,12 @@ const Modal = ({ show, onClose, content }) => {
       </motion.div>
     </motion.div>
   );
+};
+
+Modal.propTypes = {
+  show: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  content: PropTypes.node.isRequired,
 };
 
 export default Modal;
