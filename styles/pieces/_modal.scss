@@ -4,37 +4,155 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  backdrop-filter: blur(4px); /* Adds blur effect to background */
 }
 
 .modal-content {
-  background: #fff;
-  padding: 20px;
+  background: linear-gradient(
+    to bottom right,
+    #ffffff,
+    #f0f0f0
+  ); /* Gradient background */
+  padding: 30px;
   border-radius: 12px;
   width: 80%;
   max-width: 600px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Soft shadow */
   position: relative;
   transition: transform 0.3s ease-in-out;
-}
 
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #333;
-}
+  .close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s ease;
 
-.modal-body {
-  margin-top: 20px;
-  font-family: "Roboto", sans-serif;
-  color: #333;
+    &:hover {
+      color: #333; /* Darker color on hover */
+    }
+  }
+
+  .modal-body {
+    margin-top: 20px;
+    font-family: "Roboto", sans-serif;
+    color: #333;
+
+    .subheading {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      position: relative;
+      color: #444; /* Subtle darker color for headings */
+      cursor: pointer;
+
+      /* Pseudo-element for decorative underline */
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #777;
+        transform: scaleX(0); /* Initial scale to hide */
+        transform-origin: bottom left;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover::after {
+        transform: scaleX(1); /* Expand underline on hover */
+      }
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+
+      /* Pseudo-element for decorative line */
+      &::before {
+        content: "";
+        position: absolute;
+        top: 100%; /* Initially hidden below paragraph */
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #555;
+        transition: top 0.3s ease;
+      }
+
+      &:hover::before {
+        top: 0; /* Move line up on hover */
+      }
+    }
+
+    ul {
+      margin-top: 12px;
+      padding-left: 20px;
+      color: #666; /* Lighter color for list items */
+      list-style-type: none; /* Remove default list style */
+
+      li {
+        position: relative;
+        margin-bottom: 8px;
+
+        /* Custom bullet point */
+        &::before {
+          content: "•";
+          position: absolute;
+          left: -20px;
+          color: #777;
+          transition: color 0.3s ease;
+        }
+      }
+
+      &:hover li::before {
+        color: #333; /* Darker color on hover */
+      }
+    }
+  }
+
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+
+    /* Box shadow effect */
+    &:hover {
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #666; /* Darker color on hover */
+    }
+  }
 }
