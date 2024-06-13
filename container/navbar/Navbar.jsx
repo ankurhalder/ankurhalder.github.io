@@ -2,22 +2,25 @@ import { Fragment } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { ToggleBar } from "../../pieces";
+
 function Navbar() {
   const logoControls = useAnimation();
   const socialControls = useAnimation();
 
   useEffect(() => {
-    logoControls.start({
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5, type: "spring", stiffness: 200 },
-    });
-
-    socialControls.start({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, delay: 0.1, ease: "easeOut" },
-    });
+    const animateNavbar = async () => {
+      await logoControls.start({
+        opacity: 1,
+        scale: 1,
+        transition: { duration: 0.5, type: "spring", stiffness: 200 },
+      });
+      await socialControls.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, delay: 0.1, ease: "easeOut" },
+      });
+    };
+    animateNavbar();
   }, [logoControls, socialControls]);
 
   const socialVariants = {
@@ -36,49 +39,45 @@ function Navbar() {
           src="/apple-icon.png"
           alt=""
         />
-        <ToggleBar></ToggleBar>
+        <ToggleBar /> {/* Placeholder for future side navigation toggle */}
         <div className="social">
-          <motion.a
-            href="https://github.com/ankurhalder"
-            target="_blank"
-            variants={socialVariants}
-            whileHover="hover"
-            initial={{ opacity: 0, y: 20 }}
-            animate={socialControls}
-          >
-            <img src="/social/github.svg" alt="github" />
-          </motion.a>
-          <motion.a
-            href="https://www.linkedin.com/in/ankurhalder"
-            target="_blank"
-            variants={socialVariants}
-            whileHover="hover"
-            initial={{ opacity: 0, y: 20 }}
-            animate={socialControls}
-          >
-            <img src="/social/linkedin.svg" alt="linkedin" />
-          </motion.a>
-          <motion.a
-            href="https://www.facebook.com/ankur.roxx.9"
-            target="_blank"
-            variants={socialVariants}
-            whileHover="hover"
-            initial={{ opacity: 0, y: 20 }}
-            animate={socialControls}
-          >
-            <img src="/social/facebook.svg" alt="facebook" />
-          </motion.a>
-          <motion.a
-            href="https://www.instagram.com/halder_ankur"
-            variants={socialVariants}
-            whileHover="hover"
-            initial={{ opacity: 0, y: 20 }}
-            animate={socialControls}
-          >
-            <img src="/social/instagram.svg" alt="instagram" />
-          </motion.a>
+          {[
+            {
+              href: "https://github.com/ankurhalder",
+              imgSrc: "/social/github.svg",
+              alt: "github",
+            },
+            {
+              href: "https://www.linkedin.com/in/ankurhalder",
+              imgSrc: "/social/linkedin.svg",
+              alt: "linkedin",
+            },
+            {
+              href: "https://www.facebook.com/ankur.roxx.9",
+              imgSrc: "/social/facebook.svg",
+              alt: "facebook",
+            },
+            {
+              href: "https://www.instagram.com/halder_ankur",
+              imgSrc: "/social/instagram.svg",
+              alt: "instagram",
+            },
+          ].map((social, index) => (
+            <motion.a
+              key={index}
+              href={social.href}
+              target="_blank"
+              variants={socialVariants}
+              whileHover="hover"
+              initial={{ opacity: 0, y: 20 }}
+              animate={socialControls}
+              aria-label={social.alt}
+            >
+              <img src={social.imgSrc} alt={social.alt} />
+            </motion.a>
+          ))}
         </div>
-        <div>{/* placeholver for sidenav toogle */}</div>
+        <div>{/* Placeholder for side nav toggle */}</div>
       </div>
     </Fragment>
   );

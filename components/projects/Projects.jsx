@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import PropTypes from "prop-types";
-
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 const items = [
   {
@@ -37,26 +36,33 @@ const Single = ({ item }) => {
     target: ref,
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
+  const y = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+  });
 
   return (
     <section>
       <div className="container none">
         <div className="wrapper">
           <div className="imageContainer" ref={ref}>
-            <img src={item.img} alt="" />
+            <img src={item.img} alt={item.title} loading="lazy" />
           </div>
           <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
             {item.githubLink && (
-              <a href={item.githubLink} target="_blank">
+              <a
+                href={item.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button>See Github</button>
               </a>
             )}
 
             {item.demoLink && (
-              <a href={item.demoLink} target="_blank">
+              <a href={item.demoLink} target="_blank" rel="noopener noreferrer">
                 <button>See Demo</button>
               </a>
             )}

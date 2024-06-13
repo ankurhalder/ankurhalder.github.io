@@ -66,7 +66,7 @@ const Skills = () => {
           <h1>
             <span>Skills</span>
           </h1>
-          <a href="/ankurhalder.pdf" target="_blank">
+          <a href="/ankurhalder.pdf" target="_blank" rel="noopener noreferrer">
             <button aria-label="Download My CV">Download My CV</button>
           </a>
         </div>
