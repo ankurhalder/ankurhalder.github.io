@@ -58,13 +58,12 @@ const Skills = () => {
         <div className="title">
           <img src="/skills/skills.svg" alt="Skills" />
           <h1>
-            <motion.span whileHover={{ color: "orange" }}>Explore</motion.span>{" "}
-            My
+            <span>Explore</span> My
           </h1>
         </div>
         <div className="title">
           <h1>
-            <motion.span whileHover={{ color: "orange" }}>Skills</motion.span>
+            <span>Skills</span>
           </h1>
           <button aria-label="Download My CV">Download My CV</button>
         </div>
