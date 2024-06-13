@@ -111,26 +111,25 @@
     }
 
     ul {
-      margin-top: 12px;
-      padding-left: 20px;
-      color: #666;
-      list-style-type: none;
-
+      margin: 0 0 0 0.5%;
+      padding: 0 0 0 20px;
+      color: var(--tex-color-inverse-1);
       li {
         position: relative;
-        margin-bottom: 8px;
-
+        margin: 0 0 2% 0;
+        font-family: var(--font-roboto);
+        font-size: var(--font-12);
+        letter-spacing: 1px;
+        font-weight: 400;
         &::before {
           content: "•";
           position: absolute;
           left: -20px;
-          color: #777;
+          top: -5px;
+          color: var(--tex-color-inverse-1);
+          font-size: var(--font-10);
           transition: color 0.3s ease;
         }
-      }
-
-      &:hover li::before {
-        color: #333;
       }
     }
   }
