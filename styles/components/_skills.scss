@@ -172,14 +172,17 @@
     }
   }
   .mySwiper {
-    width: 80%;
-    height: 60%;
+    width: 100%;
+    height: 50%;
+    padding-top: 50px;
+    padding-bottom: 50px;
     .swiper-slide {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 250px;
       .card {
-        position: relative;
+        // position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
