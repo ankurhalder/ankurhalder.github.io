@@ -3,7 +3,8 @@ import { Fragment } from "react";
 import { Navbar, Sidebar, Seo } from "../container";
 // eslint-disable-next-line no-unused-vars
 import { Parallax, Skills, Cursor, Projects, Hero } from "../components";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { NotFound } from "./pages";
 function App() {
   return (
     <Fragment>
@@ -38,6 +39,11 @@ function App() {
           </h1>
         </div>
       </section>
+      <Router>
+        <Routes>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Router>
     </Fragment>
   );
 }
