@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import { Modal } from "../../pieces";
 import { skillDetails } from "../../data/skillDetails";
+
 const variants = {
   initial: {
     x: -500,
@@ -88,7 +89,7 @@ const Skills = () => {
         {Object.keys(skillDetails).map((key) => (
           <SwiperSlide key={key}>
             <motion.div
-              className="card"
+              className={`card ${key.toLowerCase()}`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -116,7 +117,9 @@ const Skills = () => {
           selectedSkill && (
             <>
               <h2>{selectedSkill.title}</h2>
+              <div className="subheading">Description:</div>
               <p>{selectedSkill.description}</p>
+              <div className="subheading">Key Features:</div>
               <ul>
                 {selectedSkill.keyFeatures.map((feature, index) => (
                   <li key={index}>{feature}</li>
