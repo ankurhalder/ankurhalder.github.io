@@ -190,7 +190,7 @@
           var(--text-color-4)
         );
         border-radius: 12px;
-        padding: 50px;
+        // padding: 40px;
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
       }
 
@@ -199,22 +199,25 @@
       }
 
       .card img {
-        width: 80px;
-        height: 80px;
+        width: 120px;
+        height: 120px;
+        // max-width: ;
+        // height: 80px;
         object-fit: cover;
         border-radius: 50%;
-        margin-bottom: 10px;
+        // margin-bottom: 10px;
+        margin: 1% 0 5% 0;
       }
 
       .card span {
-        margin-top: 10px;
-        font-size: 18px;
-        color: #333;
-        font-weight: 500;
+        font-family: var(--font-roboto);
+        color: var(--text-color-inverse);
+        font-size: var(--font-12);
+        letter-spacing: 2px;
+        font-weight: 400;
       }
 
       .card .seeMoreButton {
-        margin-top: 15px;
         padding: 10px 20px;
         border: none;
         border-radius: 25px;
