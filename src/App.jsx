@@ -1,12 +1,13 @@
 // import Layout from "./Layout";
 import { Fragment } from "react";
-import { Navbar, Sidebar } from "../container";
+import { Navbar, Sidebar, Seo } from "../container";
 import { Parallax, Skills, Cursor, Projects, Hero } from "../components";
 import { MetaTags } from "../pieces";
 function App() {
   return (
     <Fragment>
       <MetaTags />
+      <Seo />
       <Cursor />
       <Sidebar />
       <section id="Homepage">
