@@ -1,10 +1,6 @@
 .skills {
   background-color: var(--background-color);
   height: 100%;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
-  // align-items: center;
   @include flex-container(column, nowrap, center, center);
   @media (max-width: $breakpoint-desktop-wide) {
   }
@@ -17,12 +13,6 @@
   @media (max-width: $breakpoint-phone) {
   }
   .textContainer {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    // gap: 0px;
-    flex: 0;
     align-self: flex-end;
     margin-right: 4%;
     @include flex-container(column, center, center, center);
@@ -78,11 +68,8 @@
     }
   }
   .titleContainer {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    flex: 1;
+    @include flex-container(column, nowrap, flex-start, center);
     gap: 20px;
     @media (max-width: $breakpoint-desktop-wide) {
     }
@@ -156,14 +143,16 @@
       }
 
       button {
-        width: 250px;
-        height: 80px;
-        background-color: var(--primary-color-3);
-        color: var(--text-color-4);
-        font-size: var(--font-8);
-        border: 1px solid var(--text-color-4);
-        border-radius: 40px;
-        font-family: var(--font-interstate);
+        width: 300px;
+        height: 100px;
+        border-radius: 50px;
+        object-fit: cover;
+        background-color: var(--blue-2);
+        color: var(--text-color);
+        font-size: var(--font-9);
+        font-family: var(--font-tektur);
+        letter-spacing: 2px;
+        font-weight: 400;
         @media (max-width: $breakpoint-desktop-wide) {
         }
         @media (max-width: $breakpoint-desktop) {
@@ -176,11 +165,11 @@
         }
 
         &:hover {
-          background-color: var(--text-color-4);
-          color: var(--primary-color-3);
-          border: 1px solid var(--primary-color-3);
-          transition: background-color 0.3s ease, color 0.3s ease,
-            border 0.3s ease;
+          box-shadow: 0 0 10px var(--yellow-2), 0 0 40px var(--yellow-2),
+            0 0 80px var(--yellow-2);
+          background-color: var(--yellow-2);
+          color: var(--text-color);
+          transition: all 0.5s ease-in-out;
         }
       }
     }
