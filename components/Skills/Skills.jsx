@@ -129,17 +129,12 @@ const Skills = () => {
               <h2>{selectedSkill.text}</h2>
               {selectedSkill.text === "JavaScript" && (
                 <p>
-                  I have experience in building web applications using
-                  JavaScript. I have also worked on various projects using
-                  JavaScript. Lorem ipsum dolor sit amet, consectetur
-                  adipisicing elit. Quaerat est delectus nisi soluta dolores
-                  blanditiis sequi culpa, modi voluptatem nam asperiores
-                  possimus nobis voluptate odio ex harum? Nisi doloribus, sint
-                  architecto quidem fuga necessitatibus amet vitae at officia
-                  iure iste dolorum mollitia voluptatum quaerat optio itaque.
+                  {/* JavaScript is the backbone of web development. I use it to
+                  create interactive and responsive websites, providing a great
+                  user experience. This skill can help recruiters by ensuring
+                  the development of dynamic and engaging web applications. */}
                 </p>
               )}
-              {/* Add more detailed content for each skill here */}
             </>
           )
         }
