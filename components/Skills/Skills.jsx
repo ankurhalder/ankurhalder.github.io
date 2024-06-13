@@ -66,7 +66,9 @@ const Skills = () => {
           <h1>
             <span>Skills</span>
           </h1>
-          <button aria-label="Download My CV">Download My CV</button>
+          <a href="/ankurhalder.pdf" target="_blank">
+            <button aria-label="Download My CV">Download My CV</button>
+          </a>
         </div>
       </motion.div>
       <Swiper

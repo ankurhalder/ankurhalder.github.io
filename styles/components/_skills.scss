@@ -154,8 +154,8 @@
         font-family: var(--font-tektur);
         letter-spacing: 2px;
         font-weight: 400;
-        box-shadow: 0 0 10px var(--blue-2), 0 0 20px var(--blue-2),
-          0 0 40px var(--blue-2);
+        box-shadow: 0 0 5px var(--blue-2), 0 0 10px var(--blue-2),
+          0 0 20px var(--blue-2);
         @media (max-width: $breakpoint-desktop-wide) {
         }
         @media (max-width: $breakpoint-desktop) {
@@ -168,8 +168,8 @@
         }
 
         &:hover {
-          box-shadow: 0 0 10px var(--yellow-2), 0 0 20px var(--yellow-2),
-            0 0 40px var(--yellow-2);
+          box-shadow: 0 0 5px var(--yellow-2), 0 0 10px var(--yellow-2),
+            0 0 20px var(--yellow-2);
           background-color: var(--yellow-2);
           color: var(--text-color);
           transition: all 0.5s ease-in-out;
