@@ -3,11 +3,10 @@ import { Fragment } from "react";
 import { Navbar, Sidebar, Seo } from "../container";
 // eslint-disable-next-line no-unused-vars
 import { Parallax, Skills, Cursor, Projects, Hero } from "../components";
-import { MetaTags } from "../pieces";
+
 function App() {
   return (
     <Fragment>
-      <MetaTags />
       <Seo />
       <Cursor />
       <Sidebar />
