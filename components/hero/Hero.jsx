@@ -22,6 +22,7 @@ const textVariants = {
     },
   },
 };
+
 const sliderVariants = {
   initial: {
     x: 0,
@@ -66,10 +67,23 @@ const Hero = () => {
             variants={textVariants}
             animate="scrollButton"
             src="/hero/scroll.svg"
-            alt="scroll down"
+            alt="Scroll down"
           />
         </motion.div>
       </div>
+
+      <script type="application/ld+json">
+        {`
+          {
+            "@context": "http://schema.org",
+            "@type": "ImageObject",
+            "contentUrl": "/hero/ankurhalder.png",
+            "description": "Ankur Halder",
+            "name": "Ankur Halder"
+          }
+        `}
+      </script>
+
       <motion.div
         className="slidingTextContainer"
         variants={sliderVariants}
@@ -78,8 +92,13 @@ const Hero = () => {
       >
         Web Dev Fullstack
       </motion.div>
+
       <div className="imageContainer">
-        <img src="/hero/ankurhalder.png" alt="Ankur Halder" />
+        <img
+          src="/hero/ankurhalder.png"
+          alt="Ankur Halder"
+          sizes="(max-width: 600px) 100vw, 600px"
+        />
       </div>
     </div>
   );
