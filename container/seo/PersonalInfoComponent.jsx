@@ -19,6 +19,13 @@ const PersonalInfoComponent = () => {
       <h1>{personalInfo.name}</h1>
       <h2>{personalInfo.title}</h2>
       <p>
+        Passionate and enthusiastic about software development, proficient in
+        MERN stack, Django (full stack, REST API, ORM), Python (OOP), JavaScript
+        (OOP), Next.js (full stack), and DSA. Confident and dedicated in
+        creating effective solutions. Moreover, active contributor to
+        open-source projects.
+      </p>
+      <p>
         <strong>Age:</strong> {personalInfo.age}
       </p>
       <p>
