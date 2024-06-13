@@ -9,7 +9,7 @@ export const skillDetails = {
       "Declarative syntax for easily describing UI.",
     ],
   },
-  "Node.js": {
+  Node: {
     title: "Node.js",
     description: `
         Node.js is a JavaScript runtime environment that allows executing server-side JavaScript code.`,
@@ -39,7 +39,7 @@ export const skillDetails = {
       "Supports complex data relationships and joins.",
     ],
   },
-  "Next.js": {
+  Next: {
     title: "Next.js",
     description: `
         Next.js is a React framework that provides server-side rendering (SSR) and static site generation (SSG).`,
