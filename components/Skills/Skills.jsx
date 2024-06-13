@@ -122,7 +122,7 @@ const Skills = () => {
         content={
           selectedSkill && (
             <>
-              <h2>{selectedSkill.title}</h2>
+              <h2 className="skill-heading">{selectedSkill.title}</h2>
               <div className="subheading">Description:</div>
               <p>{selectedSkill.description}</p>
               <div className="subheading">Key Features:</div>

@@ -38,24 +38,47 @@
     transition: color 0.3s ease;
 
     &:hover {
-      color: #333; /* Darker color on hover */
+      color: #333;
     }
   }
 
   .modal-body {
-    margin-top: 20px;
-    font-family: "Roboto", sans-serif;
-    color: #333;
-
+    margin: 0% 0 0 1%;
+    .skill-heading {
+      text-align: center;
+      position: relative;
+      font-family: var(--font-roboto);
+      letter-spacing: 2px;
+      font-size: var(--font-3);
+      color: var(--text-color-3);
+      &::before {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 5px;
+        background: linear-gradient(90deg, var(--blue-7), var(--pink-4));
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        border-radius: 20px;
+        transform: translateX(-50%);
+        transition: width 2s ease-in-out;
+        animation: underlineAnimation 2s infinite alternate;
+      }
+      @keyframes underlineAnimation {
+        to {
+          width: 20%;
+        }
+      }
+    }
     .subheading {
       font-size: 22px;
       font-weight: bold;
       margin-bottom: 12px;
       position: relative;
-      color: #444; /* Subtle darker color for headings */
+      color: #444;
       cursor: pointer;
 
-      /* Pseudo-element for decorative underline */
       &::after {
         content: "";
         position: absolute;
