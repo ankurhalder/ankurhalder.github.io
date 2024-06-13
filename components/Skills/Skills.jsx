@@ -6,7 +6,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import { Modal } from "../../pieces";
-
+import { skillDetails } from "../../data/skillDetails";
 const variants = {
   initial: {
     x: -500,
@@ -85,38 +85,27 @@ const Skills = () => {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {[
-          {
-            src: "/skills/javascript.svg",
-            alt: "JavaScript",
-            text: "JavaScript",
-          },
-          { src: "/skills/reactjs.svg", alt: "React", text: "React" },
-          { src: "/skills/nodejs.svg", alt: "Node.js", text: "Node.js" },
-          { src: "/skills/mongodb.svg", alt: "MongoDB", text: "MongoDB" },
-          { src: "/skills/sql.svg", alt: "MySQL", text: "SQL" },
-          { src: "/skills/next.svg", alt: "Next.js", text: "Next.js" },
-          { src: "/skills/python.svg", alt: "Python", text: "Python" },
-          { src: "/skills/java.svg", alt: "Java", text: "Java" },
-          { src: "/skills/c.svg", alt: "C", text: "C" },
-          { src: "/skills/html.svg", alt: "HTML", text: "HTML" },
-          { src: "/skills/css3.svg", alt: "CSS", text: "CSS" },
-          { src: "/skills/scss.svg", alt: "SCSS", text: "SCSS" },
-          { src: "/skills/django.svg", alt: "Django", text: "Django" },
-          { src: "/skills/github.svg", alt: "GitHub", text: "GitHub" },
-        ].map((skill, index) => (
-          <SwiperSlide key={index}>
-            <div className="card">
-              <img src={skill.src} alt={skill.alt} loading="lazy" />
-              <span>{skill.text}</span>
+        {Object.keys(skillDetails).map((key) => (
+          <SwiperSlide key={key}>
+            <motion.div
+              className="card"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <img
+                src={`/skills/${key.toLowerCase()}.svg`}
+                alt={skillDetails[key].title}
+                loading="lazy"
+              />
+              <span>{skillDetails[key].title}</span>
               <button
                 className="seeMoreButton"
-                onClick={() => handleSeeMoreClick(skill)}
-                aria-label={`See more about ${skill.text}`}
+                onClick={() => handleSeeMoreClick(skillDetails[key])}
+                aria-label={`See more about ${skillDetails[key].title}`}
               >
                 See More
               </button>
-            </div>
+            </motion.div>
           </SwiperSlide>
         ))}
       </Swiper>
@@ -126,15 +115,13 @@ const Skills = () => {
         content={
           selectedSkill && (
             <>
-              <h2>{selectedSkill.text}</h2>
-              {selectedSkill.text === "JavaScript" && (
-                <p>
-                  {/* JavaScript is the backbone of web development. I use it to
-                  create interactive and responsive websites, providing a great
-                  user experience. This skill can help recruiters by ensuring
-                  the development of dynamic and engaging web applications. */}
-                </p>
-              )}
+              <h2>{selectedSkill.title}</h2>
+              <p>{selectedSkill.description}</p>
+              <ul>
+                {selectedSkill.keyFeatures.map((feature, index) => (
+                  <li key={index}>{feature}</li>
+                ))}
+              </ul>
             </>
           )
         }
