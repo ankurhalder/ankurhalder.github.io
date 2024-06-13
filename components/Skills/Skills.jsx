@@ -50,7 +50,7 @@ const Skills = () => {
       <motion.div className="textContainer" variants={variants}>
         <p>
           Ready to Elevate Your Projects with My Skills?
-          <br /> Explore My Skills
+          {/* <br /> Explore My Skills */}
         </p>
         <hr />
       </motion.div>
