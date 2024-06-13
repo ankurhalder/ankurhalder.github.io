@@ -16,7 +16,7 @@ const Parallax = ({ type }) => {
 
   return (
     <div
-      className="parallax"
+      className="parallax none"
       ref={ref}
       style={{
         // background:

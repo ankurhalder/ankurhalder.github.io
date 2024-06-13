@@ -4,25 +4,23 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 1000;
-  backdrop-filter: blur(4px); /* Adds blur effect to background */
+  backdrop-filter: blur(7px);
+  background-color: var(--shadow-medium);
+  @include flex-container(column, nowrap, center, center);
 }
 
 .modal-content {
   background: linear-gradient(
     to bottom right,
-    #ffffff,
-    #f0f0f0
-  ); /* Gradient background */
+    var(--text-color-1),
+    var(--text-color-4)
+  );
   padding: 30px;
   border-radius: 12px;
   width: 80%;
   max-width: 600px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  box-shadow: 0 10px 30px var(--shadow-medium);
   position: relative;
   transition: transform 0.3s ease-in-out;
 

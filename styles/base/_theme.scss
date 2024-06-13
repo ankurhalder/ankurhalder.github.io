@@ -9,6 +9,7 @@
     --text-color-3: #aaa;
     --text-color-4: #e5e5e5;
     --text-color-inverse: black;
+    --shadow-medium: rgba(0, 0, 0, 0.5);
   }
 
   .theme-light {
@@ -21,5 +22,6 @@
     --text-color-3: #5c5757;
     --text-color-4: #3a3a3a;
     --text-color-inverse: white;
+    --shadow-medium: rgba(225, 225, 225, 0.5);
   }
 }
