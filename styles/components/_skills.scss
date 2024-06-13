@@ -84,10 +84,7 @@
     }
 
     .title {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+      @include flex-container(row, nowrap, center, center);
       gap: 50px;
       @media (max-width: $breakpoint-desktop-wide) {
       }
@@ -121,10 +118,11 @@
       }
 
       h1 {
-        font-family: var(--font-interstate);
-        font-size: var(--font-12);
-        font-weight: 900;
-        color: var(--text-color-3);
+        font-family: var(--font-moleth);
+        font-size: var(--font-4);
+        font-weight: 300;
+        letter-spacing: 4px;
+        color: var(--text-color);
         @media (max-width: $breakpoint-desktop-wide) {
         }
         @media (max-width: $breakpoint-desktop) {
@@ -136,9 +134,8 @@
         }
         @media (max-width: $breakpoint-phone) {
         }
-
         span {
-          color: var(--text-color-4);
+          color: var(--text-color);
         }
       }
 
