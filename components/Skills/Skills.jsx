@@ -103,6 +103,12 @@ const Skills = () => {
                 className="seeMoreButton"
                 onClick={() => handleSeeMoreClick(skillDetails[key])}
                 aria-label={`See more about ${skillDetails[key].title}`}
+                role="button"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    handleSeeMoreClick(skillDetails[key]);
+                  }
+                }}
               >
                 See More
               </button>
