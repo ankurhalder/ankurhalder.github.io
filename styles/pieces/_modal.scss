@@ -18,8 +18,10 @@
   );
   padding: 30px;
   border-radius: 12px;
-  width: 80%;
+  width: 100%;
   max-width: 600px;
+  height: 100%;
+  max-height: 50vh;
   box-shadow: 0 10px 30px var(--shadow-medium);
   position: relative;
   transition: transform 0.3s ease-in-out;
