@@ -80,7 +80,7 @@
     @media (max-width: $breakpoint-tablet) {
     }
     @media (max-width: $breakpoint-phone) {
-      width: 100%;
+      // width: 100%;
     }
 
     .title {
@@ -112,6 +112,12 @@
         @media (max-width: $breakpoint-large-tablet) {
         }
         @media (max-width: $breakpoint-tablet) {
+          max-width: 200px;
+          max-height: 70px;
+          // height: 50%;
+          // width: 100%;
+          top: unset;
+          bottom: 0;
         }
         @media (max-width: $breakpoint-phone) {
         }
@@ -130,7 +136,7 @@
         @media (max-width: $breakpoint-large-tablet) {
         }
         @media (max-width: $breakpoint-tablet) {
-          font-size: var(--font-13);
+          // font-size: var(--font-);
         }
         @media (max-width: $breakpoint-phone) {
         }
@@ -163,6 +169,8 @@
         @media (max-width: $breakpoint-large-tablet) {
         }
         @media (max-width: $breakpoint-tablet) {
+          width: 200px;
+          height: 70px;
         }
         @media (max-width: $breakpoint-phone) {
         }
