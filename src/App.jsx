@@ -1,49 +1,16 @@
-// import Layout from "./Layout";
 import { Fragment } from "react";
-import { Navbar, Sidebar, Seo } from "../container";
-// eslint-disable-next-line no-unused-vars
-import { Parallax, Skills, Cursor, Projects, Hero } from "../components";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { NotFound } from "./pages";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { NotFound, Dashboard } from "./pages";
 function App() {
   return (
     <Fragment>
-      <Seo />
-      <Cursor />
-      <Sidebar />
-      <section id="Homepage">
-        <Navbar />
-        <Hero />
-      </section>
-      <section id="Skills">
-        <Parallax type="Skills" />
-      </section>
-      <section>
-        <Skills />
-      </section>
-      <section id="Projects">
-        <Parallax type="projects" />
-      </section>
-      {/* <Projects /> */}
-      <section id="Contact">
-        <div>
-          <h1
-            style={{
-              textAlign: "center",
-              fontSize: "3rem",
-              color: "white",
-              padding: "2rem",
-            }}
-          >
-            Coming Soon
-          </h1>
-        </div>
-      </section>
-      <Router>
+      <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Dashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
     </Fragment>
   );
 }

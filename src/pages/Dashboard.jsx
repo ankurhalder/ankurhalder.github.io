@@ -1,8 +1,42 @@
+import { Fragment } from "react";
+import { Navbar, Sidebar, Seo } from "../../container";
+// eslint-disable-next-line no-unused-vars
+import { Parallax, Skills, Cursor, Projects, Hero } from "../../components";
 function Dashboard() {
   return (
-    <div>
-      <h1>Dashboard</h1>
-    </div>
+    <Fragment>
+      <Seo />
+      <Cursor />
+      <Sidebar />
+      <section id="Homepage">
+        <Navbar />
+        <Hero />
+      </section>
+      <section id="Skills">
+        <Parallax type="Skills" />
+      </section>
+      <section>
+        <Skills />
+      </section>
+      <section id="Projects">
+        <Parallax type="projects" />
+      </section>
+      {/* <Projects /> */}
+      <section id="Contact">
+        <div>
+          <h1
+            style={{
+              textAlign: "center",
+              fontSize: "3rem",
+              color: "white",
+              padding: "2rem",
+            }}
+          >
+            Coming Soon
+          </h1>
+        </div>
+      </section>
+    </Fragment>
   );
 }
 
