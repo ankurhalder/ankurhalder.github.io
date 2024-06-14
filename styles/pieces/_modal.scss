@@ -8,6 +8,16 @@
   backdrop-filter: blur(7px);
   background-color: var(--shadow-medium);
   @include flex-container(column, nowrap, center, center);
+  @media (max-width: $breakpoint-desktop-wide) {
+  }
+  @media (max-width: $breakpoint-desktop) {
+  }
+  @media (max-width: $breakpoint-large-tablet) {
+  }
+  @media (max-width: $breakpoint-tablet) {
+  }
+  @media (max-width: $breakpoint-phone) {
+  }
 }
 
 .modal-content {
@@ -25,26 +35,57 @@
   box-shadow: 0 10px 30px var(--shadow-medium);
   position: relative;
   transition: transform 0.3s ease-in-out;
-
+  @media (max-width: $breakpoint-desktop-wide) {
+  }
+  @media (max-width: $breakpoint-desktop) {
+  }
+  @media (max-width: $breakpoint-large-tablet) {
+  }
+  @media (max-width: $breakpoint-tablet) {
+  }
+  @media (max-width: $breakpoint-phone) {
+  }
   .close-button {
     position: absolute;
     top: 15px;
     right: 15px;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: var(--font-7);
     cursor: pointer;
-    color: #555;
-    transition: color 0.3s ease;
+    color: var(--tex-color-inverse-1);
+    transition: all 0.3s ease-in-out;
 
     &:hover {
-      color: #333;
+      color: var(--text-color-inverse);
+      transform: scale(1.1);
+    }
+    @media (max-width: $breakpoint-desktop-wide) {
+    }
+    @media (max-width: $breakpoint-desktop) {
+    }
+    @media (max-width: $breakpoint-large-tablet) {
+    }
+    @media (max-width: $breakpoint-tablet) {
+      font-size: var(--font-4);
+    }
+    @media (max-width: $breakpoint-phone) {
     }
   }
 
   .modal-body {
     cursor: pointer;
     margin: 0% 0 0 1%;
+    @media (max-width: $breakpoint-desktop-wide) {
+    }
+    @media (max-width: $breakpoint-desktop) {
+    }
+    @media (max-width: $breakpoint-large-tablet) {
+    }
+    @media (max-width: $breakpoint-tablet) {
+    }
+    @media (max-width: $breakpoint-phone) {
+    }
     .skill-heading {
       text-align: center;
       position: relative;
@@ -52,6 +93,16 @@
       letter-spacing: 2px;
       font-size: var(--font-3);
       color: var(--text-color-3);
+      @media (max-width: $breakpoint-desktop-wide) {
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
+      }
       &::before {
         content: "";
         display: block;
@@ -80,7 +131,16 @@
       position: relative;
       color: var(--text-color-inverse);
       margin: 1% 0 2% 0;
-
+      @media (max-width: $breakpoint-desktop-wide) {
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
+      }
       &::after {
         content: "";
         position: absolute;
@@ -108,12 +168,32 @@
       margin: 0 0 0 0.5%;
       line-height: 1.5;
       overflow: hidden;
+      @media (max-width: $breakpoint-desktop-wide) {
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
+      }
     }
 
     ul {
       margin: 0 0 0 0.5%;
       padding: 0 0 0 20px;
       color: var(--tex-color-inverse-1);
+      @media (max-width: $breakpoint-desktop-wide) {
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
+      }
       li {
         position: relative;
         margin: 0 0 2% 0;
@@ -121,6 +201,16 @@
         font-size: var(--font-12);
         letter-spacing: 1px;
         font-weight: 400;
+        @media (max-width: $breakpoint-desktop-wide) {
+        }
+        @media (max-width: $breakpoint-desktop) {
+        }
+        @media (max-width: $breakpoint-large-tablet) {
+        }
+        @media (max-width: $breakpoint-tablet) {
+        }
+        @media (max-width: $breakpoint-phone) {
+        }
         &::before {
           content: "•";
           position: absolute;
