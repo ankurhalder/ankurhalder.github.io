@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import { useRef, useEffect } from "react";
+import PropTypes from "prop-types";
 
 const useTilt = (active) => {
   const ref = useRef(null);
@@ -100,6 +100,17 @@ const Slide = ({ slide, offset }) => {
       </div>
     </div>
   );
+};
+
+Slide.propTypes = {
+  slide: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    video: PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
+  }).isRequired,
+  offset: PropTypes.number.isRequired,
 };
 
 export default Slide;
