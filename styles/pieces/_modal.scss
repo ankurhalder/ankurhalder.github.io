@@ -96,6 +96,7 @@
       font-size: var(--font-3);
       color: var(--light-black-9);
       @media (max-width: $breakpoint-desktop-wide) {
+        font-size: var(--font-6);
       }
       @media (max-width: $breakpoint-desktop) {
       }
@@ -135,6 +136,7 @@
       color: var(--text-color-inverse);
       margin: 1% 0 2% 0;
       @media (max-width: $breakpoint-desktop-wide) {
+        font-size: var(--font-11);
       }
       @media (max-width: $breakpoint-desktop) {
       }
@@ -174,6 +176,7 @@
       line-height: 1.5;
       overflow: hidden;
       @media (max-width: $breakpoint-desktop-wide) {
+        font-size: var(--font-13);
       }
       @media (max-width: $breakpoint-desktop) {
       }
@@ -209,6 +212,7 @@
         letter-spacing: 1px;
         font-weight: 400;
         @media (max-width: $breakpoint-desktop-wide) {
+          font-size: var(--font-13);
         }
         @media (max-width: $breakpoint-desktop) {
         }
