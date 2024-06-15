@@ -1,7 +1,15 @@
+/* eslint-disable no-unused-vars */
 import { Fragment } from "react";
 import { Navbar, Sidebar, Seo } from "../../container";
-// eslint-disable-next-line no-unused-vars
-import { Parallax, Skills, Cursor, Projects, Hero } from "../../components";
+
+import {
+  Parallax,
+  Skills,
+  Cursor,
+  Projects,
+  ProjectsCoverFlow,
+  Hero,
+} from "../../components";
 function Dashboard() {
   return (
     <Fragment>
@@ -12,16 +20,19 @@ function Dashboard() {
         <Navbar />
         <Hero />
       </section>
-      <section id="Skills">
+      <section>
         <Parallax type="Skills" />
       </section>
-      <section>
+      <section id="Skills">
         <Skills />
       </section>
-      <section id="Projects">
+      <section>
         <Parallax type="projects" />
       </section>
-      {/* <Projects /> */}
+      <section id="Projects">
+        <ProjectsCoverFlow />
+      </section>
+
       <section id="Contact">
         <div>
           <h1
