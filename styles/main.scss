@@ -7,7 +7,7 @@
 @import "pages/manifest";
 @import "pieces/manifest";
 html {
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   scroll-behavior: smooth;
 }
 body {
