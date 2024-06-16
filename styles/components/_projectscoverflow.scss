@@ -14,8 +14,8 @@
 
     .slideContent {
       position: relative;
-      width: 30vw;
-      height: 40vw;
+      width: 50vw;
+      height: 50vw;
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -104,7 +104,7 @@
     border: none;
     color: white;
     position: absolute;
-    font-size: 5rem;
+    font-size: 10rem;
     width: 5rem;
     height: 5rem;
     top: 30%;
@@ -121,11 +121,11 @@
     }
 
     &:first-child {
-      left: 5%; // Adjusted positioning
+      left: -10%; // Adjusted positioning
     }
 
     &:last-child {
-      right: 5%; // Adjusted positioning
+      right: -10%; // Adjusted positioning
     }
   }
 }
