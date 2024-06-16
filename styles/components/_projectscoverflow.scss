@@ -1,7 +1,6 @@
 .coverflow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
+  @include flex-container(row, nowrap, center, center);
   overflow: hidden;
 }
 
