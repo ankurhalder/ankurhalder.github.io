@@ -11,16 +11,15 @@ import { skillDetails } from "../../data/skillDetails";
 
 const variants = {
   initial: {
-    x: -500,
-    y: 100,
     opacity: 0,
+    y: 50,
   },
   animate: {
-    x: 0,
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1,
+      duration: 0.5,
+      ease: "easeOut",
       staggerChildren: 0.1,
     },
   },
@@ -33,12 +32,10 @@ const Skills = () => {
   const { ref: textRef, inView: textInView } = useInView({
     threshold: 0.1,
   });
+
   const { ref: titleRef, inView: titleInView } = useInView({
     threshold: 0.1,
   });
-  // const { ref: swiperRef, inView: swiperInView } = useInView({
-  //   threshold: 0.1,
-  // });
 
   const handleSeeMoreClick = (skill) => {
     setSelectedSkill(skill);
@@ -104,12 +101,13 @@ const Skills = () => {
         pagination
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
-        // ref={swiperRef}
       >
         {Object.keys(skillDetails).map((key) => (
           <SwiperSlide key={key}>
             <motion.div
               className={`card ${key.toLowerCase()}`}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
