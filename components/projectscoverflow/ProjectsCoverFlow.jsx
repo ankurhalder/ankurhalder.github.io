@@ -54,6 +54,7 @@ function ProjectsCoverFlow() {
   return (
     <Fragment>
       <div className="coverflow">
+        <h1>Projects</h1>
         <div className="slides">
           <button onClick={() => dispatch({ type: "PREV" })}>‹</button>
           {[...slides, ...slides, ...slides].map((slide, i) => {
