@@ -1,5 +1,6 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -28,7 +29,16 @@ const variants = {
 const Skills = () => {
   const [selectedSkill, setSelectedSkill] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const ref = useRef();
+
+  const { ref: textRef, inView: textInView } = useInView({
+    threshold: 0.1,
+  });
+  const { ref: titleRef, inView: titleInView } = useInView({
+    threshold: 0.1,
+  });
+  // const { ref: swiperRef, inView: swiperInView } = useInView({
+  //   threshold: 0.1,
+  // });
 
   const handleSeeMoreClick = (skill) => {
     setSelectedSkill(skill);
@@ -45,17 +55,24 @@ const Skills = () => {
       className="skills none"
       variants={variants}
       initial="initial"
-      ref={ref}
-      animate="animate"
+      ref={textRef}
+      animate={textInView ? "animate" : "initial"}
     >
-      <motion.div className="textContainer" variants={variants}>
-        <p>
-          Ready to Elevate Your Projects with My Skills?
-          {/* <br /> Explore My Skills */}
-        </p>
+      <motion.div
+        className="textContainer"
+        variants={variants}
+        ref={textRef}
+        animate={textInView ? "animate" : "initial"}
+      >
+        <p>Ready to Elevate Your Projects with My Skills?</p>
         <hr />
       </motion.div>
-      <motion.div className="titleContainer" variants={variants}>
+      <motion.div
+        className="titleContainer"
+        variants={variants}
+        ref={titleRef}
+        animate={titleInView ? "animate" : "initial"}
+      >
         <div className="title">
           <img src="/skills/skills.svg" alt="Skills" />
           <h1>
@@ -87,6 +104,7 @@ const Skills = () => {
         pagination
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
+        // ref={swiperRef}
       >
         {Object.keys(skillDetails).map((key) => (
           <SwiperSlide key={key}>

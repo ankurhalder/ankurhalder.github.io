@@ -54,7 +54,7 @@ const slidesReducer = (state, event) => {
 function ProjectsCoverFlow() {
   const [state, dispatch] = useReducer(slidesReducer, initialState);
   const { ref, inView } = useInView({
-    threshold: 1, // Trigger when 10% of the element is visible
+    threshold: 0.1,
   });
 
   return (

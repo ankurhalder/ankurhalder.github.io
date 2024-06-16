@@ -1,37 +1,48 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import { ToggleBar } from "../../pieces";
 
 function Navbar() {
   const logoControls = useAnimation();
   const socialControls = useAnimation();
 
-  useEffect(() => {
-    const animateNavbar = async () => {
-      await logoControls.start({
-        opacity: 1,
-        scale: 1,
-        transition: { duration: 0.5, type: "spring", stiffness: 200 },
-      });
-      await socialControls.start({
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.5, delay: 0.1, ease: "easeOut" },
-      });
-    };
-    animateNavbar();
-  }, [logoControls, socialControls]);
+  const { ref: navbarRef, inView: navbarInView } = useInView({
+    threshold: 0.1,
+  });
 
   const socialVariants = {
+    initial: {
+      opacity: 0,
+      y: 20,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, delay: 0.1, ease: "easeOut" },
+    },
     hover: {
       scale: 1.2,
     },
   };
 
+  useEffect(() => {
+    if (navbarInView) {
+      const animateNavbar = async () => {
+        await logoControls.start({
+          opacity: 1,
+          scale: 1,
+          transition: { duration: 0.5, type: "spring", stiffness: 200 },
+        });
+        await socialControls.start("animate");
+      };
+      animateNavbar();
+    }
+  }, [logoControls, socialControls, navbarInView]);
+
   return (
     <Fragment>
-      <div className="navbar none">
+      <div className="navbar none" ref={navbarRef}>
         <motion.img
           className="logo"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -69,7 +80,7 @@ function Navbar() {
               target="_blank"
               variants={socialVariants}
               whileHover="hover"
-              initial={{ opacity: 0, y: 20 }}
+              initial="initial"
               animate={socialControls}
               aria-label={social.alt}
             >

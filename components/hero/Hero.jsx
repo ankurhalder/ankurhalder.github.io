@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const textVariants = {
   initial: {
@@ -38,14 +39,23 @@ const sliderVariants = {
 };
 
 const Hero = () => {
+  const { ref: textRef, inView: textInView } = useInView({
+    threshold: 0.1,
+  });
+
+  const { ref: sliderRef, inView: sliderInView } = useInView({
+    threshold: 0.1,
+  });
+
   return (
     <div className="hero none">
       <div className="wrapper">
         <motion.div
           className="textContainer"
+          ref={textRef}
           variants={textVariants}
           initial="initial"
-          animate="animate"
+          animate={textInView ? "animate" : "initial"}
         >
           <motion.h1 variants={textVariants}>Ankur Halder</motion.h1>
           <motion.h2 variants={textVariants}>
@@ -86,9 +96,10 @@ const Hero = () => {
 
       <motion.div
         className="slidingTextContainer"
+        ref={sliderRef}
         variants={sliderVariants}
         initial="initial"
-        animate="animate"
+        animate={sliderInView ? "animate" : "initial"}
       >
         Web Dev Fullstack
       </motion.div>
