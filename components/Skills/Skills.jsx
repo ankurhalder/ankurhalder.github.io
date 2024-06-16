@@ -9,22 +9,6 @@ import { EffectCoverflow, Pagination } from "swiper/modules";
 import { Modal } from "../../pieces";
 import { skillDetails } from "../../data/skillDetails";
 
-const variants = {
-  initial: {
-    opacity: 0,
-    y: 50,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-      staggerChildren: 0.1,
-    },
-  },
-};
-
 const Skills = () => {
   const [selectedSkill, setSelectedSkill] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -49,42 +33,78 @@ const Skills = () => {
 
   return (
     <motion.div
-      className="skills none"
-      variants={variants}
-      initial="initial"
-      ref={textRef}
-      animate={textInView ? "animate" : "initial"}
+      className="skills"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
       <motion.div
         className="textContainer"
-        variants={variants}
         ref={textRef}
-        animate={textInView ? "animate" : "initial"}
+        initial={{ opacity: 0, y: 50 }}
+        animate={textInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <p>Ready to Elevate Your Projects with My Skills?</p>
-        <hr />
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={textInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Ready to Elevate Your Projects with My Skills?
+        </motion.p>
+        <motion.hr
+          initial={{ width: 0 }}
+          animate={textInView ? { width: "100%" } : { width: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        />
       </motion.div>
+
       <motion.div
         className="titleContainer"
-        variants={variants}
         ref={titleRef}
-        animate={titleInView ? "animate" : "initial"}
+        initial={{ opacity: 0, y: 50 }}
+        animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
       >
         <div className="title">
-          <img src="/skills/skills.svg" alt="Skills" />
-          <h1>
+          <motion.img
+            src="/skills/skills.svg"
+            alt="Skills"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+          />
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 1 }}
+          >
             <span>Explore</span> My
-          </h1>
+          </motion.h1>
         </div>
         <div className="title">
-          <h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+          >
             <span>Skills</span>
-          </h1>
+          </motion.h1>
           <a href="/ankurhalder.pdf" target="_blank" rel="noopener noreferrer">
-            <button aria-label="Download My CV">Download My CV</button>
+            <motion.button
+              aria-label="Download My CV"
+              initial={{ opacity: 0, y: 20 }}
+              animate={
+                titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+              }
+              transition={{ duration: 0.8, delay: 1.4 }}
+            >
+              Download My CV
+            </motion.button>
           </a>
         </div>
       </motion.div>
+
       <Swiper
         effect="coverflow"
         grabCursor
@@ -108,47 +128,86 @@ const Skills = () => {
               className={`card ${key.toLowerCase()}`}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.5 }}
             >
-              <img
+              <motion.img
                 src={`/skills/${key.toLowerCase()}.svg`}
                 alt={skillDetails[key].title}
                 loading="lazy"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
               />
-              <span>{skillDetails[key].title}</span>
-              <button
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                {skillDetails[key].title}
+              </motion.span>
+              <motion.button
                 className="seeMoreButton"
                 onClick={() => handleSeeMoreClick(skillDetails[key])}
                 aria-label={`See more about ${skillDetails[key].title}`}
-                role="button"
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    handleSeeMoreClick(skillDetails[key]);
-                  }
-                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
               >
                 See More
-              </button>
+              </motion.button>
             </motion.div>
           </SwiperSlide>
         ))}
       </Swiper>
+
       <Modal
         show={isModalOpen}
         onClose={closeModal}
         content={
           selectedSkill && (
             <>
-              <h2 className="skill-heading">{selectedSkill.title}</h2>
-              <div className="subheading">Description:</div>
-              <p>{selectedSkill.description}</p>
-              <div className="subheading">Key Features:</div>
-              <ul>
+              <motion.h2
+                className="skill-heading"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                {selectedSkill.title}
+              </motion.h2>
+              <motion.div
+                className="subheading"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                Description:
+              </motion.div>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                {selectedSkill.description}
+              </motion.p>
+              <motion.div
+                className="subheading"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                Key Features:
+              </motion.div>
+              <motion.ul
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
                 {selectedSkill.keyFeatures.map((feature, index) => (
-                  <li key={index}>{feature}</li>
+                  <motion.li key={index}>{feature}</motion.li>
                 ))}
-              </ul>
+              </motion.ul>
             </>
           )
         }
