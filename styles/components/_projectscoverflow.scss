@@ -14,17 +14,17 @@
 
     .slideContent {
       position: relative;
-      width: 50dvw;
+      width: 40dvw;
       height: 50dvw;
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
       transition: transform 0.5s ease-in-out;
-      opacity: 0.7;
+      opacity: 0.5;
       display: grid;
       align-content: center;
       transform-style: preserve-3d;
-      transform: perspective(1000px) translateX(calc(100% * var(--offset)))
+      transform: perspective(1000px) translateX(calc(110% * var(--offset)))
         rotateY(calc(-45deg * var(--dir)));
     }
 
@@ -32,7 +32,7 @@
       transform-style: preserve-3d;
       transform: translateZ(2rem);
       transition: opacity 0.3s linear;
-      text-shadow: 0 0.1rem 1rem #000;
+      // text-shadow: 0 0.1rem 1rem #000;
       opacity: 0;
     }
 
@@ -55,20 +55,20 @@
       letter-spacing: 0.2ch;
     }
 
-    .slideBackground {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-size: cover;
-      background-position: center center;
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.3s linear, transform 0.3s ease-in-out;
-      pointer-events: none;
-      transform: translateX(calc(10% * var(--dir)));
-    }
+    // .slideBackground {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   background-size: cover;
+    //   background-position: center center;
+    //   z-index: -1;
+    //   opacity: 0;
+    //   transition: opacity 0.3s linear, transform 0.3s ease-in-out;
+    //   pointer-events: none;
+    //   transform: translateX(calc(10% * var(--dir)));
+    // }
 
     &[data-active] {
       z-index: 2;
@@ -121,11 +121,11 @@
     }
 
     &:first-child {
-      left: -10%; // Adjusted positioning
+      left: -10%;
     }
 
     &:last-child {
-      right: -10%; // Adjusted positioning
+      right: -10%;
     }
   }
 }
