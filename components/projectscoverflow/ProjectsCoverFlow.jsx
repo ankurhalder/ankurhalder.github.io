@@ -1,4 +1,6 @@
 import { useReducer, Fragment } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import Slide from "./Slide";
 
 const slides = [
@@ -27,6 +29,7 @@ const slides = [
     poster: "/projects/adcomsys.png",
   },
 ];
+
 const initialState = {
   slideIndex: 0,
 };
@@ -50,11 +53,22 @@ const slidesReducer = (state, event) => {
 
 function ProjectsCoverFlow() {
   const [state, dispatch] = useReducer(slidesReducer, initialState);
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 1, // Adjust threshold as needed
+  });
 
   return (
     <Fragment>
       <div className="coverflow">
-        <h1>Projects</h1>
+        <motion.h1
+          ref={ref}
+          initial={{ opacity: 0, y: -50 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
+          transition={{ duration: 0.5 }}
+        >
+          Projects
+        </motion.h1>
         <div className="slides">
           <button onClick={() => dispatch({ type: "PREV" })}>‹</button>
           {[...slides, ...slides, ...slides].map((slide, i) => {

@@ -1,8 +1,16 @@
 .coverflow {
   height: 100vh;
-  @include flex-container(row, nowrap, center, center);
+  @include flex-container(row, nowrap, center, space-between);
   overflow: hidden;
-
+  h1 {
+    position: absolute;
+    font-family: var(--font-moleth);
+    font-size: var(--font-4);
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: var(--text-color);
+    margin: 1.5% 0 0 0;
+  }
   .slides {
     display: grid;
     position: relative;
