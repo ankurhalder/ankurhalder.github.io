@@ -1,26 +1,54 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 const Cursor = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const cursorX = useMotionValue(0);
+  const cursorY = useMotionValue(0);
 
   useEffect(() => {
-    const mouseMove = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+    const moveCursor = (e) => {
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
     };
 
-    window.addEventListener("mousemove", mouseMove);
+    document.addEventListener("mousemove", moveCursor);
 
     return () => {
-      window.removeEventListener("mousemove", mouseMove);
+      document.removeEventListener("mousemove", moveCursor);
     };
-  }, []);
+  }, [cursorX, cursorY]);
+
+  const springConfig = {
+    damping: 20,
+    stiffness: 100,
+  };
+
+  useSpring(cursorX, springConfig);
+  useSpring(cursorY, springConfig);
 
   return (
     <motion.div
       className="cursor"
-      animate={{ x: position.x + 1, y: position.y + 1 }}
-    ></motion.div>
+      style={{
+        translateX: cursorX,
+        translateY: cursorY,
+        translateZ: 0, // Ensure there's no translation in Z-axis
+        rotate: 45, // Rotate the cursor for a diagonal effect
+        scale: 1.5,
+        backgroundColor: "transparent",
+        border: "2px solid var(--text-color)",
+        borderRadius: "50%",
+        width: 20,
+        height: 20,
+        position: "fixed",
+        zIndex: 999,
+        pointerEvents: "none",
+        top: 0,
+        left: 0,
+        boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)", // Add a subtle shadow for depth
+        transformOrigin: "center", // Ensure rotation origin is centered
+      }}
+    />
   );
 };
 
