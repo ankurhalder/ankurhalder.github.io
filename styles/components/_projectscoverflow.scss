@@ -14,8 +14,8 @@
 
     .slideContent {
       position: relative;
-      width: 50vw;
-      height: 50vw;
+      width: 50dvw;
+      height: 50dvw;
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -109,7 +109,7 @@
     height: 5rem;
     top: 30%;
     transition: opacity 0.3s;
-    opacity: 0.7;
+    // opacity: 0.7;
     z-index: 5;
 
     &:hover {
