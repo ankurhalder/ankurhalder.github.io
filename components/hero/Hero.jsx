@@ -3,12 +3,12 @@ import { useInView } from "react-intersection-observer";
 
 const textVariants = {
   initial: {
-    x: -500,
     opacity: 0,
+    y: 20,
   },
   animate: {
-    x: 0,
     opacity: 1,
+    y: 0,
     transition: {
       duration: 1,
       staggerChildren: 0.1,
@@ -71,7 +71,7 @@ const Hero = () => {
           </motion.div>
           <motion.img
             variants={textVariants}
-            animate="scrollButton"
+            animate={{ opacity: textInView ? 1 : 0, y: textInView ? 0 : 20 }}
             src="/hero/scroll.svg"
             alt="Scroll down"
           />

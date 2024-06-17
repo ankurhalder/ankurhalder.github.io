@@ -38,9 +38,8 @@ function Dashboard() {
           <h1
             style={{
               textAlign: "center",
-              fontSize: "3rem",
+              fontSize: "var(--font-4)",
               color: "var(--text-color)",
-              padding: "2rem",
             }}
           >
             Coming Soon
