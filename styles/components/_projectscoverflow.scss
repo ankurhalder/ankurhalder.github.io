@@ -203,8 +203,9 @@
       color: var(--text-color);
       position: absolute;
       font-size: 10rem;
-      height: 80%;
-      top: calc(50% - height/2);
+      // height: 80%;
+      // top: calc(50% - height/2);
+      transform: translateY(50%);
       transition: opacity 0.3s;
       opacity: 0.5;
       z-index: 5;
