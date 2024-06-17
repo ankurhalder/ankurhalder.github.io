@@ -88,7 +88,7 @@ function Navbar() {
             </motion.a>
           ))}
         </div>
-        <div>{/* Placeholder for side nav toggle */}</div>
+        {/* <div></div> */}
       </div>
     </Fragment>
   );
