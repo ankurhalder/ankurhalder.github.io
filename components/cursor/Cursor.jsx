@@ -55,8 +55,7 @@ const Cursor = () => {
           pointerEvents: "none",
           top: 0,
           left: 0,
-          boxShadow:
-            "0px 0px 10px var(--shadow-medium-inverse) inset,0px 0px 20px -5px var(--shadow-medium-inverse)",
+          boxShadow: "0px 0px 20px -5px var(--shadow-medium-inverse)",
 
           transformOrigin: "center",
         }}
