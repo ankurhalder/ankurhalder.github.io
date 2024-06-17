@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
 const variants = {
   open: {
@@ -13,6 +14,7 @@ const variants = {
     },
   },
 };
+
 const itemVariants = {
   open: {
     y: 0,
@@ -24,7 +26,7 @@ const itemVariants = {
   },
 };
 
-const Links = () => {
+const Links = ({ closeSidebar }) => {
   const items = [
     "Homepage",
     "Skills",
@@ -43,12 +45,17 @@ const Links = () => {
           variants={itemVariants}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
+          onClick={closeSidebar}
         >
           {item}
         </motion.a>
       ))}
     </motion.div>
   );
+};
+
+Links.propTypes = {
+  closeSidebar: PropTypes.func.isRequired,
 };
 
 export default Links;
