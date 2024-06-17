@@ -55,6 +55,7 @@ function Sidebar({ isDarkMode, setIsDarkMode }) {
         isDarkMode={isDarkMode}
         setIsDarkMode={setIsDarkMode}
         setOpen={setOpen}
+        isOpen={open}
       />
     </motion.div>
   );
