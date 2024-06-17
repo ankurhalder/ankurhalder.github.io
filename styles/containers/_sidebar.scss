@@ -9,7 +9,7 @@
     bottom: 0;
     width: 400px;
     background: var(--background-1);
-
+    @include flex-container(column, nowrap, center, center);
     @media (max-width: $breakpoint-desktop-wide) {
     }
     @media (max-width: $breakpoint-desktop) {
@@ -94,6 +94,20 @@
         @media (max-width: $breakpoint-phone) {
           font-size: var(--font-5);
         }
+      }
+    }
+    .togglebar-container {
+      position: absolute;
+      bottom: 5%;
+      @media (max-width: $breakpoint-desktop-wide) {
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
       }
     }
   }

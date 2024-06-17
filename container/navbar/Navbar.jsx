@@ -1,7 +1,7 @@
 import { Fragment, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { ToggleBar } from "../../pieces";
+// import { ToggleBar } from "../../pieces";
 
 function Navbar() {
   const logoControls = useAnimation();
@@ -50,7 +50,7 @@ function Navbar() {
           src="/apple-icon.png"
           alt=""
         />
-        <ToggleBar /> {/* Placeholder for future side navigation toggle */}
+        {/* <ToggleBar />  */}
         <div className="social">
           {[
             {

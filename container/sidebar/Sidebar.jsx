@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Links from "./links/Links";
 import ToggleButton from "./toogleButtom/ToggleButton";
-
+import { ToggleBar } from "../../pieces";
 const variants = {
   open: {
     clipPath: "circle(1200px at 50px 50px)",
@@ -35,6 +35,9 @@ const Sidebar = () => {
       >
         <h1>Ankur Halder</h1>
         <Links closeSidebar={closeSidebar} />
+        <div className="togglebar-container">
+          <ToggleBar></ToggleBar>
+        </div>
       </motion.div>
       <ToggleButton setOpen={setOpen} />
     </motion.div>
