@@ -3,16 +3,17 @@ import { motion } from "framer-motion";
 import Links from "./links/Links";
 import ToggleButton from "./toogleButtom/ToggleButton";
 import { ToggleBar } from "../../pieces";
+
 const variants = {
   open: {
-    clipPath: "circle(1200px at 50px 50px)",
+    x: 0,
     transition: {
       type: "spring",
       stiffness: 20,
     },
   },
   closed: {
-    clipPath: "circle(0px at 50px 50px)",
+    x: "100%",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -28,7 +29,18 @@ const Sidebar = () => {
   const closeSidebar = () => setOpen(false);
 
   return (
-    <motion.div className="sidebar none" animate={open ? "open" : "closed"}>
+    <motion.div
+      className={`sidebar ${open ? "open" : "closed"}`}
+      animate={open ? "open" : "closed"}
+      variants={variants}
+      style={{
+        position: "fixed",
+        top: 0,
+        right: 0,
+        height: "100vh",
+        zIndex: 9999,
+      }}
+    >
       <motion.div
         className={`bg ${open ? "open" : "closed"}`}
         variants={variants}
@@ -36,7 +48,7 @@ const Sidebar = () => {
         <h1>Ankur Halder</h1>
         <Links closeSidebar={closeSidebar} />
         <div className="togglebar-container">
-          <ToggleBar></ToggleBar>
+          <ToggleBar />
         </div>
       </motion.div>
       <ToggleButton setOpen={setOpen} />

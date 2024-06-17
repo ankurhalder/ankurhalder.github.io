@@ -5,7 +5,7 @@
     z-index: 999;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     bottom: 0;
     width: 400px;
     background: var(--background-1);
@@ -114,8 +114,8 @@
 
   button {
     position: fixed;
-    top: 25px;
-    right: 25px;
+    top: 20px;
+    right: 20px;
     background-color: transparent;
     border: none;
     cursor: pointer;
