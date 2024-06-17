@@ -19,8 +19,9 @@
     font-weight: 300;
     letter-spacing: 4px;
     color: var(--text-color);
-    margin: 5% 0 0 0;
+    margin: 3% 0 0 0;
     @media (max-width: $breakpoint-desktop-wide) {
+      margin: 2% 0 0 0;
     }
     @media (max-width: $breakpoint-desktop) {
     }
@@ -88,6 +89,7 @@
         letter-spacing: 4px;
         color: var(--text-color-4);
         @media (max-width: $breakpoint-desktop-wide) {
+          font-size: var(--font-7);
         }
         @media (max-width: $breakpoint-desktop) {
         }
@@ -105,6 +107,7 @@
         letter-spacing: 4px;
         color: var(--text-color-4);
         @media (max-width: $breakpoint-desktop-wide) {
+          font-size: var(--font-9);
         }
         @media (max-width: $breakpoint-desktop) {
         }
@@ -117,16 +120,6 @@
       }
       .slideContentInner .slideSubtitle::before {
         content: "- ";
-        @media (max-width: $breakpoint-desktop-wide) {
-        }
-        @media (max-width: $breakpoint-desktop) {
-        }
-        @media (max-width: $breakpoint-large-tablet) {
-        }
-        @media (max-width: $breakpoint-tablet) {
-        }
-        @media (max-width: $breakpoint-phone) {
-        }
       }
 
       .slideContentInner .slideDescription {
@@ -137,6 +130,7 @@
         line-height: 1.5;
         margin: 0 0 0 0.5%;
         @media (max-width: $breakpoint-desktop-wide) {
+          font-size: var(--font-12);
         }
         @media (max-width: $breakpoint-desktop) {
         }
@@ -203,7 +197,18 @@
       transition: opacity 0.3s;
       opacity: 0.5;
       z-index: 5;
-
+      @media (max-width: $breakpoint-desktop-wide) {
+        font-size: 8rem;
+        height: 70%;
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
+      }
       &:hover {
         opacity: 1;
       }
@@ -214,20 +219,32 @@
 
       &:first-child {
         left: -8%;
+        @media (max-width: $breakpoint-desktop-wide) {
+          left: -9%;
+        }
+        @media (max-width: $breakpoint-desktop) {
+        }
+        @media (max-width: $breakpoint-large-tablet) {
+        }
+        @media (max-width: $breakpoint-tablet) {
+        }
+        @media (max-width: $breakpoint-phone) {
+        }
       }
 
       &:last-child {
         right: -8%;
-      }
-      @media (max-width: $breakpoint-desktop-wide) {
-      }
-      @media (max-width: $breakpoint-desktop) {
-      }
-      @media (max-width: $breakpoint-large-tablet) {
-      }
-      @media (max-width: $breakpoint-tablet) {
-      }
-      @media (max-width: $breakpoint-phone) {
+        @media (max-width: $breakpoint-desktop-wide) {
+          right: -9%;
+        }
+        @media (max-width: $breakpoint-desktop) {
+        }
+        @media (max-width: $breakpoint-large-tablet) {
+        }
+        @media (max-width: $breakpoint-tablet) {
+        }
+        @media (max-width: $breakpoint-phone) {
+        }
       }
     }
   }
