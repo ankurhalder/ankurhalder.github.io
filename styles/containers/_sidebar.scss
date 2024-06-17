@@ -114,7 +114,7 @@
 
   button {
     position: fixed;
-    top: 25px;
+    top: 20px;
     right: 25px;
     background-color: transparent;
     border: none;
@@ -122,14 +122,16 @@
     @media (max-width: $breakpoint-desktop-wide) {
     }
     @media (max-width: $breakpoint-desktop) {
+      right: 20px;
     }
     @media (max-width: $breakpoint-large-tablet) {
+      right: 10px;
     }
     @media (max-width: $breakpoint-tablet) {
+      right: 5px;
     }
     @media (max-width: $breakpoint-phone) {
       right: 5px;
-      top: 23px;
     }
   }
 }
