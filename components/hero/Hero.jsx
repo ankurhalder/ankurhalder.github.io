@@ -43,10 +43,6 @@ const Hero = () => {
     threshold: 0.1,
   });
 
-  const { ref: sliderRef, inView: sliderInView } = useInView({
-    threshold: 0.1,
-  });
-
   return (
     <div className="hero none">
       <div className="wrapper">
@@ -96,10 +92,9 @@ const Hero = () => {
 
       <motion.div
         className="slidingTextContainer"
-        ref={sliderRef}
         variants={sliderVariants}
         initial="initial"
-        animate={sliderInView ? "animate" : "initial"}
+        animate="animate"
       >
         Web Dev Fullstack
       </motion.div>
