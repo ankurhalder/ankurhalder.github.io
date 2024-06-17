@@ -1,9 +1,9 @@
 import { Fragment, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { ToggleBar } from "../../pieces";
+// import { ToggleBar } from "../../pieces";
 import PropTypes from "prop-types";
-function Navbar({ isDarkMode, setIsDarkMode }) {
+function Navbar() {
   const logoControls = useAnimation();
   const socialControls = useAnimation();
 
@@ -50,7 +50,7 @@ function Navbar({ isDarkMode, setIsDarkMode }) {
           src="/apple-icon.png"
           alt=""
         />
-        <ToggleBar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+        {/* <ToggleBar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} /> */}
         <div className="social">
           {[
             {

@@ -2,14 +2,15 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Links from "./links/Links";
 import ToggleButton from "./toogleButtom/ToggleButton";
-
+import { ToggleBar } from "../../pieces";
 import PropTypes from "prop-types";
 const variants = {
   open: {
     x: 0,
     transition: {
       type: "spring",
-      // stiffness: 20,
+      // stiffness: 10,
+      damping: 10,
     },
   },
   closed: {
@@ -18,7 +19,7 @@ const variants = {
       delay: 0.5,
       type: "spring",
       stiffness: 400,
-      // damping: 40,
+      // damping: 10,
     },
   },
 };
@@ -31,6 +32,7 @@ function Sidebar({ isDarkMode, setIsDarkMode }) {
   return (
     <motion.div
       className="sidebar"
+      initial="closed"
       animate={open ? "open" : "closed"}
       variants={variants}
       style={{
@@ -44,6 +46,9 @@ function Sidebar({ isDarkMode, setIsDarkMode }) {
       <motion.div className="bg" variants={variants}>
         <h1>Ankur Halder</h1>
         <Links closeSidebar={closeSidebar} />
+        <div className="togglebar-container">
+          <ToggleBar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+        </div>
       </motion.div>
       <ToggleButton
         isDarkMode={isDarkMode}
