@@ -19,9 +19,8 @@
     font-weight: 300;
     letter-spacing: 4px;
     color: var(--text-color);
-    margin: 3% 0 0 0;
+    margin: 2% 0 0 0;
     @media (max-width: $breakpoint-desktop-wide) {
-      margin: 2% 0 0 0;
     }
     @media (max-width: $breakpoint-desktop) {
     }
@@ -68,8 +67,12 @@
         @media (max-width: $breakpoint-desktop) {
         }
         @media (max-width: $breakpoint-large-tablet) {
+          width: 60dvw;
         }
         @media (max-width: $breakpoint-tablet) {
+          width: 80dvw;
+          transform: perspective(500px) translateX(calc(110% * var(--offset)))
+            rotateY(calc(-45deg * var(--dir)));
         }
         @media (max-width: $breakpoint-phone) {
         }
@@ -88,6 +91,7 @@
           margin: 5% 5% 0 0;
         }
         @media (max-width: $breakpoint-tablet) {
+          transform: translateZ(100px) translateY(-15px) translateX(35px);
         }
         @media (max-width: $breakpoint-phone) {
         }
@@ -105,10 +109,12 @@
         @media (max-width: $breakpoint-desktop) {
         }
         @media (max-width: $breakpoint-large-tablet) {
+          font-size: var(--font-6);
         }
         @media (max-width: $breakpoint-tablet) {
         }
         @media (max-width: $breakpoint-phone) {
+          font-size: var(--font-6);
         }
       }
       .slideContentInner .slideSubtitle {
@@ -123,10 +129,12 @@
         @media (max-width: $breakpoint-desktop) {
         }
         @media (max-width: $breakpoint-large-tablet) {
+          font-size: var(--font-8);
         }
         @media (max-width: $breakpoint-tablet) {
         }
         @media (max-width: $breakpoint-phone) {
+          font-size: var(--font-8);
         }
       }
       .slideContentInner .slideSubtitle::before {
@@ -146,10 +154,12 @@
         @media (max-width: $breakpoint-desktop) {
         }
         @media (max-width: $breakpoint-large-tablet) {
+          font-size: var(--font-10);
         }
         @media (max-width: $breakpoint-tablet) {
         }
         @media (max-width: $breakpoint-phone) {
+          font-size: var(--font-10);
         }
       }
 
@@ -197,15 +207,18 @@
     }
 
     > button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       appearance: none;
       background: transparent;
       border: none;
       color: var(--text-color);
       position: absolute;
       font-size: 10rem;
-      // height: 80%;
-      // top: calc(50% - height/2);
-      transform: translateY(50%);
+      height: 80%;
+      top: calc(50% - height/2);
       transition: opacity 0.3s;
       opacity: 0.5;
       z-index: 5;
@@ -216,11 +229,14 @@
       @media (max-width: $breakpoint-desktop) {
       }
       @media (max-width: $breakpoint-large-tablet) {
-        height: 70%;
+        height: 80%;
       }
       @media (max-width: $breakpoint-tablet) {
+        height: 80%;
       }
       @media (max-width: $breakpoint-phone) {
+        height: 82.5%;
+        font-size: var(--font-1);
       }
       &:hover {
         opacity: 1;
@@ -243,6 +259,7 @@
         @media (max-width: $breakpoint-tablet) {
         }
         @media (max-width: $breakpoint-phone) {
+          // left: -13%;
         }
       }
 
@@ -259,6 +276,7 @@
         @media (max-width: $breakpoint-tablet) {
         }
         @media (max-width: $breakpoint-phone) {
+          // right: -13%;
         }
       }
     }
