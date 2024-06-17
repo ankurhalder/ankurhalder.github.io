@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Fragment } from "react";
 import { Navbar, Sidebar, Seo } from "../../container";
-
+import PropTypes from "prop-types";
 import {
   Parallax,
   Skills,
@@ -10,12 +10,12 @@ import {
   ProjectsCoverFlow,
   Hero,
 } from "../../components";
-function Dashboard() {
+function Dashboard({ isDarkMode, setIsDarkMode }) {
   return (
     <Fragment>
       <Seo />
       <Cursor />
-      <Sidebar />
+      <Sidebar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <section id="Homepage">
         <Navbar />
         <Hero />
@@ -50,4 +50,8 @@ function Dashboard() {
   );
 }
 
+Dashboard.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired,
+  setIsDarkMode: PropTypes.func.isRequired,
+};
 export default Dashboard;

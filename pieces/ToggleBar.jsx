@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
-const ToggleBar = ({ onToggle }) => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+const ToggleBar = ({ onToggle, isDarkMode, setIsDarkMode }) => {
+  // const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     document.body.classList.add("theme-dark");
@@ -170,6 +170,8 @@ const ToggleBar = ({ onToggle }) => {
 
 ToggleBar.propTypes = {
   onToggle: PropTypes.func,
+  isDarkMode: PropTypes.bool.isRequired,
+  setIsDarkMode: PropTypes.func.isRequired,
 };
 
 export default ToggleBar;

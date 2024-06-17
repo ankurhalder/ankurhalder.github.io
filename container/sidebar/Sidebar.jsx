@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Links from "./links/Links";
 import ToggleButton from "./toogleButtom/ToggleButton";
 import { ToggleBar } from "../../pieces";
-
+import PropTypes from "prop-types";
 const variants = {
   open: {
     x: 0,
@@ -23,7 +23,7 @@ const variants = {
   },
 };
 
-const Sidebar = () => {
+function Sidebar({ isDarkMode, setIsDarkMode }) {
   const [open, setOpen] = useState(false);
 
   const closeSidebar = () => setOpen(false);
@@ -48,12 +48,20 @@ const Sidebar = () => {
         <h1>Ankur Halder</h1>
         <Links closeSidebar={closeSidebar} />
         <div className="togglebar-container">
-          <ToggleBar />
+          <ToggleBar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         </div>
       </motion.div>
-      <ToggleButton setOpen={setOpen} />
+      <ToggleButton
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
+        setOpen={setOpen}
+      />
     </motion.div>
   );
-};
+}
 
+Sidebar.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired,
+  setIsDarkMode: PropTypes.func.isRequired,
+};
 export default Sidebar;

@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
-const ToggleButton = ({ setOpen }) => {
+const ToggleButton = ({ setOpen, isDarkMode, setIsDarkMode }) => {
   return (
     <button
       style={{
@@ -44,5 +45,7 @@ const ToggleButton = ({ setOpen }) => {
 };
 ToggleButton.propTypes = {
   setOpen: PropTypes.func.isRequired,
+  isDarkMode: PropTypes.bool.isRequired,
+  setIsDarkMode: PropTypes.func.isRequired,
 };
 export default ToggleButton;
