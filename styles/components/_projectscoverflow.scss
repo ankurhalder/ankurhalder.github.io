@@ -37,7 +37,7 @@
 
       .slideContentInner {
         transform-style: preserve-3d;
-        transform: translateZ(200px) translateY(-50px) translateX(60px);
+        transform: translateZ(200px) translateY(-40px) translateX(60px);
         transition: opacity 1s linear;
         opacity: 0;
       }
@@ -46,14 +46,15 @@
         font-family: var(--font-tektur);
         font-size: var(--font-6);
         font-weight: 400;
-        letter-spacing: 0.2ch;
-        margin: 0;
+        letter-spacing: 4px;
+        color: var(--text-color-4);
       }
       .slideContentInner .slideSubtitle {
-        font-size: 1.2rem;
-        font-weight: normal;
-        letter-spacing: 0.2ch;
-        margin: 0;
+        font-family: var(--font-roboto);
+        font-size: var(--font-8);
+        font-weight: 400;
+        letter-spacing: 4px;
+        color: var(--text-color-4);
       }
       .slideContentInner .slideSubtitle::before {
         content: "— ";
