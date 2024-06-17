@@ -80,6 +80,17 @@
         transform: translateZ(200px) translateY(-30px) translateX(70px);
         transition: opacity 1s linear;
         opacity: 0;
+        @media (max-width: $breakpoint-desktop-wide) {
+        }
+        @media (max-width: $breakpoint-desktop) {
+        }
+        @media (max-width: $breakpoint-large-tablet) {
+          margin: 5% 5% 0 0;
+        }
+        @media (max-width: $breakpoint-tablet) {
+        }
+        @media (max-width: $breakpoint-phone) {
+        }
       }
 
       .slideContentInner .slideTitle {
@@ -199,11 +210,12 @@
       z-index: 5;
       @media (max-width: $breakpoint-desktop-wide) {
         font-size: 8rem;
-        height: 70%;
+        height: 75%;
       }
       @media (max-width: $breakpoint-desktop) {
       }
       @media (max-width: $breakpoint-large-tablet) {
+        height: 70%;
       }
       @media (max-width: $breakpoint-tablet) {
       }
@@ -225,6 +237,7 @@
         @media (max-width: $breakpoint-desktop) {
         }
         @media (max-width: $breakpoint-large-tablet) {
+          left: -11%;
         }
         @media (max-width: $breakpoint-tablet) {
         }
@@ -240,6 +253,7 @@
         @media (max-width: $breakpoint-desktop) {
         }
         @media (max-width: $breakpoint-large-tablet) {
+          right: -11%;
         }
         @media (max-width: $breakpoint-tablet) {
         }
