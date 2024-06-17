@@ -37,7 +37,7 @@
 
       .slideContentInner {
         transform-style: preserve-3d;
-        transform: translateZ(200px) translateY(-40px) translateX(60px);
+        transform: translateZ(200px) translateY(-30px) translateX(70px);
         transition: opacity 1s linear;
         opacity: 0;
       }
@@ -116,14 +116,13 @@
       appearance: none;
       background: transparent;
       border: none;
-      color: white;
+      color: var(--text-color);
       position: absolute;
       font-size: 10rem;
-      width: 5rem;
-      height: 5rem;
-      top: 30%;
+      height: 80%;
+      top: calc(50% - height/2);
       transition: opacity 0.3s;
-      // opacity: 0.7;
+      opacity: 0.5;
       z-index: 5;
 
       &:hover {
@@ -135,11 +134,11 @@
       }
 
       &:first-child {
-        left: -10%;
+        left: -8%;
       }
 
       &:last-child {
-        right: -10%;
+        right: -8%;
       }
     }
   }
