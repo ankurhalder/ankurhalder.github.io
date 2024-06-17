@@ -1,20 +1,11 @@
-/* eslint-disable no-unused-vars */
 import { Fragment } from "react";
-import { Navbar, Sidebar, Seo } from "../../container";
+import { Navbar, Sidebar } from "../../container";
 import PropTypes from "prop-types";
-import {
-  Parallax,
-  Skills,
-  Cursor,
-  Projects,
-  ProjectsCoverFlow,
-  Hero,
-} from "../../components";
+import { Parallax, Skills, ProjectsCoverFlow, Hero } from "../../components";
+
 function Dashboard({ isDarkMode, setIsDarkMode }) {
   return (
     <Fragment>
-      <Seo />
-      <Cursor />
       <Sidebar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <section id="Homepage">
         <Navbar />
