@@ -43,7 +43,7 @@
       }
 
       .slideContentInner .slideTitle {
-        font-family: var(--font-tektur);
+        font-family: var(--font-playfair);
         font-size: var(--font-6);
         font-weight: 400;
         letter-spacing: 4px;
@@ -57,13 +57,16 @@
         color: var(--text-color-4);
       }
       .slideContentInner .slideSubtitle::before {
-        content: "— ";
+        content: "- ";
       }
 
       .slideContentInner .slideDescription {
-        margin: 0;
-        font-size: 0.8rem;
-        letter-spacing: 0.2ch;
+        font-family: var(--font-roboto);
+        font-size: var(--font-11);
+        font-weight: 300;
+        color: var(--text-color-4);
+        line-height: 1.5;
+        margin: 0 0 0 0.5%;
       }
 
       // .slideBackground {
