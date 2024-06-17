@@ -8,7 +8,7 @@ function Dashboard({ isDarkMode, setIsDarkMode }) {
     <Fragment>
       <Sidebar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <section id="Homepage">
-        <Navbar />
+        <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         <Hero />
       </section>
       <section>
