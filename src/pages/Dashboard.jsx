@@ -33,13 +33,13 @@ function Dashboard() {
         <ProjectsCoverFlow />
       </section>
 
-      <section id="Contact">
+      <section id="Coming Soon">
         <div>
           <h1
             style={{
               textAlign: "center",
               fontSize: "3rem",
-              color: "white",
+              color: "var(--text-color)",
               padding: "2rem",
             }}
           >
