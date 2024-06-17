@@ -26,7 +26,7 @@
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        transition: transform 0.5s ease-in-out;
+        transition: transform 1s ease-in-out;
         opacity: 0.5;
         display: grid;
         align-content: center;
@@ -37,9 +37,10 @@
 
       .slideContentInner {
         transform-style: preserve-3d;
-        transform: translateZ(2rem);
+        transform: translateZ(200px) translateY(-50px);
         transition: opacity 0.3s linear;
         // text-shadow: 0 0.1rem 1rem #000;
+        text-shadow: 2px 5px 8px var(--shadow-medium-inverse);
         opacity: 0;
       }
 

@@ -22,7 +22,7 @@ const slides = [
   },
   {
     title: "Adcomsys",
-    subtitle: "College Official Project",
+    subtitle: "Official College Project",
     description:
       "The International Conference on Advanced Computing and Systems (AdcomSYS) will foster an excellent international forum for exchanging knowledge and the recent developments in theory,",
     video: "/projects/adcomsys.mp4",
