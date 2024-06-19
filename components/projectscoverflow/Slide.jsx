@@ -96,8 +96,23 @@ const Slide = ({ slide, offset }) => {
           <h2 className="slideTitle">{slide.title}</h2>
           <h3 className="slideSubtitle">{slide.subtitle}</h3>
           <p className="slideDescription">{slide.description}</p>
+          <div className="slideContentLinks">
+            <a
+              href={`https://${slide.githubLink}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub Repository : {slide.githubLink}
+            </a>
+            <a
+              href={`https://${slide.websiteLink}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Website : {slide.websiteLink}
+            </a>
+          </div>
         </div>
-        <div className="slideContentLinks"></div>
       </div>
     </div>
   );
@@ -110,6 +125,8 @@ Slide.propTypes = {
     description: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
     poster: PropTypes.string.isRequired,
+    githubLink: PropTypes.string.isRequired,
+    websiteLink: PropTypes.string.isRequired,
   }).isRequired,
   offset: PropTypes.number.isRequired,
 };
