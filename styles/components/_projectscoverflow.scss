@@ -163,134 +163,126 @@
         }
         @media (max-width: $breakpoint-phone) {
         }
+
         video {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
+        .slideContentInner {
+          transform-style: preserve-3d;
+          transform: translateZ(200px) translateY(-30px) translateX(70px);
+          transition: opacity 1s linear;
+          opacity: 0;
+          cursor: pointer;
+          @media (max-width: $breakpoint-desktop-wide) {
+          }
+          @media (max-width: $breakpoint-desktop) {
+          }
+          @media (max-width: $breakpoint-large-tablet) {
+            margin: 5% 5% 0 0;
+          }
+          @media (max-width: $breakpoint-tablet) {
+            transform: translateZ(100px) translateY(-15px) translateX(35px);
+          }
+          @media (max-width: $breakpoint-phone) {
+          }
+          .slideTitle {
+            font-family: var(--font-playfair);
+            font-size: var(--font-6);
+            font-weight: 400;
+            letter-spacing: 4px;
+            color: var(--text-color-4);
+            @media (max-width: $breakpoint-desktop-wide) {
+              font-size: var(--font-7);
+            }
+            @media (max-width: $breakpoint-desktop) {
+            }
+            @media (max-width: $breakpoint-large-tablet) {
+              font-size: var(--font-6);
+            }
+            @media (max-width: $breakpoint-tablet) {
+            }
+            @media (max-width: $breakpoint-phone) {
+              font-size: var(--font-6);
+            }
+          }
+          .slideSubtitle {
+            font-family: var(--font-roboto);
+            font-size: var(--font-8);
+            font-weight: 400;
+            letter-spacing: 4px;
+            color: var(--text-color-4);
+            @media (max-width: $breakpoint-desktop-wide) {
+              font-size: var(--font-9);
+            }
+            @media (max-width: $breakpoint-desktop) {
+            }
+            @media (max-width: $breakpoint-large-tablet) {
+              font-size: var(--font-8);
+            }
+            @media (max-width: $breakpoint-tablet) {
+            }
+            @media (max-width: $breakpoint-phone) {
+              font-size: var(--font-8);
+            }
+            &::before {
+              content: "- ";
+            }
+          }
+          .slideDescription {
+            font-family: var(--font-roboto);
+            font-size: var(--font-11);
+            font-weight: 300;
+            color: var(--text-color-4);
+            line-height: 1.5;
+            margin: 0 0 0 0.5%;
+            @media (max-width: $breakpoint-desktop-wide) {
+              font-size: var(--font-12);
+            }
+            @media (max-width: $breakpoint-desktop) {
+            }
+            @media (max-width: $breakpoint-large-tablet) {
+              font-size: var(--font-10);
+            }
+            @media (max-width: $breakpoint-tablet) {
+            }
+            @media (max-width: $breakpoint-phone) {
+              font-size: var(--font-10);
+            }
+          }
+          .slideContentLinks {
+            @include flex-container(column, nowrap, center, flex-start);
+            a {
+              @include flex-container(row, nowrap, flex-start, flex-start);
+              margin: 1.5% 0 0 0;
+              p {
+                font-family: var(--font-tektur);
+                font-size: var(--font-13);
+                color: var(--text-color);
+                letter-spacing: 2px;
+                font-weight: 400;
+              }
+              span {
+                font-family: var(--font-roboto);
+                font-size: var(--font-13);
+                color: var(--link-color);
+                text-decoration: underline;
+                letter-spacing: 2px;
+                font-weight: 400;
+                margin: 0 0 0 3px;
+              }
+            }
+          }
+        }
         .show-more {
           opacity: 0;
           transition: opacity 0.3s ease;
+          font-size: var(--font-13);
         }
         &:hover {
           .show-more {
             opacity: 1;
-          }
-        }
-      }
-
-      .slideContentInner {
-        transform-style: preserve-3d;
-        transform: translateZ(200px) translateY(-30px) translateX(70px);
-        transition: opacity 1s linear;
-        opacity: 0;
-        cursor: pointer;
-        @media (max-width: $breakpoint-desktop-wide) {
-        }
-        @media (max-width: $breakpoint-desktop) {
-        }
-        @media (max-width: $breakpoint-large-tablet) {
-          margin: 5% 5% 0 0;
-        }
-        @media (max-width: $breakpoint-tablet) {
-          transform: translateZ(100px) translateY(-15px) translateX(35px);
-        }
-        @media (max-width: $breakpoint-phone) {
-        }
-        // &:hover {
-        //   .slideContentLinks {
-        //     a {
-        //       transform: scale3d(1.2, 1.2, 1.2);
-        //     }
-        //   }
-        // }
-      }
-
-      .slideContentInner .slideTitle {
-        font-family: var(--font-playfair);
-        font-size: var(--font-6);
-        font-weight: 400;
-        letter-spacing: 4px;
-        color: var(--text-color-4);
-        @media (max-width: $breakpoint-desktop-wide) {
-          font-size: var(--font-7);
-        }
-        @media (max-width: $breakpoint-desktop) {
-        }
-        @media (max-width: $breakpoint-large-tablet) {
-          font-size: var(--font-6);
-        }
-        @media (max-width: $breakpoint-tablet) {
-        }
-        @media (max-width: $breakpoint-phone) {
-          font-size: var(--font-6);
-        }
-      }
-      .slideContentInner .slideSubtitle {
-        font-family: var(--font-roboto);
-        font-size: var(--font-8);
-        font-weight: 400;
-        letter-spacing: 4px;
-        color: var(--text-color-4);
-        @media (max-width: $breakpoint-desktop-wide) {
-          font-size: var(--font-9);
-        }
-        @media (max-width: $breakpoint-desktop) {
-        }
-        @media (max-width: $breakpoint-large-tablet) {
-          font-size: var(--font-8);
-        }
-        @media (max-width: $breakpoint-tablet) {
-        }
-        @media (max-width: $breakpoint-phone) {
-          font-size: var(--font-8);
-        }
-      }
-      .slideContentInner .slideSubtitle::before {
-        content: "- ";
-      }
-
-      .slideContentInner .slideDescription {
-        font-family: var(--font-roboto);
-        font-size: var(--font-11);
-        font-weight: 300;
-        color: var(--text-color-4);
-        line-height: 1.5;
-        margin: 0 0 0 0.5%;
-        @media (max-width: $breakpoint-desktop-wide) {
-          font-size: var(--font-12);
-        }
-        @media (max-width: $breakpoint-desktop) {
-        }
-        @media (max-width: $breakpoint-large-tablet) {
-          font-size: var(--font-10);
-        }
-        @media (max-width: $breakpoint-tablet) {
-        }
-        @media (max-width: $breakpoint-phone) {
-          font-size: var(--font-10);
-        }
-      }
-      .slideContentInner .slideContentLinks {
-        @include flex-container(column, nowrap, center, flex-start);
-        a {
-          @include flex-container(row, nowrap, flex-start, flex-start);
-          margin: 1.5% 0 0 0;
-          p {
-            font-family: var(--font-tektur);
-            font-size: var(--font-13);
-            color: var(--text-color);
-            letter-spacing: 2px;
-            font-weight: 400;
-          }
-          span {
-            font-family: var(--font-roboto);
-            font-size: var(--font-13);
-            color: var(--link-color);
-            text-decoration: underline;
-            letter-spacing: 2px;
-            font-weight: 400;
-            margin: 0 0 0 3px;
           }
         }
       }
@@ -321,22 +313,6 @@
         transform: perspective(1000px) rotateY(calc(var(--x) * 45deg))
           rotateX(calc(var(--y) * -45deg));
       }
-    }
-  }
-
-  .slideVideo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    @media (max-width: $breakpoint-desktop-wide) {
-    }
-    @media (max-width: $breakpoint-desktop) {
-    }
-    @media (max-width: $breakpoint-large-tablet) {
-    }
-    @media (max-width: $breakpoint-tablet) {
-    }
-    @media (max-width: $breakpoint-phone) {
     }
   }
 }
