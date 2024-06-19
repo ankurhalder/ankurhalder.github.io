@@ -163,7 +163,16 @@
         }
         @media (max-width: $breakpoint-phone) {
         }
-
+        .show-more {
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          font-size: var(--font-13);
+        }
+        &:hover {
+          .show-more {
+            opacity: 1;
+          }
+        }
         video {
           width: 100%;
           height: 100%;
@@ -273,16 +282,6 @@
                 margin: 0 0 0 3px;
               }
             }
-          }
-        }
-        .show-more {
-          opacity: 0;
-          transition: opacity 0.3s ease;
-          font-size: var(--font-13);
-        }
-        &:hover {
-          .show-more {
-            opacity: 1;
           }
         }
       }
