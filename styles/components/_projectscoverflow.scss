@@ -96,6 +96,13 @@
         }
         @media (max-width: $breakpoint-phone) {
         }
+        // &:hover {
+        //   .slideContentLinks {
+        //     a {
+        //       transform: scale3d(1.2, 1.2, 1.2);
+        //     }
+        //   }
+        // }
       }
 
       .slideContentInner .slideTitle {
@@ -167,7 +174,7 @@
         @include flex-container(column, nowrap, center, flex-start);
         a {
           @include flex-container(row, nowrap, flex-start, flex-start);
-          margin: 1% 0 0 0;
+          margin: 1.5% 0 0 0;
           p {
             font-family: var(--font-tektur);
             font-size: var(--font-13);
