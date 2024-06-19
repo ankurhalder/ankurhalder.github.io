@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 
 const useTilt = (active) => {
@@ -46,11 +46,11 @@ const useTilt = (active) => {
 const Slide = ({ slide, offset }) => {
   const active = offset === 0 ? true : null;
   const ref = useTilt(active);
-  const [showMore, setShowMore] = useState(false);
+  // const [showMore, setShowMore] = useState(false);
 
-  function handleShowMore() {
-    setShowMore(!showMore);
-  }
+  // function handleShowMore() {
+  //   setShowMore(!showMore);
+  // }
 
   return (
     <div
@@ -96,33 +96,33 @@ const Slide = ({ slide, offset }) => {
           <h2 className="slideTitle">{slide.title}</h2>
           <h3 className="slideSubtitle">{slide.subtitle}</h3>
           <p className="slideDescription">{slide.description}</p>
-          <button onClick={handleShowMore} className="show-more">
+          {/* <button onClick={handleShowMore} className="show-more">
             {showMore ? "Show Less" : "Show More"}
-          </button>
-          {showMore && (
-            <div className="links-panel">
-              <div className="slideContentLinks">
-                <a
-                  className="githubLink"
-                  href={`https://${slide.githubLink}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <p>GitHub Repository: </p>
-                  <span>{slide.githubLink}</span>
-                </a>
-                <a
-                  className="websiteLink"
-                  href={`https://${slide.websiteLink}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <p>Website:</p>
-                  <span>{slide.websiteLink}</span>
-                </a>
-              </div>
+          </button> */}
+          {/* {showMore && ( */}
+          {/* <div className="links-panel">
+            <div className="slideContentLinks">
+              <a
+                className="githubLink"
+                href={`https://${slide.githubLink}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <p>GitHub Repository: </p>
+                <span>{slide.githubLink}</span>
+              </a>
+              <a
+                className="websiteLink"
+                href={`https://${slide.websiteLink}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <p>Website:</p>
+                <span>{slide.websiteLink}</span>
+              </a>
             </div>
-          )}
+          </div> */}
+          {/* )} */}
         </div>
       </div>
     </div>

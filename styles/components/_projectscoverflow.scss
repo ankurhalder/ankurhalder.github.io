@@ -151,7 +151,7 @@
         @media (max-width: $breakpoint-desktop) {
         }
         @media (max-width: $breakpoint-large-tablet) {
-          width: 60dvw;
+          width: 50dvw;
         }
         @media (max-width: $breakpoint-tablet) {
           width: 80dvw;
@@ -196,7 +196,7 @@
             @media (max-width: $breakpoint-desktop) {
             }
             @media (max-width: $breakpoint-large-tablet) {
-              font-size: var(--font-6);
+              font-size: var(--font-7);
             }
             @media (max-width: $breakpoint-tablet) {
             }
@@ -216,7 +216,7 @@
             @media (max-width: $breakpoint-desktop) {
             }
             @media (max-width: $breakpoint-large-tablet) {
-              font-size: var(--font-8);
+              font-size: var(--font-10);
             }
             @media (max-width: $breakpoint-tablet) {
             }
@@ -240,9 +240,10 @@
             @media (max-width: $breakpoint-desktop) {
             }
             @media (max-width: $breakpoint-large-tablet) {
-              font-size: var(--font-10);
+              font-size: var(--font-12);
             }
             @media (max-width: $breakpoint-tablet) {
+              font-size: var(--font-10);
             }
             @media (max-width: $breakpoint-phone) {
               font-size: var(--font-10);
