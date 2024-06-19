@@ -62,7 +62,7 @@ const Slide = ({ slide, offset }) => {
         "--dir": offset === 0 ? 0 : offset > 0 ? 1 : -1,
       }}
     >
-      <div className="slideBackground">
+      {/* <div className="slideBackground">
         <video
           src={slide.video}
           autoPlay
@@ -79,7 +79,7 @@ const Slide = ({ slide, offset }) => {
         >
           Your browser does not support the video tag.
         </video>
-      </div>
+      </div> */}
       <div className="slideContent">
         <video
           src={slide.video}
