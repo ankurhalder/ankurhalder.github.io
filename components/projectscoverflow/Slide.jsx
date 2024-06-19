@@ -51,6 +51,7 @@ const Slide = ({ slide, offset }) => {
   function handleShowMore() {
     setShowMore(!showMore);
   }
+
   return (
     <div
       ref={ref}

@@ -76,6 +76,15 @@
         }
         @media (max-width: $breakpoint-phone) {
         }
+        .show-more {
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+        &:hover {
+          .show-more {
+            opacity: 1;
+          }
+        }
       }
 
       .slideContentInner {
