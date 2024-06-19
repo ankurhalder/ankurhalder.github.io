@@ -12,6 +12,7 @@
     --text-color-inverse-1: #3a3a3a;
     --shadow-medium: rgba(0, 0, 0, 0.5);
     --shadow-medium-inverse: rgba(255, 255, 255, 0.5);
+    --link-color: aqua;
   }
 
   .theme-light {
@@ -27,5 +28,6 @@
     --text-color-inverse-1: #e5e5e5;
     --shadow-medium: rgba(225, 225, 225, 0.5);
     --shadow-medium-inverse: rgba(0, 0, 0, 0.5);
+    --link-color: #0072ff;
   }
 }

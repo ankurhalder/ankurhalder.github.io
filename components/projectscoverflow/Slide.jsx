@@ -98,18 +98,22 @@ const Slide = ({ slide, offset }) => {
           <p className="slideDescription">{slide.description}</p>
           <div className="slideContentLinks">
             <a
+              className="githubLink"
               href={`https://${slide.githubLink}`}
               target="_blank"
               rel="noreferrer"
             >
-              GitHub Repository : {slide.githubLink}
+              <p>GitHub Repository : </p>
+              <span>{slide.githubLink}</span>
             </a>
             <a
+              className="websiteLink"
               href={`https://${slide.websiteLink}`}
               target="_blank"
               rel="noreferrer"
             >
-              Website : {slide.websiteLink}
+              <p>Website :</p>
+              <span>{slide.websiteLink}</span>
             </a>
           </div>
         </div>

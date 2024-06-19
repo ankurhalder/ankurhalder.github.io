@@ -162,7 +162,19 @@
           font-size: var(--font-10);
         }
       }
-
+      .slideContentInner .slideContentLinks {
+        @include flex-container(column, nowrap, center, flex-start);
+        a {
+          @include flex-container(row, nowrap, flex-start, flex-start);
+          margin: 1% 0 0 0;
+          p {
+            color: var(--text-color);
+          }
+          span {
+            color: var(--link-color);
+          }
+        }
+      }
       .slideBackground {
         position: absolute;
         top: 0;
