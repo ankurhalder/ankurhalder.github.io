@@ -89,11 +89,6 @@ const Slide = ({ slide, offset }) => {
           title={slide.title}
           alt={`Video of ${slide.title}`}
           poster={slide.poster}
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-          }}
         >
           Your browser does not support the video tag.
         </video>
