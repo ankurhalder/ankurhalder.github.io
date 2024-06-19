@@ -19,7 +19,7 @@
     font-weight: 300;
     letter-spacing: 4px;
     color: var(--text-color);
-    margin: 2% 0 0 0;
+    margin: 1% 0 0 0;
     @media (max-width: $breakpoint-desktop-wide) {
     }
     @media (max-width: $breakpoint-desktop) {
@@ -29,6 +29,80 @@
     @media (max-width: $breakpoint-tablet) {
     }
     @media (max-width: $breakpoint-phone) {
+    }
+  }
+  button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    position: absolute;
+    font-size: 10rem;
+    height: 80%;
+    top: calc(50% - height/2);
+    transition: opacity 0.3s;
+    opacity: 0.5;
+    z-index: 5;
+    @media (max-width: $breakpoint-desktop-wide) {
+      font-size: 8rem;
+      height: 75%;
+    }
+    @media (max-width: $breakpoint-desktop) {
+    }
+    @media (max-width: $breakpoint-large-tablet) {
+      height: 80%;
+    }
+    @media (max-width: $breakpoint-tablet) {
+      height: 80%;
+    }
+    @media (max-width: $breakpoint-phone) {
+      height: 82.5%;
+      font-size: var(--font-1);
+    }
+    &:hover {
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:first-child {
+      left: -8%;
+      @media (max-width: $breakpoint-desktop-wide) {
+        left: -9%;
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+        left: -11%;
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
+        // left: -13%;
+      }
+    }
+
+    &:last-child {
+      right: -8%;
+      @media (max-width: $breakpoint-desktop-wide) {
+        right: -9%;
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+        right: -11%;
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
+        // right: -13%;
+      }
     }
   }
   .slides {
@@ -44,7 +118,7 @@
     }
     @media (max-width: $breakpoint-phone) {
     }
-    > .slide {
+    .slide {
       grid-area: 1 / -1;
       transform-style: preserve-3d;
 
@@ -242,81 +316,6 @@
         transition: none;
         transform: perspective(1000px) rotateY(calc(var(--x) * 45deg))
           rotateX(calc(var(--y) * -45deg));
-      }
-    }
-
-    > button {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      appearance: none;
-      background: transparent;
-      border: none;
-      color: var(--text-color);
-      position: absolute;
-      font-size: 10rem;
-      height: 80%;
-      top: calc(50% - height/2);
-      transition: opacity 0.3s;
-      opacity: 0.5;
-      z-index: 5;
-      @media (max-width: $breakpoint-desktop-wide) {
-        font-size: 8rem;
-        height: 75%;
-      }
-      @media (max-width: $breakpoint-desktop) {
-      }
-      @media (max-width: $breakpoint-large-tablet) {
-        height: 80%;
-      }
-      @media (max-width: $breakpoint-tablet) {
-        height: 80%;
-      }
-      @media (max-width: $breakpoint-phone) {
-        height: 82.5%;
-        font-size: var(--font-1);
-      }
-      &:hover {
-        opacity: 1;
-      }
-
-      &:focus {
-        outline: none;
-      }
-
-      &:first-child {
-        left: -8%;
-        @media (max-width: $breakpoint-desktop-wide) {
-          left: -9%;
-        }
-        @media (max-width: $breakpoint-desktop) {
-        }
-        @media (max-width: $breakpoint-large-tablet) {
-          left: -11%;
-        }
-        @media (max-width: $breakpoint-tablet) {
-        }
-        @media (max-width: $breakpoint-phone) {
-          // left: -13%;
-        }
-      }
-
-      &:last-child {
-        right: -8%;
-        @media (max-width: $breakpoint-desktop-wide) {
-          right: -9%;
-        }
-        @media (max-width: $breakpoint-desktop) {
-        }
-        @media (max-width: $breakpoint-large-tablet) {
-          right: -11%;
-        }
-        @media (max-width: $breakpoint-tablet) {
-        }
-        @media (max-width: $breakpoint-phone) {
-          // right: -13%;
-        }
       }
     }
   }
