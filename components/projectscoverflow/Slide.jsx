@@ -97,7 +97,7 @@ const Slide = ({ slide, offset }) => {
           <h3 className="slideSubtitle">{slide.subtitle}</h3>
           <p className="slideDescription">{slide.description}</p>
           <button onClick={handleShowMore} className="show-more">
-            Show More
+            {showMore ? "Show Less" : "Show More"}
           </button>
           {showMore && (
             <div className="links-panel">
