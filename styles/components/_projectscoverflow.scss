@@ -32,10 +32,7 @@
     }
   }
   button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex-container(column, nowrap, center, center);
     appearance: none;
     background: transparent;
     border: none;
