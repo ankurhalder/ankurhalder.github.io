@@ -103,7 +103,7 @@ const Slide = ({ slide, offset }) => {
               target="_blank"
               rel="noreferrer"
             >
-              <p>GitHub Repository : </p>
+              <p>GitHub Repository: </p>
               <span>{slide.githubLink}</span>
             </a>
             <a
@@ -112,7 +112,7 @@ const Slide = ({ slide, offset }) => {
               target="_blank"
               rel="noreferrer"
             >
-              <p>Website :</p>
+              <p>Website:</p>
               <span>{slide.websiteLink}</span>
             </a>
           </div>
