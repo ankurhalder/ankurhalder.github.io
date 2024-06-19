@@ -249,45 +249,45 @@
               font-size: var(--font-10);
             }
           }
-          .show-more {
-            position: fixed;
-            top: 0;
-            right: 50%;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            font-size: var(--font-13);
-          }
-          &:hover {
-            .show-more {
-              opacity: 1;
-            }
-          }
-          .links-panel {
-            position: fixed;
-            .slideContentLinks {
-              @include flex-container(column, nowrap, center, flex-start);
-              a {
-                @include flex-container(row, nowrap, flex-start, flex-start);
-                margin: 1.5% 0 0 0;
-                p {
-                  font-family: var(--font-tektur);
-                  font-size: var(--font-13);
-                  color: var(--text-color);
-                  letter-spacing: 2px;
-                  font-weight: 400;
-                }
-                span {
-                  font-family: var(--font-roboto);
-                  font-size: var(--font-13);
-                  color: var(--link-color);
-                  text-decoration: underline;
-                  letter-spacing: 2px;
-                  font-weight: 400;
-                  margin: 0 0 0 3px;
-                }
-              }
-            }
-          }
+          // .show-more {
+          //   position: fixed;
+          //   top: 0;
+          //   right: 50%;
+          //   opacity: 0;
+          //   transition: opacity 0.3s ease;
+          //   font-size: var(--font-13);
+          // }
+          // &:hover {
+          //   .show-more {
+          //     opacity: 1;
+          //   }
+          // }
+          // .links-panel {
+          //   position: fixed;
+          //   .slideContentLinks {
+          //     @include flex-container(column, nowrap, center, flex-start);
+          //     a {
+          //       @include flex-container(row, nowrap, flex-start, flex-start);
+          //       margin: 1.5% 0 0 0;
+          //       p {
+          //         font-family: var(--font-tektur);
+          //         font-size: var(--font-13);
+          //         color: var(--text-color);
+          //         letter-spacing: 2px;
+          //         font-weight: 400;
+          //       }
+          //       span {
+          //         font-family: var(--font-roboto);
+          //         font-size: var(--font-13);
+          //         color: var(--link-color);
+          //         text-decoration: underline;
+          //         letter-spacing: 2px;
+          //         font-weight: 400;
+          //         margin: 0 0 0 3px;
+          //       }
+          //     }
+          //   }
+          // }
         }
         &:hover .slideContentInner .show-more {
           opacity: 1;
