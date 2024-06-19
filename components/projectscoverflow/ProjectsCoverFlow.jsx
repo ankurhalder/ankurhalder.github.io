@@ -65,7 +65,7 @@ function ProjectsCoverFlow() {
 
   return (
     <Fragment>
-      <div className="coverflow">
+      <div className="coverflow none">
         <motion.h1
           ref={ref}
           initial={{ opacity: 0, scale: 0.8 }}
