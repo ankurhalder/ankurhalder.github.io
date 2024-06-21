@@ -10,7 +10,7 @@ const textContainerVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 1,
       ease: "easeOut",
     },
   },
@@ -88,15 +88,15 @@ const scrollIconVariants = {
 const imageVariants = {
   hidden: {
     opacity: 0,
-    scale: 1.1,
+    scale: 1.05,
   },
   visible: {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.8,
+      duration: 1,
       ease: "easeOut",
-      delay: 0.6,
+      delay: 0.3,
     },
   },
 };
@@ -106,11 +106,10 @@ const sliderVariants = {
     x: "0%",
   },
   animate: {
-    x: "-220%",
+    x: ["0%", "-100%", "-200%", "-300%"],
     transition: {
       repeat: Infinity,
-      repeatType: "mirror",
-      duration: 20,
+      duration: 15,
       ease: "linear",
     },
   },
@@ -132,7 +131,7 @@ const Hero = () => {
           variants={textContainerVariants}
         >
           <motion.h1 variants={titleVariants} whileHover="hover">
-            Ankur Halder
+            <span>Ankur</span> Halder
           </motion.h1>
           <motion.h2 variants={titleVariants} whileHover="hover">
             Full-stack Web Developer
@@ -174,7 +173,7 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        Web Dev Fullstack
+        <span>Web Dev Fullstack</span>
       </motion.div>
 
       <motion.div
