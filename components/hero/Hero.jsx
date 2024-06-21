@@ -42,7 +42,7 @@ const buttonVariants = {
   },
   hover: {
     scale: 1.1,
-    backgroundColor: "#e63946",
+    backgroundColor: "none",
     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
     transition: {
       duration: 0.3,
