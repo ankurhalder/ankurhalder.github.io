@@ -8,7 +8,6 @@ import cloud1Image from "/parallax/cloud-1.png";
 import cloud2Image from "/parallax/cloud-2.png";
 import mountainsImage from "/parallax/mountains.png";
 import sky1Image from "/parallax/sky-1.png";
-// import sky2Image from "/parallax/sky-1.png";
 
 const Parallax = ({ type, isDarkMode }) => {
   const ref = useRef();
