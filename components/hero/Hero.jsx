@@ -64,7 +64,7 @@ const imageVariants = {
       type: "spring",
       stiffness: 50,
       damping: 10,
-      delay: 1,
+      delay: 0.3,
     },
   },
 };
