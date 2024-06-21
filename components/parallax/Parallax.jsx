@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import PropTypes from "prop-types";
 
 const Parallax = ({ type }) => {
   const ref = useRef();
@@ -15,17 +16,17 @@ const Parallax = ({ type }) => {
 
   const backgroundStyle = {
     backgroundColor: "var(--background-color)",
-    // Uncomment below if you need conditional background gradient
-    // background: type === "Skills"
-    //   ? "linear-gradient(180deg, #111132, #0c0c1d)"
-    //   : "linear-gradient(180deg, #111132, #505064)",
   };
 
   const planetImage =
     type === "Skills" ? "/parallax/planets.png" : "/parallax/sun.png";
 
   return (
-    <div className="parallax none" ref={ref} style={backgroundStyle}>
+    <div
+      className={`parallax ${type.toLowerCase()}`}
+      ref={ref}
+      style={backgroundStyle}
+    >
       <motion.h1 style={{ y: yText }}>
         {type === "Skills"
           ? "Looking for a Skill Set That Matches Your Needs?"
@@ -42,6 +43,10 @@ const Parallax = ({ type }) => {
       <motion.div style={{ x: yBg }} className="stars"></motion.div>
     </div>
   );
+};
+
+Parallax.propTypes = {
+  type: PropTypes.oneOf(["Skills", "Projects"]).isRequired,
 };
 
 export default Parallax;
