@@ -15,10 +15,6 @@ const Parallax = ({ type }) => {
 
   const backgroundStyle = {
     backgroundColor: "var(--background-color)",
-    // Uncomment below if you need conditional background gradient
-    // background: type === "Skills"
-    //   ? "linear-gradient(180deg, #111132, #0c0c1d)"
-    //   : "linear-gradient(180deg, #111132, #505064)",
   };
 
   const planetImage =
