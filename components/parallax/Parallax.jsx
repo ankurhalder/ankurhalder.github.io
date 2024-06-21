@@ -1,7 +1,14 @@
-/* eslint-disable react/prop-types */
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import PropTypes from "prop-types";
+
+// Utility function to detect theme
+const detectTheme = () => {
+  if (typeof document !== "undefined") {
+    return document.body.classList.contains("theme-dark") ? "dark" : "light";
+  }
+  return "dark"; // default to dark theme
+};
 
 const Parallax = ({ type }) => {
   const ref = useRef();
@@ -20,8 +27,26 @@ const Parallax = ({ type }) => {
     backgroundColor: "var(--background-color)",
   };
 
+  // State to hold the current theme
+  const [theme, setTheme] = useState(detectTheme());
+
+  // Effect to update theme when body class changes
+  useEffect(() => {
+    const handleThemeChange = () => {
+      setTheme(detectTheme());
+    };
+
+    const observer = new MutationObserver(handleThemeChange);
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const planetImage =
-    type === "Skills" ? "/parallax/planets.png" : "/parallax/sun.png";
+    theme === "dark" ? "/parallax/planets.png" : "/parallax/sun.png";
 
   return (
     <div
@@ -47,11 +72,13 @@ const Parallax = ({ type }) => {
         }}
         transition={{ ease: "easeOut", duration: 0.5 }}
       ></motion.div>
-      <motion.div
-        className="stars"
-        style={{ rotate: rotateStars }}
-        transition={{ ease: "easeOut", duration: 0.5 }}
-      ></motion.div>
+      {theme === "dark" && (
+        <motion.div
+          className="stars"
+          style={{ rotate: rotateStars }}
+          transition={{ ease: "easeOut", duration: 0.5 }}
+        ></motion.div>
+      )}
     </div>
   );
 };

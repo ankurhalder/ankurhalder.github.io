@@ -78,7 +78,6 @@
   }
 
   .stars {
-    background-image: url("/parallax/stars.png");
     background-size: cover;
     background-position: bottom;
     width: 100%;
@@ -119,5 +118,18 @@
   .planets:hover,
   .stars:hover {
     transform: scale(1.1) rotate(5deg); /* Adjust scale and rotation for hover effect */
+  }
+}
+
+/* Theme-specific styles */
+.theme-dark {
+  .parallax .stars {
+    background-image: url("/parallax/stars.png");
+  }
+}
+
+.theme-light {
+  .parallax .stars {
+    background-image: url("/parallax/blue-sky.png");
   }
 }
