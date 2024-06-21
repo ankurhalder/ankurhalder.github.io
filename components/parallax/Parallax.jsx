@@ -17,17 +17,23 @@ const Parallax = ({ type, isDarkMode }) => {
     offset: ["start start", "end start"],
   });
 
-  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
+  // Animations for different elements
+  const yText = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    ["0%", "20%", "40%"]
+  );
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const scaleBg = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
-  const rotateStars = useTransform(scrollYProgress, [0, 1], ["0deg", "45deg"]);
-  const moveCloud1 = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
-  const moveCloud2 = useTransform(scrollYProgress, [0, 1], ["-30%", "30%"]);
+  const scaleBg = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+  const moveCloud1 = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const moveCloud2 = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
 
+  // Dynamic styles based on dark mode
   const backgroundStyle = {
     backgroundColor: isDarkMode ? "#111" : "#fff",
   };
 
+  // Choose planet image based on dark mode
   const planetImage = isDarkMode ? planetsImage : sunImage;
 
   return (
@@ -38,27 +44,44 @@ const Parallax = ({ type, isDarkMode }) => {
       ref={ref}
       style={backgroundStyle}
     >
+      {/* Animated heading */}
       <motion.h1
+        className="parallax-heading"
         style={{ y: yText }}
-        transition={{ ease: "easeOut", duration: 0.5 }}
+        initial={{ opacity: 0, y: "-10%" }}
+        animate={{ opacity: 1, y: "0%" }}
+        transition={{ ease: "easeInOut", duration: 1 }}
       >
         {type === "Skills"
           ? "Looking for a Skill Set That Matches Your Needs?"
           : "Explore My Projects and Get to Know Me Better!"}
       </motion.h1>
-      <motion.div className="mountains">
+
+      {/* Static mountains */}
+      <motion.div
+        className="mountains"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ ease: "easeInOut", duration: 1 }}
+      >
         <img src={mountainsImage} alt="Mountains" />
       </motion.div>
+
+      {/* Render elements based on dark mode and type */}
       {isDarkMode ? (
         <>
+          {/* Animated stars */}
           <motion.div
             className="stars"
             style={{
               backgroundImage: `url(${starsImage})`,
-              rotate: rotateStars,
             }}
-            transition={{ ease: "easeOut", duration: 0.5 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ ease: "easeInOut", duration: 1 }}
           ></motion.div>
+
+          {/* Animated planets */}
           <motion.div
             className="planets"
             style={{
@@ -66,39 +89,46 @@ const Parallax = ({ type, isDarkMode }) => {
               scale: scaleBg,
               backgroundImage: `url(${planetImage})`,
             }}
-            transition={{ ease: "easeOut", duration: 0.5 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ ease: "easeInOut", duration: 1 }}
           ></motion.div>
         </>
       ) : (
         <>
-          {type === "Skills" && (
+          {/* Sky background (conditional based on type) */}
+          {(type === "Skills" || type === "Projects") && (
             <motion.div
               className="sky"
               style={{ backgroundImage: `url(${sky1Image})` }}
-              transition={{ ease: "easeOut", duration: 0.5 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ ease: "easeInOut", duration: 1 }}
             ></motion.div>
           )}
-          {type === "Projects" && (
-            <motion.div
-              className="sky"
-              style={{ backgroundImage: `url(${sky1Image})` }}
-              transition={{ ease: "easeOut", duration: 0.5 }}
-            ></motion.div>
-          )}
+
+          {/* Animated clouds */}
           <motion.div
             className="cloud cloud-1"
             style={{ x: moveCloud1 }}
-            transition={{ ease: "easeOut", duration: 0.5 }}
+            initial={{ opacity: 0, x: "-10%" }}
+            animate={{ opacity: 1, x: "10%" }}
+            transition={{ ease: "easeInOut", duration: 1 }}
           >
             <img src={cloud1Image} alt="Cloud 1" />
           </motion.div>
+
           <motion.div
             className="cloud cloud-2"
             style={{ x: moveCloud2 }}
-            transition={{ ease: "easeOut", duration: 0.5 }}
+            initial={{ opacity: 0, x: "-20%" }}
+            animate={{ opacity: 1, x: "20%" }}
+            transition={{ ease: "easeInOut", duration: 1 }}
           >
             <img src={cloud2Image} alt="Cloud 2" />
           </motion.div>
+
+          {/* Animated planets */}
           <motion.div
             className="planets"
             style={{
@@ -106,7 +136,9 @@ const Parallax = ({ type, isDarkMode }) => {
               scale: scaleBg,
               backgroundImage: `url(${planetImage})`,
             }}
-            transition={{ ease: "easeOut", duration: 0.5 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ ease: "easeInOut", duration: 1 }}
           ></motion.div>
         </>
       )}
