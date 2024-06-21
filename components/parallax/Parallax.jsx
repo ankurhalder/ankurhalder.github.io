@@ -24,7 +24,7 @@ const Parallax = ({ type, isDarkMode }) => {
   const moveCloud2 = useTransform(scrollYProgress, [0, 1], ["-30%", "30%"]);
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? "#111" : "var(--background-color)",
+    backgroundColor: isDarkMode ? "#111" : "#fff",
   };
 
   const planetImage = type === "Skills" ? planetsImage : sunImage;
@@ -48,36 +48,53 @@ const Parallax = ({ type, isDarkMode }) => {
       <motion.div className="mountains">
         <img src={mountainsImage} alt="Mountains" />
       </motion.div>
-      <motion.div
-        className="cloud cloud-1"
-        style={{ x: moveCloud1 }}
-        transition={{ ease: "easeOut", duration: 0.5 }}
-      >
-        <img src={cloud1Image} alt="Cloud 1" />
-      </motion.div>
-      <motion.div
-        className="cloud cloud-2"
-        style={{ x: moveCloud2 }}
-        transition={{ ease: "easeOut", duration: 0.5 }}
-      >
-        <img src={cloud2Image} alt="Cloud 2" />
-      </motion.div>
-      {isDarkMode && (
-        <motion.div
-          className="stars"
-          style={{ backgroundImage: `url(${starsImage})`, rotate: rotateStars }}
-          transition={{ ease: "easeOut", duration: 0.5 }}
-        ></motion.div>
+      {isDarkMode ? (
+        <>
+          <motion.div
+            className="stars"
+            style={{
+              backgroundImage: `url(${starsImage})`,
+              rotate: rotateStars,
+            }}
+            transition={{ ease: "easeOut", duration: 0.5 }}
+          ></motion.div>
+          <motion.div
+            className="planets"
+            style={{
+              y: yBg,
+              scale: scaleBg,
+              backgroundImage: `url(${planetImage})`,
+            }}
+            transition={{ ease: "easeOut", duration: 0.5 }}
+          ></motion.div>
+        </>
+      ) : (
+        <>
+          <motion.div
+            className="cloud cloud-1"
+            style={{ x: moveCloud1 }}
+            transition={{ ease: "easeOut", duration: 0.5 }}
+          >
+            <img src={cloud1Image} alt="Cloud 1" />
+          </motion.div>
+          <motion.div
+            className="cloud cloud-2"
+            style={{ x: moveCloud2 }}
+            transition={{ ease: "easeOut", duration: 0.5 }}
+          >
+            <img src={cloud2Image} alt="Cloud 2" />
+          </motion.div>
+          <motion.div
+            className="planets"
+            style={{
+              y: yBg,
+              scale: scaleBg,
+              backgroundImage: `url(${planetImage})`,
+            }}
+            transition={{ ease: "easeOut", duration: 0.5 }}
+          ></motion.div>
+        </>
       )}
-      <motion.div
-        className="planets"
-        style={{
-          y: yBg,
-          scale: scaleBg,
-          backgroundImage: `url(${planetImage})`,
-        }}
-        transition={{ ease: "easeOut", duration: 0.5 }}
-      ></motion.div>
     </div>
   );
 };
