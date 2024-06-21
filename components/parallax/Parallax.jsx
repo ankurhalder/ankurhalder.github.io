@@ -29,7 +29,7 @@ const Parallax = ({ type, isDarkMode }) => {
     backgroundColor: isDarkMode ? "#111" : "#fff",
   };
 
-  const planetImage = type === "Skills" ? planetsImage : sunImage;
+  const planetImage = isDarkMode ? planetsImage : sunImage;
 
   return (
     <div
