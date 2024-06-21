@@ -109,7 +109,7 @@ const sliderVariants = {
     x: ["0%", "-100%", "-200%", "-300%"],
     transition: {
       repeat: Infinity,
-      duration: 15,
+      duration: 20,
       ease: "linear",
     },
   },
