@@ -1,101 +1,68 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const textVariants = {
-  initial: {
-    opacity: 0,
-    y: 30,
-  },
-  animate: {
+const textContainerVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring",
-      stiffness: 50,
-      damping: 10,
-      staggerChildren: 0.25,
-      delayChildren: 0.1,
+      duration: 0.8,
+      delay: 0.2,
+      ease: "easeOut",
+    },
+  },
+};
+
+const textVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
     },
   },
   hover: {
     scale: 1.05,
     transition: {
       duration: 0.3,
+      ease: "easeOut",
     },
   },
 };
 
 const buttonVariants = {
-  initial: {
-    opacity: 0,
-    y: 30,
-  },
-  animate: {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring",
-      stiffness: 50,
-      damping: 10,
-      delay: 0.5,
+      duration: 0.8,
+      delay: 0.4,
+      ease: "easeOut",
     },
   },
   hover: {
-    scale: 1.1,
-    backgroundColor: "none",
-    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+    scale: 1.05,
+    boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)",
     transition: {
       duration: 0.3,
-    },
-  },
-};
-
-const imageVariants = {
-  initial: {
-    opacity: 0,
-    y: 30,
-    scale: 1.05,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      type: "spring",
-      stiffness: 50,
-      damping: 10,
-      delay: 0.3,
-    },
-  },
-};
-
-const sliderVariants = {
-  initial: {
-    x: 0,
-  },
-  animate: {
-    x: "-220%",
-    transition: {
-      repeat: Infinity,
-      repeatType: "mirror",
-      duration: 20,
-      ease: "linear",
+      ease: "easeOut",
     },
   },
 };
 
 const scrollIconVariants = {
-  initial: {
-    opacity: 0,
-    y: 10,
-  },
-  animate: {
-    opacity: [1, 0.8, 1],
-    y: [10, 0, 10],
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
     transition: {
-      duration: 2,
-      repeat: Infinity,
+      duration: 1,
       ease: "easeInOut",
+      repeat: Infinity,
     },
   },
   hover: {
@@ -106,20 +73,44 @@ const scrollIconVariants = {
   },
 };
 
+const imageVariants = {
+  hidden: { opacity: 0, scale: 1.1 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const sliderVariants = {
+  animate: {
+    x: ["0%", "-220%"],
+    transition: {
+      repeat: Infinity,
+      repeatType: "mirror",
+      duration: 15,
+      ease: "linear",
+    },
+  },
+};
+
 const Hero = () => {
-  const { ref: textRef, inView: textInView } = useInView({
+  const { ref: textContainerRef, inView: textContainerInView } = useInView({
     threshold: 0.1,
   });
 
   return (
-    <div className="hero none">
+    <div className="hero">
       <div className="wrapper">
         <motion.div
           className="textContainer"
-          ref={textRef}
-          variants={textVariants}
-          initial="initial"
-          animate={textInView ? "animate" : "initial"}
+          ref={textContainerRef}
+          initial="hidden"
+          animate={textContainerInView ? "visible" : "hidden"}
+          variants={textContainerVariants}
         >
           <motion.h1 variants={textVariants} whileHover="hover">
             Ankur Halder
@@ -127,17 +118,25 @@ const Hero = () => {
           <motion.h2 variants={textVariants} whileHover="hover">
             Full-stack Web Developer
           </motion.h2>
-          <motion.div variants={textVariants} className="buttons">
+          <motion.div variants={buttonVariants} className="buttons">
             <a
               href="/ankurhalder.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <motion.button variants={buttonVariants} whileHover="hover">
+              <motion.button
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap={{ scale: 0.95 }}
+              >
                 Download My CV
               </motion.button>
             </a>
-            <motion.button variants={buttonVariants} whileHover="hover">
+            <motion.button
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap={{ scale: 0.95 }}
+            >
               Contact Me
             </motion.button>
           </motion.div>
@@ -150,32 +149,20 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      <script type="application/ld+json">
-        {`
-          {
-            "@context": "http://schema.org",
-            "@type": "ImageObject",
-            "contentUrl": "/hero/ankurhalder.png",
-            "description": "Ankur Halder",
-            "name": "Ankur Halder"
-          }
-        `}
-      </script>
-
       <motion.div
         className="slidingTextContainer"
         variants={sliderVariants}
-        initial="initial"
+        initial="animate"
         animate="animate"
       >
-        Web Dev Fullstack
+        <span>Web Dev Fullstack</span>
       </motion.div>
 
       <motion.div
         className="imageContainer"
         variants={imageVariants}
-        initial="initial"
-        animate={textInView ? "animate" : "initial"}
+        initial="hidden"
+        animate={textContainerInView ? "visible" : "hidden"}
       >
         <img
           src="/hero/ankurhalder.png"
