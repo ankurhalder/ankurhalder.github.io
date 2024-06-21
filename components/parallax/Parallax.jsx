@@ -1,6 +1,9 @@
-/* eslint-disable react/prop-types */
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import PropTypes from "prop-types";
+import planetsImage from "/parallax/planets.png";
+import sunImage from "/parallax/sun.png";
+import starsImage from "/parallax/stars.png";
 
 const Parallax = ({ type }) => {
   const ref = useRef();
@@ -12,17 +15,25 @@ const Parallax = ({ type }) => {
 
   const yText = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const scaleBg = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
+  const rotateStars = useTransform(scrollYProgress, [0, 1], ["0deg", "45deg"]);
 
   const backgroundStyle = {
     backgroundColor: "var(--background-color)",
   };
 
-  const planetImage =
-    type === "Skills" ? "/parallax/planets.png" : "/parallax/sun.png";
+  const planetImage = type === "Skills" ? planetsImage : sunImage;
 
   return (
-    <div className="parallax none" ref={ref} style={backgroundStyle}>
-      <motion.h1 style={{ y: yText }}>
+    <div
+      className={`parallax ${type.toLowerCase()}`}
+      ref={ref}
+      style={backgroundStyle}
+    >
+      <motion.h1
+        style={{ y: yText }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
+      >
         {type === "Skills"
           ? "Looking for a Skill Set That Matches Your Needs?"
           : "Explore My Projects and Get to Know Me Better!"}
@@ -32,12 +43,22 @@ const Parallax = ({ type }) => {
         className="planets"
         style={{
           y: yBg,
+          scale: scaleBg,
           backgroundImage: `url(${planetImage})`,
         }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
       ></motion.div>
-      <motion.div style={{ x: yBg }} className="stars"></motion.div>
+      <motion.div
+        className="stars"
+        style={{ backgroundImage: `url(${starsImage})`, rotate: rotateStars }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
+      ></motion.div>
     </div>
   );
+};
+
+Parallax.propTypes = {
+  type: PropTypes.oneOf(["Skills", "Projects"]).isRequired,
 };
 
 export default Parallax;
