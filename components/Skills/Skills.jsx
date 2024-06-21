@@ -1,7 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -13,14 +13,55 @@ import { skillDetails } from "../../data/skillDetails";
 const Skills = () => {
   const [selectedSkill, setSelectedSkill] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [textInView, setTextInView] = useState(false);
+  const [titleInView, setTitleInView] = useState(false);
 
-  const { ref: textRef, inView: textInView } = useInView({
-    threshold: 0.1,
-  });
+  const textRef = useRef(null);
+  const titleRef = useRef(null);
 
-  const { ref: titleRef, inView: titleInView } = useInView({
-    threshold: 0.1,
-  });
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    const textObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setTextInView(true);
+        } else {
+          setTextInView(false);
+        }
+      });
+    }, observerOptions);
+
+    const titleObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setTitleInView(true);
+        } else {
+          setTitleInView(false);
+        }
+      });
+    }, observerOptions);
+
+    if (textRef.current) {
+      textObserver.observe(textRef.current);
+    }
+    if (titleRef.current) {
+      titleObserver.observe(titleRef.current);
+    }
+
+    return () => {
+      if (textRef.current) {
+        textObserver.unobserve(textRef.current);
+      }
+      if (titleRef.current) {
+        titleObserver.unobserve(titleRef.current);
+      }
+    };
+  }, []);
 
   const handleSeeMoreClick = (skill) => {
     setSelectedSkill(skill);
@@ -39,13 +80,7 @@ const Skills = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
     >
-      <motion.div
-        className="textContainer"
-        ref={textRef}
-        initial={{ opacity: 0, y: 50 }}
-        animate={textInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.4 }}
-      >
+      <div className="textContainer" ref={textRef}>
         <motion.p
           initial={{ opacity: 0 }}
           animate={textInView ? { opacity: 1 } : { opacity: 0 }}
@@ -58,15 +93,9 @@ const Skills = () => {
           animate={textInView ? { width: "100%" } : { width: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
         />
-      </motion.div>
+      </div>
 
-      <motion.div
-        className="titleContainer"
-        ref={titleRef}
-        initial={{ opacity: 0, y: 50 }}
-        animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.4, delay: 0.3 }}
-      >
+      <div className="titleContainer" ref={titleRef}>
         <div className="title">
           <motion.img
             src="/skills/skills.svg"
@@ -78,7 +107,7 @@ const Skills = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.4, delay: 0.4 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
           >
             <span>Explore</span> My
           </motion.h1>
@@ -87,7 +116,7 @@ const Skills = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.4, delay: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
           >
             <span>Skills</span>
           </motion.h1>
@@ -98,13 +127,13 @@ const Skills = () => {
               animate={
                 titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
-              transition={{ duration: 0.4, delay: 0.6 }}
+              transition={{ duration: 0.4, delay: 0.5 }}
             >
               Download My CV
             </motion.button>
           </a>
         </div>
-      </motion.div>
+      </div>
 
       <Swiper
         effect="coverflow"
