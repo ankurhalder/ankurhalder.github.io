@@ -1,3 +1,5 @@
+/* Existing SCSS structure */
+
 .parallax {
   width: 100%;
   height: 100%;
@@ -5,16 +7,27 @@
   @include flex-container(row, nowrap, center, flex-start);
   overflow: hidden;
   text-align: center;
+
   @media (max-width: $breakpoint-desktop-wide) {
+    /* Adjust styles for wide desktop */
   }
+
   @media (max-width: $breakpoint-desktop) {
+    /* Adjust styles for desktop */
   }
+
   @media (max-width: $breakpoint-large-tablet) {
+    /* Adjust styles for large tablets */
   }
+
   @media (max-width: $breakpoint-tablet) {
+    /* Adjust styles for tablets */
   }
+
   @media (max-width: $breakpoint-phone) {
+    /* Adjust styles for phones */
   }
+
   h1 {
     margin: 1% 0 0 0;
     font-family: var(--font-oswald);
@@ -24,15 +37,11 @@
     letter-spacing: 4px;
     line-height: 1.6;
     text-transform: uppercase;
-    @media (max-width: $breakpoint-desktop-wide) {
-    }
-    @media (max-width: $breakpoint-desktop) {
-    }
-    @media (max-width: $breakpoint-large-tablet) {
-    }
+
     @media (max-width: $breakpoint-tablet) {
       font-size: var(--font-4);
     }
+
     @media (max-width: $breakpoint-phone) {
       font-size: var(--font-3);
     }
@@ -46,19 +55,13 @@
     height: 100%;
     position: absolute;
     z-index: 3;
-    @media (max-width: $breakpoint-desktop-wide) {
-    }
-    @media (max-width: $breakpoint-desktop) {
-    }
-    @media (max-width: $breakpoint-large-tablet) {
-    }
-    @media (max-width: $breakpoint-tablet) {
-    }
+
     @media (max-width: $breakpoint-phone) {
       background-size: contain;
       background-repeat: no-repeat;
     }
   }
+
   .planets {
     background-size: cover;
     background-position: bottom;
@@ -67,19 +70,14 @@
     position: absolute;
     z-index: 2;
     margin: 6% 0 0 0;
-    @media (max-width: $breakpoint-desktop-wide) {
-    }
-    @media (max-width: $breakpoint-desktop) {
-    }
-    @media (max-width: $breakpoint-large-tablet) {
-    }
-    @media (max-width: $breakpoint-tablet) {
-    }
+    transition: transform 0.5s ease;
+
     @media (max-width: $breakpoint-phone) {
       background-size: contain;
       background-repeat: no-repeat;
     }
   }
+
   .stars {
     background-image: url("/parallax/stars.png");
     background-size: cover;
@@ -88,15 +86,10 @@
     height: 100%;
     position: absolute;
     z-index: 1;
-    @media (max-width: $breakpoint-desktop-wide) {
-    }
-    @media (max-width: $breakpoint-desktop) {
-    }
-    @media (max-width: $breakpoint-large-tablet) {
-    }
-    @media (max-width: $breakpoint-tablet) {
-    }
+    transition: transform 0.5s ease;
+
     @media (max-width: $breakpoint-phone) {
+      /* Adjust styles for phones */
     }
   }
 }
