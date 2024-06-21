@@ -13,7 +13,14 @@ const textVariants = {
       type: "spring",
       stiffness: 50,
       damping: 10,
-      staggerChildren: 0.3,
+      staggerChildren: 0.25,
+      delayChildren: 0.1,
+    },
+  },
+  hover: {
+    scale: 1.05,
+    transition: {
+      duration: 0.3,
     },
   },
 };
@@ -30,12 +37,15 @@ const buttonVariants = {
       type: "spring",
       stiffness: 50,
       damping: 10,
+      delay: 0.5,
     },
   },
   hover: {
     scale: 1.1,
+    backgroundColor: "#e63946",
+    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
     transition: {
-      yoyo: Infinity,
+      duration: 0.3,
     },
   },
 };
@@ -44,14 +54,17 @@ const imageVariants = {
   initial: {
     opacity: 0,
     y: 30,
+    scale: 1.05,
   },
   animate: {
     opacity: 1,
     y: 0,
+    scale: 1,
     transition: {
       type: "spring",
       stiffness: 50,
       damping: 10,
+      delay: 1,
     },
   },
 };
@@ -85,6 +98,12 @@ const scrollIconVariants = {
       ease: "easeInOut",
     },
   },
+  hover: {
+    scale: 1.2,
+    transition: {
+      yoyo: Infinity,
+    },
+  },
 };
 
 const Hero = () => {
@@ -102,8 +121,10 @@ const Hero = () => {
           initial="initial"
           animate={textInView ? "animate" : "initial"}
         >
-          <motion.h1 variants={textVariants}>Ankur Halder</motion.h1>
-          <motion.h2 variants={textVariants}>
+          <motion.h1 variants={textVariants} whileHover="hover">
+            Ankur Halder
+          </motion.h1>
+          <motion.h2 variants={textVariants} whileHover="hover">
             Full-stack Web Developer
           </motion.h2>
           <motion.div variants={textVariants} className="buttons">
@@ -124,6 +145,7 @@ const Hero = () => {
             variants={scrollIconVariants}
             src="/hero/scroll.svg"
             alt="Scroll down"
+            whileHover="hover"
           />
         </motion.div>
       </div>
