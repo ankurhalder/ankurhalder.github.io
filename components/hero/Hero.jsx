@@ -4,22 +4,54 @@ import { useInView } from "react-intersection-observer";
 const textVariants = {
   initial: {
     opacity: 0,
-    y: 20,
+    y: 30,
   },
   animate: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1,
-      staggerChildren: 0.1,
+      type: "spring",
+      stiffness: 50,
+      damping: 10,
+      staggerChildren: 0.3,
     },
   },
-  scrollButton: {
+};
+
+const buttonVariants = {
+  initial: {
     opacity: 0,
-    y: 10,
+    y: 30,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
     transition: {
-      duration: 2,
-      repeat: Infinity,
+      type: "spring",
+      stiffness: 50,
+      damping: 10,
+    },
+  },
+  hover: {
+    scale: 1.1,
+    transition: {
+      yoyo: Infinity,
+    },
+  },
+};
+
+const imageVariants = {
+  initial: {
+    opacity: 0,
+    y: 30,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 50,
+      damping: 10,
     },
   },
 };
@@ -34,6 +66,23 @@ const sliderVariants = {
       repeat: Infinity,
       repeatType: "mirror",
       duration: 20,
+      ease: "linear",
+    },
+  },
+};
+
+const scrollIconVariants = {
+  initial: {
+    opacity: 0,
+    y: 10,
+  },
+  animate: {
+    opacity: [1, 0.8, 1],
+    y: [10, 0, 10],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut",
     },
   },
 };
@@ -63,15 +112,16 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <motion.button variants={textVariants}>
+              <motion.button variants={buttonVariants} whileHover="hover">
                 Download My CV
               </motion.button>
             </a>
-            <motion.button variants={textVariants}>Contact Me</motion.button>
+            <motion.button variants={buttonVariants} whileHover="hover">
+              Contact Me
+            </motion.button>
           </motion.div>
           <motion.img
-            variants={textVariants}
-            animate={{ opacity: textInView ? 1 : 0, y: textInView ? 0 : 20 }}
+            variants={scrollIconVariants}
             src="/hero/scroll.svg"
             alt="Scroll down"
           />
@@ -99,13 +149,18 @@ const Hero = () => {
         Web Dev Fullstack
       </motion.div>
 
-      <div className="imageContainer">
+      <motion.div
+        className="imageContainer"
+        variants={imageVariants}
+        initial="initial"
+        animate={textInView ? "animate" : "initial"}
+      >
         <img
           src="/hero/ankurhalder.png"
           alt="Ankur Halder"
           sizes="(max-width: 600px) 100vw, 600px"
         />
-      </div>
+      </motion.div>
     </div>
   );
 };
