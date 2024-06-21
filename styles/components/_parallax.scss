@@ -1,5 +1,4 @@
-/* Existing SCSS structure */
-
+/* SCSS for Parallax component */
 .parallax {
   width: 100%;
   height: 100%;
@@ -91,5 +90,34 @@
     @media (max-width: $breakpoint-phone) {
       /* Adjust styles for phones */
     }
+  }
+
+  /* Additional Enhancements */
+
+  .planets {
+    perspective: 1000px; /* Adjust perspective for 3D depth effect */
+    transform-style: preserve-3d;
+    transform: translateZ(-50px); /* Adjust translateZ for depth perception */
+  }
+
+  .stars {
+    perspective: 1000px; /* Adjust perspective for 3D depth effect */
+    transform-style: preserve-3d;
+    transform: translateZ(
+      -100px
+    ); /* Adjust translateZ for deeper depth perception */
+  }
+
+  &.projects {
+    background: linear-gradient(
+      180deg,
+      #111132,
+      #505064
+    ); /* Gradient for projects */
+  }
+
+  .planets:hover,
+  .stars:hover {
+    transform: scale(1.1) rotate(5deg); /* Adjust scale and rotation for hover effect */
   }
 }
