@@ -94,7 +94,6 @@ const Skills = () => {
           transition={{ duration: 0.4, delay: 0.2 }}
         />
       </div>
-
       <div className="titleContainer" ref={titleRef}>
         <div className="title">
           <motion.img
@@ -134,66 +133,64 @@ const Skills = () => {
           </a>
         </div>
       </div>
-
-      <motion.div className="mySwiper">
-        <Swiper
-          effect="coverflow"
-          grabCursor
-          centeredSlides
-          slidesPerView="auto"
-          loop
-          coverflowEffect={{
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-          }}
-          pagination={{ clickable: true }}
-          modules={[EffectCoverflow, Pagination]}
-          initialSlide={0}
-        >
-          {Object.keys(skillDetails).map((key, index) => (
-            <SwiperSlide key={key}>
-              <motion.div
-                className={`card ${key.toLowerCase()}`}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.3 }}
+      <Swiper
+        className="mySwiper"
+        effect="coverflow"
+        grabCursor
+        centeredSlides
+        slidesPerView="auto"
+        loop
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        pagination={{ clickable: true }}
+        modules={[EffectCoverflow, Pagination]}
+        initialSlide={0}
+      >
+        {Object.keys(skillDetails).map((key, index) => (
+          <SwiperSlide key={key}>
+            <motion.div
+              className={`card ${key.toLowerCase()}`}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.img
+                src={`/skills/${key.toLowerCase()}.svg`}
+                alt={skillDetails[key].title}
+                loading="lazy"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4 }}
+              />
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
               >
-                <motion.img
-                  src={`/skills/${key.toLowerCase()}.svg`}
-                  alt={skillDetails[key].title}
-                  loading="lazy"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.4 }}
-                />
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.1 }}
-                >
-                  {skillDetails[key].title}
-                </motion.span>
-                <motion.button
-                  className="seeMoreButton"
-                  onClick={() => handleSeeMoreClick(skillDetails[key])}
-                  aria-label={`See more about ${skillDetails[key].title}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.2 }}
-                >
-                  See More
-                </motion.button>
-              </motion.div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </motion.div>
-
+                {skillDetails[key].title}
+              </motion.span>
+              <motion.button
+                className="seeMoreButton"
+                onClick={() => handleSeeMoreClick(skillDetails[key])}
+                aria-label={`See more about ${skillDetails[key].title}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+              >
+                See More
+              </motion.button>
+            </motion.div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      \
       <Modal
         show={isModalOpen}
         onClose={closeModal}
