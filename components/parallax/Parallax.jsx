@@ -8,7 +8,7 @@ import cloud1Image from "/parallax/cloud-1.png";
 import cloud2Image from "/parallax/cloud-2.png";
 import mountainsImage from "/parallax/mountains.png";
 
-const Parallax = ({ type }) => {
+const Parallax = ({ type, isDarkMode }) => {
   const ref = useRef();
 
   const { scrollYProgress } = useScroll({
@@ -24,14 +24,16 @@ const Parallax = ({ type }) => {
   const moveCloud2 = useTransform(scrollYProgress, [0, 1], ["-30%", "30%"]);
 
   const backgroundStyle = {
-    backgroundColor: "var(--background-color)",
+    backgroundColor: isDarkMode ? "#111" : "var(--background-color)",
   };
 
   const planetImage = type === "Skills" ? planetsImage : sunImage;
 
   return (
     <div
-      className={`parallax ${type.toLowerCase()}`}
+      className={`parallax ${type.toLowerCase()} ${
+        isDarkMode ? "dark-mode" : "light-mode"
+      }`}
       ref={ref}
       style={backgroundStyle}
     >
@@ -60,6 +62,13 @@ const Parallax = ({ type }) => {
       >
         <img src={cloud2Image} alt="Cloud 2" />
       </motion.div>
+      {isDarkMode && (
+        <motion.div
+          className="stars"
+          style={{ backgroundImage: `url(${starsImage})`, rotate: rotateStars }}
+          transition={{ ease: "easeOut", duration: 0.5 }}
+        ></motion.div>
+      )}
       <motion.div
         className="planets"
         style={{
@@ -69,17 +78,13 @@ const Parallax = ({ type }) => {
         }}
         transition={{ ease: "easeOut", duration: 0.5 }}
       ></motion.div>
-      <motion.div
-        className="stars"
-        style={{ backgroundImage: `url(${starsImage})`, rotate: rotateStars }}
-        transition={{ ease: "easeOut", duration: 0.5 }}
-      ></motion.div>
     </div>
   );
 };
 
 Parallax.propTypes = {
   type: PropTypes.oneOf(["Skills", "Projects"]).isRequired,
+  isDarkMode: PropTypes.bool.isRequired,
 };
 
 export default Parallax;

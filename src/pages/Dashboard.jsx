@@ -12,13 +12,21 @@ function Dashboard({ isDarkMode, setIsDarkMode }) {
         <Hero />
       </section>
       <section>
-        <Parallax type="Skills" />
+        <Parallax
+          isDarkMode={isDarkMode}
+          setIsDarkMode={setIsDarkMode}
+          type="Skills"
+        />
       </section>
       <section id="Skills">
         <Skills />
       </section>
       <section>
-        <Parallax type="Projects" />
+        <Parallax
+          isDarkMode={isDarkMode}
+          setIsDarkMode={setIsDarkMode}
+          type="Projects"
+        />
       </section>
       <section id="Projects">
         <ProjectsCoverFlow />
