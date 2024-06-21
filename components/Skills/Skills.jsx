@@ -100,14 +100,14 @@ const Skills = () => {
           <motion.img
             src="/skills/skills.svg"
             alt="Skills"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4 }}
+            initial={{ opacity: 0 }}
+            animate={titleInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
           />
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
           >
             <span>Explore</span> My
           </motion.h1>
@@ -116,7 +116,7 @@ const Skills = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.4, delay: 0.4 }}
+            transition={{ duration: 0.4, delay: 0.6 }}
           >
             <span>Skills</span>
           </motion.h1>
@@ -127,7 +127,7 @@ const Skills = () => {
               animate={
                 titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
-              transition={{ duration: 0.4, delay: 0.5 }}
+              transition={{ duration: 0.4, delay: 0.8 }}
             >
               Download My CV
             </motion.button>
@@ -135,63 +135,64 @@ const Skills = () => {
         </div>
       </div>
 
-      <Swiper
-        effect="coverflow"
-        grabCursor
-        centeredSlides
-        slidesPerView="auto"
-        loop
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        pagination={{ clickable: true }}
-        modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
-        initialSlide={0}
-      >
-        {Object.keys(skillDetails).map((key, index) => (
-          <SwiperSlide key={key}>
-            <motion.div
-              className={`card ${key.toLowerCase()}`}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.3 }}
-            >
-              <motion.img
-                src={`/skills/${key.toLowerCase()}.svg`}
-                alt={skillDetails[key].title}
-                loading="lazy"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4 }}
-              />
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
+      <motion.div className="mySwiper">
+        <Swiper
+          effect="coverflow"
+          grabCursor
+          centeredSlides
+          slidesPerView="auto"
+          loop
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          pagination={{ clickable: true }}
+          modules={[EffectCoverflow, Pagination]}
+          initialSlide={0}
+        >
+          {Object.keys(skillDetails).map((key, index) => (
+            <SwiperSlide key={key}>
+              <motion.div
+                className={`card ${key.toLowerCase()}`}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.3 }}
               >
-                {skillDetails[key].title}
-              </motion.span>
-              <motion.button
-                className="seeMoreButton"
-                onClick={() => handleSeeMoreClick(skillDetails[key])}
-                aria-label={`See more about ${skillDetails[key].title}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-              >
-                See More
-              </motion.button>
-            </motion.div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+                <motion.img
+                  src={`/skills/${key.toLowerCase()}.svg`}
+                  alt={skillDetails[key].title}
+                  loading="lazy"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4 }}
+                />
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                >
+                  {skillDetails[key].title}
+                </motion.span>
+                <motion.button
+                  className="seeMoreButton"
+                  onClick={() => handleSeeMoreClick(skillDetails[key])}
+                  aria-label={`See more about ${skillDetails[key].title}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                >
+                  See More
+                </motion.button>
+              </motion.div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </motion.div>
 
       <Modal
         show={isModalOpen}

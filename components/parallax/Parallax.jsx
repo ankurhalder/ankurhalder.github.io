@@ -25,6 +25,7 @@ const Parallax = ({ type, isDarkMode }) => {
   );
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const scaleBg = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+  const rotateStars = useTransform(scrollYProgress, [0, 1], ["0deg", "45deg"]);
   const moveCloud1 = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
   const moveCloud2 = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
 
@@ -75,6 +76,7 @@ const Parallax = ({ type, isDarkMode }) => {
             className="stars"
             style={{
               backgroundImage: `url(${starsImage})`,
+              rotate: rotateStars,
             }}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
