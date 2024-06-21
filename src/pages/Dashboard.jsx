@@ -18,7 +18,7 @@ function Dashboard({ isDarkMode, setIsDarkMode }) {
         <Skills />
       </section>
       <section>
-        <Parallax type="projects" />
+        <Parallax type="Projects" />
       </section>
       <section id="Projects">
         <ProjectsCoverFlow />
