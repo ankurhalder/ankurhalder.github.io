@@ -1,6 +1,6 @@
 .parallax {
   width: 100%;
-  height: 100%;
+  height: 100vh; /* Ensure full viewport height */
   position: relative;
   display: flex;
   justify-content: center;
@@ -8,76 +8,100 @@
   overflow: hidden;
   text-align: center;
   background-color: var(--background-color);
+}
 
-  h1 {
-    margin: 1% 0 0 0;
-    font-family: var(--font-oswald);
-    font-size: var(--font-1);
-    font-weight: 600;
-    color: var(--text-color);
-    letter-spacing: 4px;
-    line-height: 1.6;
-    text-transform: uppercase;
+.parallax h1 {
+  margin: 1% 0 0 0;
+  font-family: var(--font-oswald);
+  font-size: var(--font-1);
+  font-weight: 600;
+  color: var(--text-color);
+  letter-spacing: 4px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
 
-    @media (max-width: $breakpoint-tablet) {
-      font-size: var(--font-4);
-    }
-
-    @media (max-width: $breakpoint-phone) {
-      font-size: var(--font-3);
-    }
+@media (max-width: $breakpoint-tablet) {
+  .parallax h1 {
+    font-size: var(--font-4);
   }
+}
 
-  .mountains {
-    background-image: url("/parallax/mountains.png");
-    background-size: cover;
-    background-position: bottom;
+@media (max-width: $breakpoint-phone) {
+  .parallax h1 {
+    font-size: var(--font-3);
+  }
+}
+
+.parallax .mountains {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+
+  img {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 3;
-
-    @media (max-width: $breakpoint-phone) {
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
+    height: auto;
+    display: block;
   }
+}
 
-  .planets {
-    background-size: cover;
-    background-position: bottom;
+.parallax .cloud {
+  position: absolute;
+  width: 20%; /* Adjust the cloud size */
+  max-width: 200px; /* Maximum width of the cloud */
+  top: 10%; /* Adjust vertical position */
+  z-index: 4;
+  pointer-events: none;
+
+  img {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 2;
-    margin: 6% 0 0 0;
-    transition: transform 0.5s ease;
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    transform: translateZ(-50px);
-
-    @media (max-width: $breakpoint-phone) {
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
+    height: auto;
   }
+}
 
-  .stars {
-    background-size: cover;
-    background-position: bottom;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-    background-image: url("/parallax/stars.png");
-    transition: transform 0.5s ease;
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    transform: translateZ(-100px);
-  }
+.parallax .cloud-1 {
+  left: 5%; /* Adjust horizontal position */
+}
 
-  .planets:hover,
-  .stars:hover {
-    transform: scale(1.1) rotate(5deg);
+.parallax .cloud-2 {
+  right: 5%; /* Adjust horizontal position */
+}
+
+.parallax .planets {
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  margin: 6% 0 0 0;
+  transition: transform 0.5s ease;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: translateZ(-50px);
+
+  @media (max-width: $breakpoint-phone) {
+    background-size: contain;
+    background-repeat: no-repeat;
   }
+}
+
+.parallax .stars {
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  background-image: url("/parallax/stars.png");
+  transition: transform 0.5s ease;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+}
+
+.parallax .planets:hover,
+.parallax .stars:hover {
+  transform: scale(1.1) rotate(5deg);
 }

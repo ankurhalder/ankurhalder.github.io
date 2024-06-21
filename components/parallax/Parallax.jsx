@@ -4,6 +4,9 @@ import PropTypes from "prop-types";
 import planetsImage from "/parallax/planets.png";
 import sunImage from "/parallax/sun.png";
 import starsImage from "/parallax/stars.png";
+import cloud1Image from "/parallax/cloud-1.png";
+import cloud2Image from "/parallax/cloud-2.png";
+import mountainsImage from "/parallax/mountains.png";
 
 const Parallax = ({ type }) => {
   const ref = useRef();
@@ -17,6 +20,8 @@ const Parallax = ({ type }) => {
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const scaleBg = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
   const rotateStars = useTransform(scrollYProgress, [0, 1], ["0deg", "45deg"]);
+  const moveCloud1 = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+  const moveCloud2 = useTransform(scrollYProgress, [0, 1], ["-30%", "30%"]);
 
   const backgroundStyle = {
     backgroundColor: "var(--background-color)",
@@ -38,7 +43,23 @@ const Parallax = ({ type }) => {
           ? "Looking for a Skill Set That Matches Your Needs?"
           : "Explore My Projects and Get to Know Me Better!"}
       </motion.h1>
-      <motion.div className="mountains"></motion.div>
+      <motion.div className="mountains">
+        <img src={mountainsImage} alt="Mountains" />
+      </motion.div>
+      <motion.div
+        className="cloud cloud-1"
+        style={{ x: moveCloud1 }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
+      >
+        <img src={cloud1Image} alt="Cloud 1" />
+      </motion.div>
+      <motion.div
+        className="cloud cloud-2"
+        style={{ x: moveCloud2 }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
+      >
+        <img src={cloud2Image} alt="Cloud 2" />
+      </motion.div>
       <motion.div
         className="planets"
         style={{
