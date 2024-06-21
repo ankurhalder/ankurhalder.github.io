@@ -31,8 +31,8 @@ const Parallax = ({ type, isDarkMode }) => {
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const scaleBg = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
   const rotateStars = useTransform(scrollYProgress, [0, 1], ["0deg", "45deg"]);
-  const moveCloud1 = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-  const moveCloud2 = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+  const moveCloud1 = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+  const moveCloud2 = useTransform(scrollYProgress, [0, 1], ["-30%", "30%"]);
 
   // Dynamic styles based on dark mode
   const backgroundStyle = {
@@ -122,9 +122,9 @@ const Parallax = ({ type, isDarkMode }) => {
             <motion.div
               className="cloud cloud-1"
               style={{ x: moveCloud1 }}
-              initial={{ opacity: 0, x: "-10%" }}
-              animate={{ opacity: 1, x: "10%" }}
-              exit={{ opacity: 0, x: "-10%" }}
+              initial={{ opacity: 0, x: "-20%" }}
+              animate={{ opacity: 1, x: "20%" }}
+              exit={{ opacity: 0, x: "-20%" }}
               transition={{ ease: "easeInOut", duration: 1 }}
             >
               <img src={cloud1Image} alt="Cloud 1" />
@@ -133,9 +133,9 @@ const Parallax = ({ type, isDarkMode }) => {
             <motion.div
               className="cloud cloud-2"
               style={{ x: moveCloud2 }}
-              initial={{ opacity: 0, x: "-20%" }}
-              animate={{ opacity: 1, x: "20%" }}
-              exit={{ opacity: 0, x: "-20%" }}
+              initial={{ opacity: 0, x: "-30%" }}
+              animate={{ opacity: 1, x: "30%" }}
+              exit={{ opacity: 0, x: "-30%" }}
               transition={{ ease: "easeInOut", duration: 1 }}
             >
               <img src={cloud2Image} alt="Cloud 2" />
