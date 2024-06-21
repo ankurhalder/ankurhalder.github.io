@@ -7,6 +7,8 @@ import starsImage from "/parallax/stars.png";
 import cloud1Image from "/parallax/cloud-1.png";
 import cloud2Image from "/parallax/cloud-2.png";
 import mountainsImage from "/parallax/mountains.png";
+import sky1Image from "/parallax/sky-1.jpg";
+import sky2Image from "/parallax/sky-2.jpg";
 
 const Parallax = ({ type, isDarkMode }) => {
   const ref = useRef();
@@ -70,6 +72,20 @@ const Parallax = ({ type, isDarkMode }) => {
         </>
       ) : (
         <>
+          {type === "Skills" && (
+            <motion.div
+              className="sky"
+              style={{ backgroundImage: `url(${sky1Image})` }}
+              transition={{ ease: "easeOut", duration: 0.5 }}
+            ></motion.div>
+          )}
+          {type === "Projects" && (
+            <motion.div
+              className="sky"
+              style={{ backgroundImage: `url(${sky2Image})` }}
+              transition={{ ease: "easeOut", duration: 0.5 }}
+            ></motion.div>
+          )}
           <motion.div
             className="cloud cloud-1"
             style={{ x: moveCloud1 }}

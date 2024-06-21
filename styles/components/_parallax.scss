@@ -105,3 +105,15 @@
 .parallax .stars:hover {
   transform: scale(1.1) rotate(5deg);
 }
+.parallax .sky {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  transition: transform 0.5s ease;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: translateZ(-50px);
+}
