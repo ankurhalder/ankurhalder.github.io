@@ -62,7 +62,7 @@ const Parallax = ({ type }) => {
           ? "Looking for a Skill Set That Matches Your Needs?"
           : "Explore My Projects and Get to Know Me Better!"}
       </motion.h1>
-      <motion.div className="mountains"></motion.div>
+      <div className="mountains"></div>
       <motion.div
         className="planets"
         style={{
@@ -72,9 +72,15 @@ const Parallax = ({ type }) => {
         }}
         transition={{ ease: "easeOut", duration: 0.5 }}
       ></motion.div>
-      {theme === "dark" && (
+      {theme === "dark" ? (
         <motion.div
           className="stars"
+          style={{ rotate: rotateStars }}
+          transition={{ ease: "easeOut", duration: 0.5 }}
+        ></motion.div>
+      ) : (
+        <motion.div
+          className="clouds"
           style={{ rotate: rotateStars }}
           transition={{ ease: "easeOut", duration: 0.5 }}
         ></motion.div>

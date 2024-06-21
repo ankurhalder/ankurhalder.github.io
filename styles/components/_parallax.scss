@@ -3,9 +3,13 @@
   width: 100%;
   height: 100%;
   position: relative;
-  @include flex-container(row, nowrap, center, flex-start);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   overflow: hidden;
   text-align: center;
+  scroll-behavior: smooth; /* Smooth scrolling */
 
   @media (max-width: $breakpoint-desktop-wide) {
     /* Adjust styles for wide desktop */
@@ -54,6 +58,17 @@
     height: 100%;
     position: absolute;
     z-index: 3;
+  }
+
+  .planets,
+  .stars,
+  .clouds {
+    background-size: cover;
+    background-position: bottom;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 0.5s ease, opacity 0.5s ease;
 
     @media (max-width: $breakpoint-phone) {
       background-size: contain;
@@ -62,49 +77,31 @@
   }
 
   .planets {
-    background-size: cover;
-    background-position: bottom;
-    width: 100%;
-    height: 100%;
-    position: absolute;
     z-index: 2;
     margin: 6% 0 0 0;
-    transition: transform 0.5s ease;
-
-    @media (max-width: $breakpoint-phone) {
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-  }
-
-  .stars {
-    background-size: cover;
-    background-position: bottom;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-    transition: transform 0.5s ease;
-
-    @media (max-width: $breakpoint-phone) {
-      /* Adjust styles for phones */
-    }
-  }
-
-  /* Additional Enhancements */
-
-  .planets {
     perspective: 1000px; /* Adjust perspective for 3D depth effect */
     transform-style: preserve-3d;
     transform: translateZ(-50px); /* Adjust translateZ for depth perception */
   }
 
   .stars {
+    z-index: 1;
     perspective: 1000px; /* Adjust perspective for 3D depth effect */
     transform-style: preserve-3d;
     transform: translateZ(
       -100px
     ); /* Adjust translateZ for deeper depth perception */
+    background-image: url("/parallax/stars.png");
+  }
+
+  .clouds {
+    z-index: 1;
+    perspective: 1000px; /* Adjust perspective for 3D depth effect */
+    transform-style: preserve-3d;
+    transform: translateZ(
+      -100px
+    ); /* Adjust translateZ for deeper depth perception */
+    background-image: url("/parallax/blue-sky.png");
   }
 
   &.projects {
@@ -116,20 +113,21 @@
   }
 
   .planets:hover,
-  .stars:hover {
+  .stars:hover,
+  .clouds:hover {
     transform: scale(1.1) rotate(5deg); /* Adjust scale and rotation for hover effect */
   }
-}
 
-/* Theme-specific styles */
-.theme-dark {
-  .parallax .stars {
-    background-image: url("/parallax/stars.png");
+  /* Theme-specific styles */
+  .theme-dark {
+    .parallax .stars {
+      background-image: url("/parallax/stars.png");
+    }
   }
-}
 
-.theme-light {
-  .parallax .stars {
-    background-image: url("/parallax/blue-sky.png");
+  .theme-light {
+    .parallax .clouds {
+      background-image: url("/parallax/blue-sky.png");
+    }
   }
 }
