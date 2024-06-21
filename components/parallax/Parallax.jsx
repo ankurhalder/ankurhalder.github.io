@@ -1,5 +1,10 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
 import PropTypes from "prop-types";
 import planetsImage from "/parallax/planets.png";
 import sunImage from "/parallax/sun.png";
@@ -69,81 +74,89 @@ const Parallax = ({ type, isDarkMode }) => {
       </motion.div>
 
       {/* Render elements based on dark mode and type */}
-      {isDarkMode ? (
-        <>
-          {/* Animated stars */}
-          <motion.div
-            className="stars"
-            style={{
-              backgroundImage: `url(${starsImage})`,
-              rotate: rotateStars,
-            }}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ ease: "easeInOut", duration: 1 }}
-          ></motion.div>
-
-          {/* Animated planets */}
-          <motion.div
-            className="planets"
-            style={{
-              y: yBg,
-              scale: scaleBg,
-              backgroundImage: `url(${planetImage})`,
-            }}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ ease: "easeInOut", duration: 1 }}
-          ></motion.div>
-        </>
-      ) : (
-        <>
-          {/* Sky background (conditional based on type) */}
-          {(type === "Skills" || type === "Projects") && (
+      <AnimatePresence>
+        {isDarkMode ? (
+          <>
+            {/* Animated stars */}
             <motion.div
-              className="sky"
-              style={{ backgroundImage: `url(${sky1Image})` }}
+              className="stars"
+              style={{
+                backgroundImage: `url(${starsImage})`,
+                rotate: rotateStars,
+              }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
               transition={{ ease: "easeInOut", duration: 1 }}
-            ></motion.div>
-          )}
+            />
 
-          {/* Animated clouds */}
-          <motion.div
-            className="cloud cloud-1"
-            style={{ x: moveCloud1 }}
-            initial={{ opacity: 0, x: "-10%" }}
-            animate={{ opacity: 1, x: "10%" }}
-            transition={{ ease: "easeInOut", duration: 1 }}
-          >
-            <img src={cloud1Image} alt="Cloud 1" />
-          </motion.div>
+            {/* Animated planets */}
+            <motion.div
+              className="planets"
+              style={{
+                y: yBg,
+                scale: scaleBg,
+                backgroundImage: `url(${planetImage})`,
+              }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ ease: "easeInOut", duration: 1 }}
+            />
+          </>
+        ) : (
+          <>
+            {/* Sky background (conditional based on type) */}
+            {(type === "Skills" || type === "Projects") && (
+              <motion.div
+                className="sky"
+                style={{ backgroundImage: `url(${sky1Image})` }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ ease: "easeInOut", duration: 1 }}
+              />
+            )}
 
-          <motion.div
-            className="cloud cloud-2"
-            style={{ x: moveCloud2 }}
-            initial={{ opacity: 0, x: "-20%" }}
-            animate={{ opacity: 1, x: "20%" }}
-            transition={{ ease: "easeInOut", duration: 1 }}
-          >
-            <img src={cloud2Image} alt="Cloud 2" />
-          </motion.div>
+            {/* Animated clouds */}
+            <motion.div
+              className="cloud cloud-1"
+              style={{ x: moveCloud1 }}
+              initial={{ opacity: 0, x: "-10%" }}
+              animate={{ opacity: 1, x: "10%" }}
+              exit={{ opacity: 0, x: "-10%" }}
+              transition={{ ease: "easeInOut", duration: 1 }}
+            >
+              <img src={cloud1Image} alt="Cloud 1" />
+            </motion.div>
 
-          {/* Animated planets */}
-          <motion.div
-            className="planets"
-            style={{
-              y: yBg,
-              scale: scaleBg,
-              backgroundImage: `url(${planetImage})`,
-            }}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ ease: "easeInOut", duration: 1 }}
-          ></motion.div>
-        </>
-      )}
+            <motion.div
+              className="cloud cloud-2"
+              style={{ x: moveCloud2 }}
+              initial={{ opacity: 0, x: "-20%" }}
+              animate={{ opacity: 1, x: "20%" }}
+              exit={{ opacity: 0, x: "-20%" }}
+              transition={{ ease: "easeInOut", duration: 1 }}
+            >
+              <img src={cloud2Image} alt="Cloud 2" />
+            </motion.div>
+
+            {/* Animated planets */}
+            <motion.div
+              className="planets"
+              style={{
+                y: yBg,
+                scale: scaleBg,
+                backgroundImage: `url(${planetImage})`,
+              }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ ease: "easeInOut", duration: 1 }}
+            />
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
