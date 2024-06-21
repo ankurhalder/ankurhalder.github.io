@@ -1,6 +1,6 @@
 .parallax {
   width: 100%;
-  height: 100vh; /* Ensure full viewport height */
+  height: 100vh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -48,9 +48,9 @@
 
 .parallax .cloud {
   position: absolute;
-  width: 20%; /* Adjust the cloud size */
-  max-width: 200px; /* Maximum width of the cloud */
-  top: 10%; /* Adjust vertical position */
+  width: 20%;
+  max-width: 200px;
+  top: 10%;
   z-index: 4;
   pointer-events: none;
 
@@ -61,11 +61,11 @@
 }
 
 .parallax .cloud-1 {
-  left: 5%; /* Adjust horizontal position */
+  left: 5%;
 }
 
 .parallax .cloud-2 {
-  right: 5%; /* Adjust horizontal position */
+  right: 5%;
 }
 
 .parallax .planets {
