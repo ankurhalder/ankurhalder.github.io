@@ -13,6 +13,8 @@ const Parallax = ({ type }) => {
 
   const yText = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const scaleBg = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
+  const rotateStars = useTransform(scrollYProgress, [0, 1], ["0deg", "45deg"]);
 
   const backgroundStyle = {
     backgroundColor: "var(--background-color)",
@@ -27,7 +29,10 @@ const Parallax = ({ type }) => {
       ref={ref}
       style={backgroundStyle}
     >
-      <motion.h1 style={{ y: yText }}>
+      <motion.h1
+        style={{ y: yText }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
+      >
         {type === "Skills"
           ? "Looking for a Skill Set That Matches Your Needs?"
           : "Explore My Projects and Get to Know Me Better!"}
@@ -37,10 +42,16 @@ const Parallax = ({ type }) => {
         className="planets"
         style={{
           y: yBg,
+          scale: scaleBg,
           backgroundImage: `url(${planetImage})`,
         }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
       ></motion.div>
-      <motion.div style={{ x: yBg }} className="stars"></motion.div>
+      <motion.div
+        className="stars"
+        style={{ rotate: rotateStars }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
+      ></motion.div>
     </div>
   );
 };
