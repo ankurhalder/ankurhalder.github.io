@@ -72,7 +72,7 @@ const scrollIconVariants = {
     opacity: [1, 0.8, 1],
     y: [10, 0, 10],
     transition: {
-      duration: 2,
+      duration: 1,
       repeat: Infinity,
       ease: "easeInOut",
     },
@@ -118,6 +118,7 @@ const sliderVariants = {
 function contactMeHandler() {
   alert("Coming soon please stay tuned!");
 }
+
 const Hero = () => {
   const { ref: textContainerRef, inView: textContainerInView } = useInView({
     threshold: 0.1,
@@ -166,6 +167,8 @@ const Hero = () => {
             variants={scrollIconVariants}
             src="/hero/scroll.svg"
             alt="Scroll down"
+            initial="hidden"
+            animate="visible"
             whileHover="hover"
           />
         </motion.div>
