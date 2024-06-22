@@ -1,18 +1,19 @@
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-// do not delete this commented code
+//@ do not delete this commented code
 // import { ToggleBar } from "../../pieces";
 import PropTypes from "prop-types";
 
-function Navbar() {
+// eslint-disable-next-line no-unused-vars
+function Navbar({ isDarkMode, setIsDarkMode }) {
+  const [triggerAnimations, setTriggerAnimations] = useState(false);
   const logoControls = useAnimation();
   const socialControls = useAnimation();
 
   const { ref: navbarRef, inView: navbarInView } = useInView({
     threshold: 0.1,
-    triggerOnce: true,
   });
 
   const socialVariants = {
@@ -32,7 +33,22 @@ function Navbar() {
   };
 
   useEffect(() => {
-    if (navbarInView) {
+    const handleScroll = () => {
+      if (navbarInView && !triggerAnimations) {
+        setTriggerAnimations(true);
+      } else if (!navbarInView && triggerAnimations) {
+        setTriggerAnimations(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [navbarInView, triggerAnimations]);
+
+  useEffect(() => {
+    if (triggerAnimations) {
       const animateNavbar = async () => {
         await logoControls.start({
           opacity: 1,
@@ -43,8 +59,12 @@ function Navbar() {
         socialControls.start((i) => socialVariants.animate(i));
       };
       animateNavbar();
+    } else {
+      // Reset animations when triggerAnimations is false
+      logoControls.set({ opacity: 0, scale: 0.5 });
+      socialControls.set({ opacity: 0, y: 20 });
     }
-  }, [logoControls, socialControls, navbarInView]);
+  }, [triggerAnimations, logoControls, socialControls, socialVariants]);
 
   return (
     <Fragment>
@@ -57,7 +77,7 @@ function Navbar() {
           src="/apple-icon.png"
           alt="Logo"
         />
-        {/* Do not delete  this commented code */}
+        {/* orange Do not delete  this commented code */}
         {/* <ToggleBar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} /> */}
         <div className="social">
           {[
