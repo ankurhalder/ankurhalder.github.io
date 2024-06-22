@@ -31,14 +31,20 @@
     line-height: 1.6;
 
     @media (max-width: $breakpoint-desktop-wide) {
+      margin: 3% 0 0 0;
     }
     @media (max-width: $breakpoint-desktop) {
+      margin: 5% 0 0 0;
     }
     @media (max-width: $breakpoint-large-tablet) {
+      margin: 7% 0 0 0;
     }
     @media (max-width: $breakpoint-tablet) {
+      margin: 20% 0 0 0;
     }
     @media (max-width: $breakpoint-phone) {
+      margin: 25% 0 0 0;
+      font-size: var(--font-5);
     }
   }
 
@@ -155,18 +161,11 @@
     @media (max-width: $breakpoint-large-tablet) {
     }
     @media (max-width: $breakpoint-tablet) {
-    }
-    @media (max-width: $breakpoint-phone) {
-    }
-    @media (max-width: 768px) {
       background-size: contain;
       background-repeat: no-repeat;
       transform: translateY(10%);
     }
-
-    @media (max-width: 480px) {
-      background-size: contain;
-      background-repeat: no-repeat;
+    @media (max-width: $breakpoint-phone) {
       transform: translateY(20%);
     }
   }
@@ -174,8 +173,6 @@
   .planets {
     transform: translateZ(-50px);
     z-index: 2;
-    margin-top: 6%;
-    transform: translateZ(-50px);
     @media (max-width: $breakpoint-desktop-wide) {
     }
     @media (max-width: $breakpoint-desktop) {
