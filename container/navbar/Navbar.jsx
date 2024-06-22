@@ -40,7 +40,6 @@ function Navbar({ isDarkMode, setIsDarkMode }) {
   );
 
   useEffect(() => {
-    // Trigger animations when component mounts
     setTriggerAnimations(true);
   }, []);
 
@@ -73,7 +72,6 @@ function Navbar({ isDarkMode, setIsDarkMode }) {
     if (triggerAnimations) {
       animateNavbar();
     } else {
-      // Reset animations when triggerAnimations is false
       logoControls.set({ opacity: 0, scale: 0.5 });
       socialControls.set({ opacity: 0, y: 20 });
     }
@@ -84,7 +82,7 @@ function Navbar({ isDarkMode, setIsDarkMode }) {
       <div className="navbar" ref={navbarRef}>
         <motion.img
           className="logo"
-          initial={{ opacity: 0, scale: 0.5 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={logoControls}
           whileHover={{ scale: 1.1 }}
           onTap={() => {
@@ -94,10 +92,10 @@ function Navbar({ isDarkMode, setIsDarkMode }) {
             });
             setTimeout(() => {
               logoControls.start({
-                scale: 1, // Return to original scale
-                transition: { duration: 0.5 }, // Adjust duration as needed
+                scale: 1,
+                transition: { duration: 0.5 },
               });
-            }, 500); // Adjust the delay duration (in milliseconds) as needed
+            }, 500);
           }}
           onClick={() => {
             logoControls.start({
@@ -106,10 +104,10 @@ function Navbar({ isDarkMode, setIsDarkMode }) {
             });
             setTimeout(() => {
               logoControls.start({
-                scale: 1, // Return to original scale
-                transition: { duration: 0.5 }, // Adjust duration as needed
+                scale: 1,
+                transition: { duration: 0.5 },
               });
-            }, 500); // Adjust the delay duration (in milliseconds) as needed
+            }, 500);
           }}
           src="/apple-icon.png"
           alt="Logo"
