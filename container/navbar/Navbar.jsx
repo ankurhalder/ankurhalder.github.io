@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Fragment, useEffect, useState, useMemo } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -6,7 +7,6 @@ import { useInView } from "react-intersection-observer";
 // import { ToggleBar } from "../../pieces";
 import PropTypes from "prop-types";
 
-// eslint-disable-next-line no-unused-vars
 function Navbar({ isDarkMode, setIsDarkMode }) {
   const [triggerAnimations, setTriggerAnimations] = useState(false);
   const logoControls = useAnimation();
@@ -27,7 +27,7 @@ function Navbar({ isDarkMode, setIsDarkMode }) {
         y: 0,
         transition: {
           duration: 0.5,
-          delay: i === 0 ? 0 : i * 0.2,
+          delay: i * 0.2,
           ease: "easeOut",
         },
       }),
@@ -38,6 +38,11 @@ function Navbar({ isDarkMode, setIsDarkMode }) {
     }),
     []
   );
+
+  useEffect(() => {
+    // Trigger animations when component mounts
+    setTriggerAnimations(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,16 +60,17 @@ function Navbar({ isDarkMode, setIsDarkMode }) {
   }, [navbarInView, triggerAnimations]);
 
   useEffect(() => {
+    const animateNavbar = async () => {
+      await logoControls.start({
+        opacity: 1,
+        scale: 1,
+        rotate: 360,
+        transition: { duration: 1, type: "spring", stiffness: 200 },
+      });
+      socialControls.start((i) => socialVariants.animate(i));
+    };
+
     if (triggerAnimations) {
-      const animateNavbar = async () => {
-        await logoControls.start({
-          opacity: 1,
-          scale: 1,
-          rotate: 360,
-          transition: { duration: 1, type: "spring", stiffness: 200 },
-        });
-        socialControls.start((i) => socialVariants.animate(i));
-      };
       animateNavbar();
     } else {
       // Reset animations when triggerAnimations is false
