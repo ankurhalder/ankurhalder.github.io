@@ -15,7 +15,7 @@
   }
   .textContainer {
     align-self: flex-end;
-    margin-right: 4%;
+    margin: 1% 5% 0 0;
     @include flex-container(column, center, center, center);
     @media (max-width: $breakpoint-desktop-wide) {
     }
@@ -24,11 +24,13 @@
     @media (max-width: $breakpoint-large-tablet) {
     }
     @media (max-width: $breakpoint-tablet) {
+      margin: 4% 0 2% 0;
       align-self: center;
       text-align: center;
       flex-direction: column;
     }
     @media (max-width: $breakpoint-phone) {
+      margin: 4% 4% 2% 0;
     }
 
     p {
@@ -205,6 +207,18 @@
     width: 100%;
     height: 50%;
     padding-top: 30px;
+    @media (max-width: $breakpoint-desktop-wide) {
+    }
+    @media (max-width: $breakpoint-desktop) {
+    }
+    @media (max-width: $breakpoint-large-tablet) {
+    }
+    @media (max-width: $breakpoint-tablet) {
+    }
+    @media (max-width: $breakpoint-phone) {
+      width: 100%;
+      height: 55%;
+    }
     .swiper-pagination-bullet {
       // @include flex-container(row, nowrap, center, center);
       width: 20px;
@@ -221,9 +235,11 @@
         margin: 0 1.5% 1% 0;
       }
       @media (max-width: $breakpoint-tablet) {
+        width: 17px;
+        height: 17px;
       }
       @media (max-width: $breakpoint-phone) {
-        margin: 0 2% 1% 0;
+        margin: 0 2% 10% 0;
         width: 15px;
         height: 15px;
       }
@@ -233,6 +249,22 @@
       background-size: cover;
       width: 250px;
       height: 250px;
+      @media (max-width: $breakpoint-desktop-wide) {
+        width: 240px;
+        height: 240px;
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+        width: 230px;
+        height: 230px;
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
+        width: 200px;
+        height: 200px;
+      }
       .card {
         @include flex-container(column, center, center, center);
         background: linear-gradient(
@@ -243,6 +275,19 @@
         border-radius: 12px;
         padding: 20px;
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        @media (max-width: $breakpoint-desktop-wide) {
+          padding: 18px;
+        }
+        @media (max-width: $breakpoint-desktop) {
+        }
+        @media (max-width: $breakpoint-large-tablet) {
+          padding: 15px;
+        }
+        @media (max-width: $breakpoint-tablet) {
+        }
+        @media (max-width: $breakpoint-phone) {
+          padding: 10px;
+        }
       }
 
       .card:hover {
@@ -257,6 +302,22 @@
         object-fit: cover;
         border-radius: 50%;
         margin: 5% 0 5% 0;
+        @media (max-width: $breakpoint-desktop-wide) {
+          max-width: 110px;
+          max-height: 110px;
+        }
+        @media (max-width: $breakpoint-desktop) {
+        }
+        @media (max-width: $breakpoint-large-tablet) {
+          max-width: 100px;
+          max-height: 100px;
+        }
+        @media (max-width: $breakpoint-tablet) {
+        }
+        @media (max-width: $breakpoint-phone) {
+          max-width: 90px;
+          max-height: 90px;
+        }
       }
 
       .card span {
@@ -265,6 +326,18 @@
         font-size: var(--font-12);
         letter-spacing: 2px;
         font-weight: 400;
+        @media (max-width: $breakpoint-desktop-wide) {
+        }
+        @media (max-width: $breakpoint-desktop) {
+        }
+        @media (max-width: $breakpoint-large-tablet) {
+          font-size: var(--font-11);
+        }
+        @media (max-width: $breakpoint-tablet) {
+          font-size: var(--font-9);
+        }
+        @media (max-width: $breakpoint-phone) {
+        }
       }
 
       .card .seeMoreButton {
@@ -280,15 +353,22 @@
         font-weight: 400;
         cursor: pointer;
         @media (max-width: $breakpoint-desktop-wide) {
+          margin: 6% 0 6% 0;
         }
         @media (max-width: $breakpoint-desktop) {
         }
         @media (max-width: $breakpoint-large-tablet) {
+          margin: 7% 0 7% 0;
+          padding: 10px 20px;
         }
         @media (max-width: $breakpoint-tablet) {
-          font-size: var(--font-11);
+          font-size: var(--font-12);
+          padding: 8px 16px;
+          margin: 6% 0 6% 0;
         }
         @media (max-width: $breakpoint-phone) {
+          font-size: var(--font-11);
+          margin: 7% 0 7% 0;
         }
       }
       // ! keep it here
