@@ -23,7 +23,6 @@ const Parallax = ({ type, isDarkMode }) => {
   });
 
   const { ref: textInViewRef, inView: textInView } = useInView({
-    // triggerOnce: true,
     threshold: 0.5,
   });
 
@@ -51,7 +50,6 @@ const Parallax = ({ type, isDarkMode }) => {
     [0, 1],
     viewportWidth >= 450 ? ["0deg", "45deg"] : ["0deg", "0deg"]
   );
-  const rotatesky = useTransform(scrollYProgress, [0, 1], ["0deg", "0deg"]);
   const moveCloud1 = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
   const moveCloud2 = useTransform(scrollYProgress, [0, 1], ["-30%", "30%"]);
 
@@ -119,16 +117,15 @@ const Parallax = ({ type, isDarkMode }) => {
                 className="sky"
                 style={{
                   backgroundImage: `url(${sky1Image})`,
-                  rotate: rotatesky,
                 }}
               />
             )}
 
             <motion.div
               className="cloud cloud-1"
-              style={{ x: moveCloud1 }}
+              style={{ x: moveCloud1, zIndex: 1 }}
               initial={{ opacity: 0, x: "-10%" }}
-              animate={{ opacity: 1, x: "10%" }}
+              animate={{ opacity: 1, x: "25%" }}
               transition={{ ease: "easeInOut", duration: 0.8 }}
             >
               <img src={cloud1Image} alt="Cloud 1" />
@@ -137,8 +134,8 @@ const Parallax = ({ type, isDarkMode }) => {
             <motion.div
               className="cloud cloud-2"
               style={{ x: moveCloud2 }}
-              initial={{ opacity: 0, x: "-15%" }}
-              animate={{ opacity: 1, x: "15%" }}
+              initial={{ opacity: 0, x: "-10%" }}
+              animate={{ opacity: 1, x: "25%" }}
               transition={{ ease: "easeInOut", duration: 0.8 }}
             >
               <img src={cloud2Image} alt="Cloud 2" />
