@@ -29,6 +29,7 @@
       max-width: max(500px, 60%);
     }
     @media (max-width: $breakpoint-phone) {
+      max-width: max(300px, 60%);
     }
     .textContainer {
       width: 50%;
@@ -51,6 +52,7 @@
         text-align: center;
       }
       @media (max-width: $breakpoint-phone) {
+        gap: 20px;
       }
 
       h1 {
@@ -73,6 +75,7 @@
           font-size: var(--font-8);
         }
         @media (max-width: $breakpoint-phone) {
+          font-size: var(--font-7);
         }
       }
 
@@ -95,6 +98,7 @@
           font-size: var(--font-2);
         }
         @media (max-width: $breakpoint-phone) {
+          font-size: var(--font-3);
         }
       }
 
@@ -111,6 +115,8 @@
           margin: 0 2% 0 0;
         }
         @media (max-width: $breakpoint-phone) {
+          margin: 0;
+          gap: 10px;
         }
         button {
           font-family: var(--font-tektur);
@@ -139,6 +145,8 @@
             font-size: var(--font-12);
           }
           @media (max-width: $breakpoint-phone) {
+            padding: 15px;
+            font-size: var(--font-11);
           }
         }
       }
@@ -164,8 +172,8 @@
           max-height: 50px;
         }
         @media (max-width: $breakpoint-phone) {
-          max-width: 40px;
-          max-height: 40px;
+          max-width: 45px;
+          max-height: 45px;
         }
       }
     }
@@ -189,6 +197,7 @@
       bottom: 0;
     }
     @media (max-width: $breakpoint-phone) {
+      height: 60%;
     }
 
     img {
