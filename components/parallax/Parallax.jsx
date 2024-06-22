@@ -52,7 +52,7 @@ const Parallax = ({ type, isDarkMode }) => {
         style={{ y: yText }}
         initial={{ opacity: 0, y: "-10%" }}
         animate={{ opacity: 1, y: "0%" }}
-        transition={{ ease: "easeInOut", duration: 1 }}
+        transition={{ ease: "easeInOut", duration: 0.8 }}
       >
         {type === "Skills"
           ? "Looking for a Skill Set That Matches Your Needs?"
@@ -75,11 +75,12 @@ const Parallax = ({ type, isDarkMode }) => {
               style={{
                 backgroundImage: `url(${starsImage})`,
                 rotate: rotateStars,
+                translateZ: "-100px", // Enhanced depth
               }}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ ease: "easeInOut", duration: 1 }}
+              initial={{ opacity: 0, scale: 0.8, translateZ: "-50px" }}
+              animate={{ opacity: 1, scale: 1, translateZ: "0px" }}
+              exit={{ opacity: 0, scale: 0.8, translateZ: "-50px" }}
+              transition={{ ease: "easeInOut", duration: 0.8 }} // Smooth transition
             />
 
             <motion.div
@@ -111,10 +112,9 @@ const Parallax = ({ type, isDarkMode }) => {
             <motion.div
               className="cloud cloud-1"
               style={{ x: moveCloud1 }}
-              initial={{ opacity: 0, x: "-20%" }}
-              animate={{ opacity: 1, x: "20%" }}
-              exit={{ opacity: 0, x: "-20%" }}
-              transition={{ ease: "easeInOut", duration: 1 }}
+              initial={{ opacity: 0, x: "-10%" }}
+              animate={{ opacity: 1, x: "10%" }}
+              transition={{ ease: "easeInOut", duration: 0.8 }}
             >
               <img src={cloud1Image} alt="Cloud 1" />
             </motion.div>
@@ -122,10 +122,9 @@ const Parallax = ({ type, isDarkMode }) => {
             <motion.div
               className="cloud cloud-2"
               style={{ x: moveCloud2 }}
-              initial={{ opacity: 0, x: "-30%" }}
-              animate={{ opacity: 1, x: "30%" }}
-              exit={{ opacity: 0, x: "-30%" }}
-              transition={{ ease: "easeInOut", duration: 1 }}
+              initial={{ opacity: 0, x: "-15%" }}
+              animate={{ opacity: 1, x: "15%" }}
+              transition={{ ease: "easeInOut", duration: 0.8 }}
             >
               <img src={cloud2Image} alt="Cloud 2" />
             </motion.div>
@@ -139,8 +138,7 @@ const Parallax = ({ type, isDarkMode }) => {
               }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ ease: "easeInOut", duration: 1 }}
+              transition={{ ease: "easeInOut", duration: 0.8 }}
             />
           </>
         )}
