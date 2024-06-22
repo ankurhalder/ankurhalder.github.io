@@ -15,13 +15,11 @@
     z-index: 100;
     margin: 1% 0 0 0;
     font-family: var(--font-cromback);
-    // font-family: var(--font-lighters);
-    font-size: var(--font-1);
+    font-size: var(--font-3);
     font-weight: 400;
-    color: var(--text-color);
+    color: var(--text-color-4);
     letter-spacing: 4px;
     line-height: 1.6;
-    // text-transform: uppercase;
 
     @media (max-width: 768px) {
       font-size: var(--font-4);
