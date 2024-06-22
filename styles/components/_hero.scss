@@ -103,6 +103,7 @@
       }
 
       .buttons {
+        z-index: 10;
         @include flex-container(row, nowrap, center, center);
         gap: 20px;
         @media (max-width: $breakpoint-desktop-wide) {
@@ -152,6 +153,7 @@
       }
 
       img {
+        z-index: 9;
         max-width: 70px;
         max-height: 70px;
         color: var(--text-color);
