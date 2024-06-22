@@ -14,11 +14,12 @@
   }
   .wrapper {
     height: 100%;
-    margin: auto;
+    margin: 0 auto;
+    max-width: max(1500px, 60%);
     @media (max-width: $breakpoint-desktop-wide) {
+      // max-width: max(1200px, 60%);
     }
     @media (max-width: $breakpoint-desktop) {
-      max-width: max(1200px, 60%);
     }
     @media (max-width: $breakpoint-large-tablet) {
       max-width: max(1000px, 60%);

@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 const textContainerVariants = {
   hidden: {
     opacity: 0,
-    y: 50,
+    y: 100,
   },
   visible: {
     opacity: 1,
@@ -19,7 +19,7 @@ const textContainerVariants = {
 const titleVariants = {
   hidden: {
     opacity: 0,
-    y: 20,
+    y: 100,
   },
   visible: {
     opacity: 1,
@@ -31,7 +31,7 @@ const titleVariants = {
     },
   },
   hover: {
-    scale: 1.05,
+    scale: 1.02,
     transition: {
       duration: 0.3,
       ease: "easeOut",
@@ -54,7 +54,7 @@ const buttonVariants = {
     },
   },
   hover: {
-    scale: 1.05,
+    scale: 1.02,
     boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)",
     transition: {
       duration: 0.3,
