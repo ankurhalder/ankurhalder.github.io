@@ -22,7 +22,6 @@ const Parallax = ({ type, isDarkMode }) => {
     offset: ["start start", "end start"],
   });
 
-  // Animations for different elements
   const yText = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
@@ -34,12 +33,10 @@ const Parallax = ({ type, isDarkMode }) => {
   const moveCloud1 = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
   const moveCloud2 = useTransform(scrollYProgress, [0, 1], ["-30%", "30%"]);
 
-  // Dynamic styles based on dark mode
   const backgroundStyle = {
     backgroundColor: isDarkMode ? "#111" : "#fff",
   };
 
-  // Choose planet image based on dark mode
   const planetImage = isDarkMode ? planetsImage : sunImage;
 
   return (
@@ -50,7 +47,6 @@ const Parallax = ({ type, isDarkMode }) => {
       ref={ref}
       style={backgroundStyle}
     >
-      {/* Animated heading */}
       <motion.h1
         className="parallax-heading"
         style={{ y: yText }}
@@ -62,8 +58,6 @@ const Parallax = ({ type, isDarkMode }) => {
           ? "Looking for a Skill Set That Matches Your Needs?"
           : "Explore My Projects and Get to Know Me Better!"}
       </motion.h1>
-
-      {/* Static mountains */}
       <motion.div
         className="mountains"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -73,11 +67,9 @@ const Parallax = ({ type, isDarkMode }) => {
         <img src={mountainsImage} alt="Mountains" />
       </motion.div>
 
-      {/* Render elements based on dark mode and type */}
       <AnimatePresence>
         {isDarkMode ? (
           <>
-            {/* Animated stars */}
             <motion.div
               className="stars"
               style={{
@@ -90,7 +82,6 @@ const Parallax = ({ type, isDarkMode }) => {
               transition={{ ease: "easeInOut", duration: 1 }}
             />
 
-            {/* Animated planets */}
             <motion.div
               className="planets"
               style={{
@@ -106,7 +97,6 @@ const Parallax = ({ type, isDarkMode }) => {
           </>
         ) : (
           <>
-            {/* Sky background (conditional based on type) */}
             {(type === "Skills" || type === "Projects") && (
               <motion.div
                 className="sky"
@@ -118,7 +108,6 @@ const Parallax = ({ type, isDarkMode }) => {
               />
             )}
 
-            {/* Animated clouds */}
             <motion.div
               className="cloud cloud-1"
               style={{ x: moveCloud1 }}
@@ -141,7 +130,6 @@ const Parallax = ({ type, isDarkMode }) => {
               <img src={cloud2Image} alt="Cloud 2" />
             </motion.div>
 
-            {/* Animated planets */}
             <motion.div
               className="planets"
               style={{

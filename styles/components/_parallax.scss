@@ -21,13 +21,13 @@
   text-transform: uppercase;
 }
 
-@media (max-width: $breakpoint-tablet) {
+@media (max-width: 768px) {
   .parallax h1 {
     font-size: var(--font-4);
   }
 }
 
-@media (max-width: $breakpoint-phone) {
+@media (max-width: 480px) {
   .parallax h1 {
     font-size: var(--font-3);
   }
@@ -35,15 +35,16 @@
 
 .parallax .mountains {
   width: 100%;
-  height: 100%;
+  height: auto;
   position: absolute;
+  bottom: 0;
   z-index: 3;
+}
 
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+.parallax .mountains img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .parallax .cloud {
@@ -53,11 +54,11 @@
   top: 10%;
   z-index: 4;
   pointer-events: none;
+}
 
-  img {
-    width: 100%;
-    height: auto;
-  }
+.parallax .cloud img {
+  width: 100%;
+  height: auto;
 }
 
 .parallax .cloud-1 {
@@ -68,52 +69,36 @@
   right: 5%;
 }
 
-.parallax .planets {
-  background-size: cover;
-  background-position: bottom;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 2;
-  margin: 6% 0 0 0;
-  transition: transform 0.5s ease;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-  transform: translateZ(-50px);
-
-  @media (max-width: $breakpoint-phone) {
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-}
-
-.parallax .stars {
-  background-size: cover;
-  background-position: bottom;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 1;
-  background-image: url("/parallax/stars.png");
-  transition: transform 0.5s ease;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-  transform: translateZ(-100px);
-}
-
-.parallax .planets:hover,
-.parallax .stars:hover {
-  transform: scale(1.1) rotate(5deg);
-}
+.parallax .planets,
+.parallax .stars,
 .parallax .sky {
   background-size: cover;
   background-position: center;
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 1;
   transition: transform 0.5s ease;
   perspective: 1000px;
   transform-style: preserve-3d;
+}
+
+.parallax .planets {
+  z-index: 2;
+  margin-top: 6%;
   transform: translateZ(-50px);
+}
+
+.parallax .stars {
+  z-index: 1;
+  transform: translateZ(-100px);
+}
+
+.parallax .sky {
+  z-index: 1;
+  transform: translateZ(-50px);
+}
+
+.parallax .planets:hover,
+.parallax .stars:hover {
+  transform: scale(1.1) rotate(5deg);
 }
