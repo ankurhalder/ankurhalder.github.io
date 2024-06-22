@@ -1,6 +1,7 @@
 .sidebar {
   background-color: var(--background);
   color: var(--text-color-inverse);
+  height: 100dvh;
   .bg {
     z-index: 999;
     position: fixed;
@@ -37,9 +38,10 @@
       @media (max-width: $breakpoint-desktop) {
       }
       @media (max-width: $breakpoint-large-tablet) {
+        font-size: var(--font-5);
       }
       @media (max-width: $breakpoint-tablet) {
-        font-size: var(--font-6);
+        font-size: var(--font-4);
       }
       @media (max-width: $breakpoint-phone) {
       }
@@ -88,8 +90,10 @@
         @media (max-width: $breakpoint-desktop) {
         }
         @media (max-width: $breakpoint-large-tablet) {
+          font-size: var(--font-6);
         }
         @media (max-width: $breakpoint-tablet) {
+          font-size: var(--font-5);
         }
         @media (max-width: $breakpoint-phone) {
           font-size: var(--font-5);
