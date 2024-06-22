@@ -6,6 +6,7 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import PropTypes from "prop-types";
+import { useInView } from "react-intersection-observer";
 import planetsImage from "/parallax/planets.png";
 import sunImage from "/parallax/sun.png";
 import starsImage from "/parallax/stars.png";
@@ -16,10 +17,14 @@ import sky1Image from "/parallax/sky-1.png";
 
 const Parallax = ({ type, isDarkMode }) => {
   const ref = useRef();
-
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
+  });
+
+  const { ref: textInViewRef, inView: textInView } = useInView({
+    // triggerOnce: true,
+    threshold: 0.5,
   });
 
   const yText = useTransform(
@@ -34,7 +39,7 @@ const Parallax = ({ type, isDarkMode }) => {
   const moveCloud2 = useTransform(scrollYProgress, [0, 1], ["-30%", "30%"]);
 
   const backgroundStyle = {
-    backgroundColor: "var( --background-color)",
+    backgroundColor: "var(--background-color)",
   };
 
   const planetImage = isDarkMode ? planetsImage : sunImage;
@@ -51,8 +56,11 @@ const Parallax = ({ type, isDarkMode }) => {
         className="parallax-heading"
         style={{ y: yText }}
         initial={{ opacity: 0, y: "-10%" }}
-        animate={{ opacity: 1, y: "0%" }}
+        animate={
+          textInView ? { opacity: 1, y: "0%" } : { opacity: 0, y: "-10%" }
+        }
         transition={{ ease: "easeInOut", duration: 0.8 }}
+        ref={textInViewRef}
       >
         {type === "Skills"
           ? "Looking for a Skill Set That Matches Your Needs?"
