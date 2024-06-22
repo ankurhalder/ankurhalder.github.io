@@ -23,10 +23,9 @@
       max-width: max(1150px, 60%);
     }
     @media (max-width: $breakpoint-large-tablet) {
-      max-width: max(1000px, 60%);
+      max-width: max(900px, 60%);
     }
     @media (max-width: $breakpoint-tablet) {
-      max-width: max(800px, 60%);
     }
     @media (max-width: $breakpoint-phone) {
     }
@@ -41,6 +40,7 @@
       @media (max-width: $breakpoint-desktop) {
       }
       @media (max-width: $breakpoint-large-tablet) {
+        gap: 30px;
       }
       @media (max-width: $breakpoint-tablet) {
         height: 50%;
@@ -66,6 +66,7 @@
           font-size: var(--font-10);
         }
         @media (max-width: $breakpoint-large-tablet) {
+          font-size: var(--font-11);
         }
         @media (max-width: $breakpoint-tablet) {
         }
@@ -86,6 +87,7 @@
           font-size: var(--font-3);
         }
         @media (max-width: $breakpoint-large-tablet) {
+          font-size: var(--font-4);
         }
         @media (max-width: $breakpoint-tablet) {
         }
@@ -126,6 +128,7 @@
             font-size: var(--font-15);
           }
           @media (max-width: $breakpoint-large-tablet) {
+            font-size: var(--font-14);
           }
           @media (max-width: $breakpoint-tablet) {
           }
@@ -147,6 +150,8 @@
           max-height: 45px;
         }
         @media (max-width: $breakpoint-large-tablet) {
+          max-width: 40px;
+          max-height: 40px;
         }
         @media (max-width: $breakpoint-tablet) {
         }
