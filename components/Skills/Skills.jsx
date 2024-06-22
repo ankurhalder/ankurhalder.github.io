@@ -190,7 +190,7 @@ const Skills = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      \
+
       <Modal
         show={isModalOpen}
         onClose={closeModal}

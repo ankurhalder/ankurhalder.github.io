@@ -1,6 +1,7 @@
 .skills {
   background-color: var(--background-color);
   height: 100%;
+  transition: background-color 0.5s ease-in-out;
   @include flex-container(column, nowrap, center, center);
   @media (max-width: $breakpoint-desktop-wide) {
   }
@@ -195,6 +196,21 @@
       margin: 0 0.5% 1% 0;
       background-color: var(--text-color-1);
       color: var(--text-color-1);
+      @media (max-width: $breakpoint-desktop-wide) {
+        margin: 0 1% 1% 0;
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+        margin: 0 1.5% 1% 0;
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
+        margin: 0 2% 1% 0;
+        width: 15px;
+        height: 15px;
+      }
     }
     .swiper-slide {
       background-position: center;
