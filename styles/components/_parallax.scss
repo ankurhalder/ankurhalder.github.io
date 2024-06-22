@@ -12,6 +12,9 @@
   background-color: var(--background-color);
 
   h1 {
+    position: absolute;
+    top: 0;
+    z-index: 100;
     margin: 1% 0 0 0;
     font-family: var(--font-oswald);
     font-size: var(--font-1);
