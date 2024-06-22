@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import {
   motion,
   useScroll,
@@ -27,6 +27,18 @@ const Parallax = ({ type, isDarkMode }) => {
     threshold: 0.5,
   });
 
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setViewportWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const yText = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
@@ -34,7 +46,11 @@ const Parallax = ({ type, isDarkMode }) => {
   );
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const scaleBg = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
-  const rotateStars = useTransform(scrollYProgress, [0, 1], ["0deg", "45deg"]);
+  const rotateStars = useTransform(
+    scrollYProgress,
+    [0, 1],
+    viewportWidth >= 450 ? ["0deg", "45deg"] : ["0deg", "0deg"]
+  );
   const rotatesky = useTransform(scrollYProgress, [0, 1], ["0deg", "0deg"]);
   const moveCloud1 = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
   const moveCloud2 = useTransform(scrollYProgress, [0, 1], ["-30%", "30%"]);
