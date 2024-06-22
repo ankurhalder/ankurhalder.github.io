@@ -1,8 +1,8 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState, useMemo } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-//@ do not delete this commented code
+// @ do not delete this commented code
 // import { ToggleBar } from "../../pieces";
 import PropTypes from "prop-types";
 
@@ -16,21 +16,28 @@ function Navbar({ isDarkMode, setIsDarkMode }) {
     threshold: 0.1,
   });
 
-  const socialVariants = {
-    initial: {
-      opacity: 0,
-      y: 20,
-    },
-    animate: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, delay: i * 0.2, ease: "easeOut" },
+  const socialVariants = useMemo(
+    () => ({
+      initial: {
+        opacity: 0,
+        y: -20,
+      },
+      animate: (i) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.5,
+          delay: i === 0 ? 0 : i * 0.2,
+          ease: "easeOut",
+        },
+      }),
+      hover: {
+        scale: 1.2,
+        transition: { duration: 0.3, ease: "easeInOut" },
+      },
     }),
-    hover: {
-      scale: 1.2,
-      transition: { duration: 0.3, ease: "easeInOut" },
-    },
-  };
+    []
+  );
 
   useEffect(() => {
     const handleScroll = () => {
