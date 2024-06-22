@@ -7,6 +7,7 @@
   z-index: 1000;
   backdrop-filter: blur(7px);
   background-color: var(--shadow-medium);
+
   @include flex-container(column, nowrap, center, center);
   @media (max-width: $breakpoint-desktop-wide) {
   }
@@ -26,6 +27,7 @@
     var(--background-1),
     var(--text-color-4)
   );
+  overflow-y: scroll;
   padding: 30px;
   border-radius: 12px;
   width: 100%;
