@@ -34,7 +34,7 @@ const Parallax = ({ type, isDarkMode }) => {
   const moveCloud2 = useTransform(scrollYProgress, [0, 1], ["-30%", "30%"]);
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? "#111" : "#fff",
+    backgroundColor: "var( --background-color)",
   };
 
   const planetImage = isDarkMode ? planetsImage : sunImage;
@@ -58,12 +58,7 @@ const Parallax = ({ type, isDarkMode }) => {
           ? "Looking for a Skill Set That Matches Your Needs?"
           : "Explore My Projects and Get to Know Me Better!"}
       </motion.h1>
-      <motion.div
-        className="mountains"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ ease: "easeInOut", duration: 1 }}
-      >
+      <motion.div className="mountains">
         <img src={mountainsImage} alt="Mountains" />
       </motion.div>
 
@@ -75,12 +70,8 @@ const Parallax = ({ type, isDarkMode }) => {
               style={{
                 backgroundImage: `url(${starsImage})`,
                 rotate: rotateStars,
-                translateZ: "-100px",
+                // translateZ: "-1000px",
               }}
-              initial={{ opacity: 0, scale: 0.8, translateZ: "-50px" }}
-              animate={{ opacity: 1, scale: 1, translateZ: "0px" }}
-              exit={{ opacity: 0, scale: 0.8, translateZ: "-50px" }}
-              transition={{ ease: "easeInOut", duration: 0.8 }} // Smooth transition
             />
 
             <motion.div
@@ -102,10 +93,6 @@ const Parallax = ({ type, isDarkMode }) => {
               <motion.div
                 className="sky"
                 style={{ backgroundImage: `url(${sky1Image})` }}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ ease: "easeInOut", duration: 1 }}
               />
             )}
 
