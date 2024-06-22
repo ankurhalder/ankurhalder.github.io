@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { Fragment, useEffect, useState, useMemo } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -7,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 // import { ToggleBar } from "../../pieces";
 import PropTypes from "prop-types";
 
+// eslint-disable-next-line no-unused-vars
 function Navbar({ isDarkMode, setIsDarkMode }) {
   const [triggerAnimations, setTriggerAnimations] = useState(false);
   const logoControls = useAnimation();
@@ -86,10 +86,35 @@ function Navbar({ isDarkMode, setIsDarkMode }) {
           className="logo"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={logoControls}
-          whileHover={{ scale: 1.1, rotate: 10 }}
+          whileHover={{ scale: 1.1 }}
+          onTap={() => {
+            logoControls.start({
+              scale: 1.2,
+              transition: { type: "spring", stiffness: 500, damping: 30 },
+            });
+            setTimeout(() => {
+              logoControls.start({
+                scale: 1, // Return to original scale
+                transition: { duration: 0.5 }, // Adjust duration as needed
+              });
+            }, 500); // Adjust the delay duration (in milliseconds) as needed
+          }}
+          onClick={() => {
+            logoControls.start({
+              scale: 1.2,
+              transition: { type: "spring", stiffness: 500, damping: 30 },
+            });
+            setTimeout(() => {
+              logoControls.start({
+                scale: 1, // Return to original scale
+                transition: { duration: 0.5 }, // Adjust duration as needed
+              });
+            }, 500); // Adjust the delay duration (in milliseconds) as needed
+          }}
           src="/apple-icon.png"
           alt="Logo"
         />
+
         {/* orange Do not delete  this commented code */}
         {/* <ToggleBar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} /> */}
         <div className="social">
