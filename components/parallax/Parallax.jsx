@@ -35,6 +35,7 @@ const Parallax = ({ type, isDarkMode }) => {
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const scaleBg = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
   const rotateStars = useTransform(scrollYProgress, [0, 1], ["0deg", "45deg"]);
+  const rotatesky = useTransform(scrollYProgress, [0, 1], ["0deg", "0deg"]);
   const moveCloud1 = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
   const moveCloud2 = useTransform(scrollYProgress, [0, 1], ["-30%", "30%"]);
 
@@ -100,7 +101,10 @@ const Parallax = ({ type, isDarkMode }) => {
             {(type === "Skills" || type === "Projects") && (
               <motion.div
                 className="sky"
-                style={{ backgroundImage: `url(${sky1Image})` }}
+                style={{
+                  backgroundImage: `url(${sky1Image})`,
+                  rotate: rotatesky,
+                }}
               />
             )}
 
