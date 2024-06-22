@@ -75,7 +75,7 @@ const Parallax = ({ type, isDarkMode }) => {
               style={{
                 backgroundImage: `url(${starsImage})`,
                 rotate: rotateStars,
-                translateZ: "-100px", // Enhanced depth
+                translateZ: "-100px",
               }}
               initial={{ opacity: 0, scale: 0.8, translateZ: "-50px" }}
               animate={{ opacity: 1, scale: 1, translateZ: "0px" }}
