@@ -1,6 +1,8 @@
 import { Fragment, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+
+// do not delete this commented code
 // import { ToggleBar } from "../../pieces";
 import PropTypes from "prop-types";
 function Navbar() {
@@ -50,6 +52,7 @@ function Navbar() {
           src="/apple-icon.png"
           alt=""
         />
+        {/* Do not delete  this commented code */}
         {/* <ToggleBar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} /> */}
         <div className="social">
           {[
@@ -88,7 +91,6 @@ function Navbar() {
             </motion.a>
           ))}
         </div>
-        {/* <div></div> */}
       </div>
     </Fragment>
   );
