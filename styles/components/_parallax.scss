@@ -8,97 +8,108 @@
   overflow: hidden;
   text-align: center;
   background-color: var(--background-color);
-}
 
-.parallax h1 {
-  margin: 1% 0 0 0;
-  font-family: var(--font-oswald);
-  font-size: var(--font-1);
-  font-weight: 600;
-  color: var(--text-color);
-  letter-spacing: 4px;
-  line-height: 1.6;
-  text-transform: uppercase;
-}
+  h1 {
+    margin: 1% 0 0 0;
+    font-family: var(--font-oswald);
+    font-size: var(--font-1);
+    font-weight: 600;
+    color: var(--text-color);
+    letter-spacing: 4px;
+    line-height: 1.6;
+    text-transform: uppercase;
 
-@media (max-width: 768px) {
-  .parallax h1 {
-    font-size: var(--font-4);
+    @media (max-width: 768px) {
+      font-size: var(--font-4);
+    }
+
+    @media (max-width: 480px) {
+      font-size: var(--font-3);
+    }
   }
-}
 
-@media (max-width: 480px) {
-  .parallax h1 {
-    font-size: var(--font-3);
+  .mountains {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
   }
-}
 
-.parallax .mountains {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  bottom: 0;
-  z-index: 3;
-}
+  .cloud {
+    position: absolute;
+    width: 20%;
+    max-width: 200px;
+    top: 10%;
+    z-index: 4;
+    pointer-events: none;
 
-.parallax .mountains img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+    &.cloud-1 {
+      left: 5%;
+    }
 
-.parallax .cloud {
-  position: absolute;
-  width: 20%;
-  max-width: 200px;
-  top: 10%;
-  z-index: 4;
-  pointer-events: none;
-}
+    &.cloud-2 {
+      right: 5%;
+    }
 
-.parallax .cloud img {
-  width: 100%;
-  height: auto;
-}
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 
-.parallax .cloud-1 {
-  left: 5%;
-}
+  .planets,
+  .stars,
+  .sky {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 0.5s ease;
+    perspective: 1000px;
+    transform-style: preserve-3d;
 
-.parallax .cloud-2 {
-  right: 5%;
-}
+    @media (max-width: 768px) {
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: translateY(10%);
+    }
 
-.parallax .planets,
-.parallax .stars,
-.parallax .sky {
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transition: transform 0.5s ease;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-}
+    @media (max-width: 480px) {
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: translateY(20%);
+    }
+  }
 
-.parallax .planets {
-  z-index: 2;
-  margin-top: 6%;
-  transform: translateZ(-50px);
-}
+  .planets {
+    z-index: 2;
+    margin-top: 6%;
+    transform: translateZ(-50px);
 
-.parallax .stars {
-  z-index: 1;
-  transform: translateZ(-100px);
-}
+    &:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+  }
 
-.parallax .sky {
-  z-index: 1;
-  transform: translateZ(-50px);
-}
+  .stars {
+    z-index: 1;
+    transform: translateZ(-100px);
 
-.parallax .planets:hover,
-.parallax .stars:hover {
-  transform: scale(1.1) rotate(5deg);
+    &:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+  }
+
+  .sky {
+    z-index: 1;
+    transform: translateZ(-50px);
+  }
 }
