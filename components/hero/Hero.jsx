@@ -115,6 +115,9 @@ const sliderVariants = {
   },
 };
 
+function contactMeHandler() {
+  alert("Coming soon please stay tuned!");
+}
 const Hero = () => {
   const { ref: textContainerRef, inView: textContainerInView } = useInView({
     threshold: 0.1,
@@ -151,6 +154,7 @@ const Hero = () => {
               </motion.button>
             </a>
             <motion.button
+              onDoubleClick={contactMeHandler}
               variants={buttonVariants}
               whileHover="hover"
               whileTap={{ scale: 0.95 }}

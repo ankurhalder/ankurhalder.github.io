@@ -20,6 +20,7 @@
       max-width: max(1300px, 60%);
     }
     @media (max-width: $breakpoint-desktop) {
+      max-width: max(1150px, 60%);
     }
     @media (max-width: $breakpoint-large-tablet) {
       max-width: max(1000px, 60%);
@@ -62,6 +63,7 @@
           font-size: var(--font-9);
         }
         @media (max-width: $breakpoint-desktop) {
+          font-size: var(--font-10);
         }
         @media (max-width: $breakpoint-large-tablet) {
         }
@@ -81,6 +83,7 @@
           font-size: var(--font-2);
         }
         @media (max-width: $breakpoint-desktop) {
+          font-size: var(--font-3);
         }
         @media (max-width: $breakpoint-large-tablet) {
         }
@@ -119,6 +122,8 @@
             font-size: var(--font-14);
           }
           @media (max-width: $breakpoint-desktop) {
+            padding: 15px;
+            font-size: var(--font-15);
           }
           @media (max-width: $breakpoint-large-tablet) {
           }
@@ -138,6 +143,8 @@
           max-height: 50px;
         }
         @media (max-width: $breakpoint-desktop) {
+          max-width: 45px;
+          max-height: 45px;
         }
         @media (max-width: $breakpoint-large-tablet) {
         }
