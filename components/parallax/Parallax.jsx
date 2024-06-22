@@ -50,6 +50,7 @@ const Parallax = ({ type, isDarkMode }) => {
     [0, 1],
     viewportWidth >= 450 ? ["0deg", "45deg"] : ["0deg", "0deg"]
   );
+  const rotateSky = useTransform(scrollYProgress, [0, 1], ["0deg", "0deg"]);
   const moveCloud1 = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
   const moveCloud2 = useTransform(scrollYProgress, [0, 1], ["-30%", "30%"]);
 
@@ -117,6 +118,7 @@ const Parallax = ({ type, isDarkMode }) => {
                 className="sky"
                 style={{
                   backgroundImage: `url(${sky1Image})`,
+                  rotate: rotateSky,
                 }}
               />
             )}
