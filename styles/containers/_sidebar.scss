@@ -45,6 +45,9 @@
       }
       @media (max-width: $breakpoint-phone) {
       }
+      @media screen and (max-width: 1000px) and (max-height: 450px) {
+        font-size: var(--font-8);
+      }
       &::before {
         content: "";
         display: block;
@@ -80,6 +83,11 @@
       @media (max-width: $breakpoint-phone) {
         gap: 40px;
       }
+      @media screen and (max-width: 1000px) and (max-height: 450px) {
+        margin: -10% 0 0 0;
+        gap: 10px;
+      }
+
       a {
         font-family: var(--font-roboto);
         font-size: var(--font-7);
@@ -97,6 +105,9 @@
         }
         @media (max-width: $breakpoint-phone) {
           font-size: var(--font-5);
+        }
+        @media screen and (max-width: 1000px) and (max-height: 450px) {
+          font-size: var(--font-8);
         }
       }
     }
@@ -136,6 +147,10 @@
     }
     @media (max-width: $breakpoint-phone) {
       right: 5px;
+    }
+    @media screen and (max-width: 1000px) and (max-height: 450px) {
+      right: 10px;
+      top: 3.5%;
     }
   }
 }
