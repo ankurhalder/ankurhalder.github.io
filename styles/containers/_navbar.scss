@@ -12,6 +12,8 @@
   }
   @media (max-width: $breakpoint-phone) {
   }
+  @media screen and (max-width: 1000px) and (max-height: 450px) {
+  }
   .logo {
     max-width: 40px;
     @media (max-width: $breakpoint-desktop-wide) {
@@ -23,6 +25,9 @@
     @media (max-width: $breakpoint-tablet) {
     }
     @media (max-width: $breakpoint-phone) {
+    }
+    @media screen and (max-width: 1000px) and (max-height: 450px) {
+      max-width: 35px;
     }
   }
 
@@ -44,6 +49,10 @@
       margin: 0 10% 0 0;
       gap: 10px;
     }
+    @media screen and (max-width: 1000px) and (max-height: 450px) {
+      margin: 0 5% 0 0;
+      gap: 10px;
+    }
     a {
       img {
         transition: transform 1s ease;
@@ -58,6 +67,9 @@
         @media (max-width: $breakpoint-tablet) {
         }
         @media (max-width: $breakpoint-phone) {
+          max-width: 25px;
+        }
+        @media screen and (max-width: 1000px) and (max-height: 450px) {
           max-width: 25px;
         }
       }
