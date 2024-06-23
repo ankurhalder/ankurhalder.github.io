@@ -46,6 +46,9 @@
       margin: 25% 0 0 0;
       font-size: var(--font-5);
     }
+    @media screen and (max-width: 1000px) and (max-height: 450px) {
+      margin: 0 0 0 0;
+    }
   }
 
   .mountains {
