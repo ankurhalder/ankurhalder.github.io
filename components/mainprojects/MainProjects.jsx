@@ -46,13 +46,11 @@ const Single = ({ item }) => {
     target: ref,
   });
 
-  // Motion values for dynamic animations
   const y = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
   });
 
-  // Motion value and transform for parallax effect
   const parallaxY = useMotionValue(0);
   const opacity = useTransform(parallaxY, [-200, 0], [0, 1]);
 
@@ -118,7 +116,7 @@ const Single = ({ item }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 variants={buttonVariants}
-                whileHover="hover" // Add whileHover prop for hover effect
+                whileHover="hover"
               >
                 <button>See Github</button>
               </motion.a>
@@ -130,7 +128,7 @@ const Single = ({ item }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 variants={buttonVariants}
-                whileHover="hover" // Add whileHover prop for hover effect
+                whileHover="hover"
               >
                 <button>See Demo</button>
               </motion.a>
@@ -161,7 +159,6 @@ const MainProject = () => {
     offset: ["end end", "start start"],
   });
 
-  // Motion values for dynamic animations
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
