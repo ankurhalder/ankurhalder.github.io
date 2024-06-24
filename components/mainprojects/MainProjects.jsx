@@ -13,7 +13,9 @@ const items = [
   {
     id: 1,
     title: "Space Otaku",
+    subTitle: "Solo Project",
     video: "/projects/spaceotaku.mp4",
+    poster: "/projects/spaceotaku.png",
     desc: "Space Otaku – your ultimate destination for staying up-to-date with the latest space news, astronaut activities, satellite locations, solar system details, and much more! This project combines the power of Next.js, Sass, and the Dialogflow chatbot to provide you with a seamless and interactive experience.",
     githubLink: "https://github.com/ankurhalder/spaceotaku",
     demoLink: "https://www.spaceotaku.online",
@@ -21,14 +23,18 @@ const items = [
   {
     id: 2,
     title: "Adcomsys",
+    subTitle: "Official College Project",
     video: "/projects/adcomsys.mp4",
-    desc: "Developed the official website for the First International Conference on Advanced Computing and Systems, AdComSys 2024, organized by UEM. Collaborated with Vidit Modi to create a seamless digital experience facilitating knowledge exchange and collaboration in cutting-edge technologies.",
+    poster: "/projects/adcomsys.png",
+    desc: "Developed the official website for the First International Conference on Advanced Computing and Systems, AdComSys 2024, organized by UEM. The International Conference on Advanced Computing and Systems (AdcomSYS) will foster an excellent international forum for exchanging knowledge and the recent developments in theory.",
     githubLink: "https://github.com/uem-conference/uem-conference.github.io",
     demoLink: "https://adcomsys.uem.edu.in",
   },
   {
     id: 3,
     title: "Eduversa",
+    subTitle: "Group Project",
+    poster: "/projects/eduversa.png",
     video: "/projects/eduversa.mp4",
     desc: "Discover Eduversa: the ultimate student management solution. Empowering students with data access and aiding teachers in attendance and student info management. Utilizing Next-gen tech for seamless operation.",
     githubLink: "https://github.com/eduversa/eduversa.github.io",
@@ -105,10 +111,12 @@ const Single = ({ item }) => {
               alt={`Video of ${item.title}`}
               loading="lazy"
               style={{ opacity, y: parallaxY }}
+              poster={item.poster}
             />
           </motion.div>
           <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>
+            <h3>{item.subTitle}</h3>
             <p>{item.desc}</p>
             {item.githubLink && (
               <motion.a
@@ -144,7 +152,9 @@ Single.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
+    subTitle: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
     githubLink: PropTypes.string,
     demoLink: PropTypes.string,
