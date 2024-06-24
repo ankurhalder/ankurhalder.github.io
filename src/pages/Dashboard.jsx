@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Navbar, Sidebar } from "../../container";
 import PropTypes from "prop-types";
-import { Parallax, Skills, Hero, MainProjects } from "../../components";
+import { Parallax, Skills, Hero, Projects } from "../../components";
 
 function Dashboard({ isDarkMode, setIsDarkMode }) {
   return (
@@ -29,11 +29,11 @@ function Dashboard({ isDarkMode, setIsDarkMode }) {
         />
       </section>
       <section id="Projects">
-        <MainProjects />
+        <Projects />
       </section>
 
       <section id="Comingsoon">
-        <div></div>
+        <div>Coming Soon</div>
       </section>
     </Fragment>
   );
