@@ -41,52 +41,74 @@ const Single = ({ item }) => {
     damping: 30,
   });
 
-  const textVariants = {
+  const containerVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
+  };
+
+  const videoVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.8, delay: 0.4 },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.6 } },
   };
 
   return (
     <article>
-      <div className="container none">
+      <motion.div
+        className="container"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
         <div className="wrapper">
-          <div className="videoContainer" ref={ref}>
+          <motion.div
+            className="videoContainer"
+            ref={ref}
+            variants={videoVariants}
+          >
             <video
               controls
               src={item.video}
               alt={`Video of ${item.title}`}
               loading="lazy"
             />
-          </div>
-          <motion.div
-            className="textContainer"
-            style={{ y }}
-            initial="hidden"
-            animate="visible"
-            variants={textVariants}
-          >
+          </motion.div>
+          <motion.div className="textContainer" style={{ y }}>
             <header>
               <h2>{item.title}</h2>
             </header>
             <p>{item.desc}</p>
             {item.githubLink && (
-              <a
+              <motion.a
                 href={item.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
+                variants={buttonVariants}
               >
                 <button>See Github</button>
-              </a>
+              </motion.a>
             )}
-
             {item.demoLink && (
-              <a href={item.demoLink} target="_blank" rel="noopener noreferrer">
+              <motion.a
+                href={item.demoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={buttonVariants}
+              >
                 <button>See Demo</button>
-              </a>
+              </motion.a>
             )}
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </article>
   );
 };
@@ -121,7 +143,7 @@ const MainProject = () => {
   };
 
   return (
-    <main className="main-project none" ref={ref}>
+    <main className="main-project" ref={ref}>
       <div className="progress">
         <h1>Featured Projects</h1>
         <motion.div
