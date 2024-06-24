@@ -48,8 +48,13 @@ const Single = ({ item }) => {
           <div className="videoContainer" ref={ref}>
             <motion.video
               src={item.video}
-              controls
-              preload="metadata"
+              autoPlay
+              muted
+              loop
+              playsInline
+              disablePictureInPicture
+              controls={false}
+              preload="auto"
               poster={`/projects/posters/${item.id}.png`}
               alt={`Video preview of ${item.title}`}
               loading="lazy"
@@ -57,7 +62,9 @@ const Single = ({ item }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
+              className="animated-video"
             ></motion.video>
+            <div className="videoOverlay"></div>
           </div>
           <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>

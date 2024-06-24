@@ -32,18 +32,8 @@ function Dashboard({ isDarkMode, setIsDarkMode }) {
         <MainProjects />
       </section>
 
-      <section id="Coming Soon">
-        <div>
-          <h1
-            style={{
-              textAlign: "center",
-              fontSize: "var(--font-4)",
-              color: "var(--text-color)",
-            }}
-          >
-            Coming Soon
-          </h1>
-        </div>
+      <section id="Comingsoon">
+        <div></div>
       </section>
     </Fragment>
   );
