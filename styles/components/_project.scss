@@ -132,12 +132,7 @@
               transition: background-color 0.3s ease;
 
               &:hover {
-                background-color: rgba(
-                  0,
-                  0,
-                  255,
-                  0.8
-                ); /* Adjust opacity for a hover effect */
+                background-color: rgba(0, 0, 255, 0.8);
               }
             }
           }

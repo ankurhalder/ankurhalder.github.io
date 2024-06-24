@@ -59,8 +59,8 @@ const Single = ({ item }) => {
               alt={`Video preview of ${item.title}`}
               loading="lazy"
               aria-label={`Video preview of ${item.title}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, scale: 1 }}
+              animate={{ opacity: 1, scale: 1.1 }}
               transition={{ duration: 0.5 }}
               className="animated-video"
             ></motion.video>
