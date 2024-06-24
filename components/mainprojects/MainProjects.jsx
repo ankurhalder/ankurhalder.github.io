@@ -91,15 +91,6 @@ const Single = ({ item }) => {
     },
   };
 
-  const wrapperVariants = {
-    hidden: { opacity: 0, rotateY: -180 },
-    visible: {
-      opacity: 1,
-      rotateY: 0,
-      transition: { duration: 1, delay: 0.2, ease: "easeInOut" },
-    },
-  };
-
   return (
     <motion.section
       ref={inViewRef}
@@ -108,8 +99,12 @@ const Single = ({ item }) => {
       variants={containerVariants}
     >
       <div className="container none">
-        <motion.div className="wrapper" ref={ref} variants={wrapperVariants}>
-          <motion.div className="videoContainer" variants={videoVariants}>
+        <div className="wrapper">
+          <motion.div
+            className="videoContainer"
+            ref={ref}
+            variants={videoVariants}
+          >
             <motion.video
               controls
               src={item.video}
@@ -120,9 +115,9 @@ const Single = ({ item }) => {
             />
           </motion.div>
           <motion.div className="textContainer" style={{ y }}>
-            <motion.h2>{item.title}</motion.h2>
-            <motion.h3>{item.subTitle}</motion.h3>
-            <motion.p>{item.desc}</motion.p>
+            <h2>{item.title}</h2>
+            <h3>{item.subTitle}</h3>
+            <p>{item.desc}</p>
             {item.githubLink && (
               <motion.a
                 href={item.githubLink}
@@ -147,7 +142,7 @@ const Single = ({ item }) => {
               </motion.a>
             )}
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </motion.section>
   );
@@ -169,11 +164,6 @@ Single.propTypes = {
 const MainProject = () => {
   const ref = useRef();
 
-  const { ref: inViewRef, inView } = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
-  });
-
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["end end", "start start"],
@@ -193,26 +183,10 @@ const MainProject = () => {
     },
   };
 
-  const mainTitleVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.8, delay: 0.4, ease: "easeInOut" },
-    },
-  };
-
   return (
     <div className="main-project none" ref={ref}>
       <div className="progress">
-        <motion.h1
-          ref={inViewRef}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={mainTitleVariants}
-        >
-          Featured Projects
-        </motion.h1>
+        <h1>Featured Projects</h1>
         <motion.div
           style={{ scaleX }}
           className="progressBar"
