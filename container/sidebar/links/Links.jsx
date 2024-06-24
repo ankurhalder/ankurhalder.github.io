@@ -31,7 +31,7 @@ const Links = ({ closeSidebar }) => {
     "Homepage",
     "Skills",
     "Projects",
-    "Comingsoon",
+    "Coming Soon",
     "Coming Soon ",
     "Coming Soon  ",
   ];
