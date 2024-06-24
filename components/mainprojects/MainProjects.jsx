@@ -1,6 +1,13 @@
+/* eslint-disable no-unused-vars */
 import { useRef } from "react";
 import PropTypes from "prop-types";
-import { motion, useScroll, useSpring } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const items = [
@@ -47,7 +54,11 @@ const Single = ({ item }) => {
 
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, delay: 0.2, ease: "easeOut" },
+    },
   };
 
   const videoVariants = {
@@ -55,13 +66,21 @@ const Single = ({ item }) => {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.8, delay: 0.4 },
+      transition: { duration: 0.8, delay: 0.4, ease: "easeInOut" },
     },
   };
 
   const buttonVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.6 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, delay: 0.6, ease: "easeInOut" },
+    },
+    hover: {
+      scale: 1.1,
+      transition: { duration: 0.3, ease: "easeInOut" },
+    },
   };
 
   return (
@@ -94,6 +113,7 @@ const Single = ({ item }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 variants={buttonVariants}
+                whileHover="hover" // Add whileHover prop for hover effect
               >
                 <button>See Github</button>
               </motion.a>
@@ -105,6 +125,7 @@ const Single = ({ item }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 variants={buttonVariants}
+                whileHover="hover" // Add whileHover prop for hover effect
               >
                 <button>See Demo</button>
               </motion.a>
@@ -142,7 +163,11 @@ const MainProject = () => {
 
   const progressBarVariants = {
     hidden: { opacity: 0, scaleX: 0 },
-    visible: { opacity: 1, scaleX: 1, transition: { duration: 1 } },
+    visible: {
+      opacity: 1,
+      scaleX: 1,
+      transition: { duration: 1, ease: "easeInOut" },
+    },
   };
 
   return (
@@ -155,7 +180,7 @@ const MainProject = () => {
           initial="hidden"
           animate="visible"
           variants={progressBarVariants}
-        ></motion.div>
+        />
       </div>
       {items.map((item) => (
         <Single item={item} key={item.id} />
