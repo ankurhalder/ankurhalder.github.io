@@ -9,22 +9,26 @@
     padding-top: 20px;
 
     h1 {
-      font-weight: 400;
-      font-family: var(--font-tektur);
-      color: var(--text-color-3);
-      font-size: var(--font-3);
-      letter-spacing: 5px;
+      font-weight: 600;
+      font-family: "Montserrat", sans-serif; /* Update to a modern font */
+      color: #333; /* Darker color for better readability */
+      font-size: 2.5rem;
+      letter-spacing: 2px;
       text-transform: uppercase;
+      margin-bottom: 1rem;
 
-      @media (max-width: $breakpoint-phone) {
-        padding-top: calc(100vh - 100px);
-        font-size: 24px;
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
       }
     }
 
     .progressBar {
-      height: 10px;
-      background-color: var(--text-color-3);
+      height: 5px;
+      background-color: #4caf50; /* Green progress bar */
+
+      @media (max-width: 768px) {
+        height: 3px;
+      }
     }
   }
 
@@ -40,31 +44,29 @@
     .wrapper {
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      gap: 50px;
+      gap: 2rem;
       max-width: 1366px;
-      height: 100%;
+      margin: 0 auto;
+      padding: 3rem;
 
-      @media (max-width: $breakpoint-phone) {
+      @media (max-width: 768px) {
         flex-direction: column;
+        padding: 2rem;
       }
 
       .videoContainer {
         flex: 1;
-        height: 50%;
-
-        @media (max-width: $breakpoint-phone) {
-          width: 100%;
-          max-height: 300px;
-        }
+        height: 100%;
 
         video {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          border-radius: 10px;
 
-          @media (max-width: $breakpoint-phone) {
+          @media (max-width: 768px) {
             object-fit: contain;
           }
         }
@@ -75,48 +77,67 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
-        gap: 30px;
-        padding: 10px;
+        align-items: flex-start;
+        gap: 1.5rem;
 
-        @media (max-width: $breakpoint-phone) {
-          transform: none !important;
+        @media (max-width: 768px) {
+          align-items: center;
           text-align: center;
         }
 
         h2 {
-          font-family: var(--font-elianto);
-          letter-spacing: 2px;
-          font-size: var(--font-3);
-          color: var(--text-color);
+          font-family: "Montserrat", sans-serif; /* Update font */
+          font-size: 2.5rem;
+          font-weight: 600;
+          color: #333;
+          letter-spacing: 1px;
+          margin-bottom: 0.5rem;
 
-          @media (max-width: $breakpoint-phone) {
-            font-size: 36px;
+          @media (max-width: 768px) {
+            font-size: 2rem;
+          }
+        }
+
+        h3 {
+          font-size: 1.8rem;
+          font-weight: 500;
+          color: #666;
+          margin-bottom: 1rem;
+
+          @media (max-width: 768px) {
+            font-size: 1.5rem;
           }
         }
 
         p {
-          color: gray;
-          font-size: var(--font-9);
-          font-family: var(--font-roboto);
-          letter-spacing: 2px;
-          line-height: 1.5;
+          color: #666;
+          font-size: 1.6rem;
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
 
-          @media (max-width: $breakpoint-phone) {
-            font-size: 16px;
+          @media (max-width: 768px) {
+            font-size: 1.4rem;
           }
         }
 
         button {
-          font-family: var(--font-roboto);
-          font-size: var(--font-12);
-          letter-spacing: 2px;
-          color: var(--text-color);
-          background-color: var(--blue-2);
+          font-family: "Montserrat", sans-serif; /* Update font */
+          font-size: 1.6rem;
+          letter-spacing: 1px;
+          color: white;
+          background-color: #4caf50; /* Green button */
           border: none;
-          padding: 10px 15px;
-          width: 200px;
+          padding: 1rem 2rem;
           cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #45a049; /* Darker green on hover */
+          }
+
+          @media (max-width: 768px) {
+            font-size: 1.4rem;
+          }
         }
       }
     }
