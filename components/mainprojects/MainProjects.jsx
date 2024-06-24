@@ -106,7 +106,9 @@ const Single = ({ item }) => {
             variants={videoVariants}
           >
             <motion.video
-              controls
+              autoPlay
+              muted
+              loop
               src={item.video}
               alt={`Video of ${item.title}`}
               loading="lazy"
