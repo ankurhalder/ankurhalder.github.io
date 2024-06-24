@@ -56,7 +56,7 @@
         flex-direction: column;
       }
 
-      .imageContainer {
+      .videoContainer {
         flex: 1;
         height: 50%;
         @media (max-width: $breakpoint-desktop-wide) {
@@ -72,7 +72,7 @@
           max-height: 300px;
         }
 
-        img {
+        video {
           width: 500px;
           height: 500px;
           object-fit: cover;

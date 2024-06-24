@@ -6,7 +6,7 @@ const items = [
   {
     id: 1,
     title: "Space Otaku",
-    img: "/projects/spaceotaku.png",
+    video: "/projects/spaceotaku.mp4",
     desc: "Space Otaku – your ultimate destination for staying up-to-date with the latest space news, astronaut activities, satellite locations, solar system details, and much more! This project combines the power of Next.js, Sass, and the Dialogflow chatbot to provide you with a seamless and interactive experience.",
     githubLink: "https://github.com/ankurhalder/spaceotaku",
     demoLink: "https://www.spaceotaku.online",
@@ -14,7 +14,7 @@ const items = [
   {
     id: 2,
     title: "Adcomsys",
-    img: "/projects/adcomsys.png",
+    video: "/projects/adcomsys.mp4",
     desc: "Developed the official website for the First International Conference on Advanced Computing and Systems, AdComSys 2024, organized by UEM. Collaborated with Vidit Modi to create a seamless digital experience facilitating knowledge exchange and collaboration in cutting-edge technologies.",
     githubLink: "https://github.com/uem-conference/uem-conference.github.io",
     demoLink: "https://adcomsys.uem.edu.in",
@@ -22,7 +22,7 @@ const items = [
   {
     id: 3,
     title: "Eduversa",
-    img: "/projects/eduversa.png",
+    video: "/projects/eduversa.mp4",
     desc: "Discover Eduversa: the ultimate student management solution. Empowering students with data access and aiding teachers in attendance and student info management. Utilizing Next-gen tech for seamless operation.",
     githubLink: "https://github.com/eduversa/eduversa.github.io",
     demoLink: "https://www.eduversa.in",
@@ -45,8 +45,15 @@ const Single = ({ item }) => {
     <section>
       <div className="container none">
         <div className="wrapper">
-          <div className="imageContainer" ref={ref}>
-            <img src={item.img} alt={item.title} loading="lazy" />
+          <div className="videoContainer" ref={ref}>
+            <video
+              src={item.video}
+              controls
+              preload="metadata"
+              poster="/projects/poster.png"
+              alt={`Video preview of ${item.title}`}
+              loading="lazy"
+            ></video>
           </div>
           <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>
@@ -77,7 +84,7 @@ Single.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    img: PropTypes.string.isRequired,
+    video: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
     githubLink: PropTypes.string,
     demoLink: PropTypes.string,
