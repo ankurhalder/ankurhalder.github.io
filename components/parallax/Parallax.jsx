@@ -15,7 +15,7 @@ import cloud2Image from "/parallax/cloud-2.png";
 import mountainsImage from "/parallax/mountains.png";
 import sky1Image from "/parallax/sky-1.png";
 
-const Parallax = ({ type, isDarkMode }) => {
+function Parallax({ type, isDarkMode }) {
   const ref = useRef();
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -159,7 +159,7 @@ const Parallax = ({ type, isDarkMode }) => {
       </AnimatePresence>
     </div>
   );
-};
+}
 
 Parallax.propTypes = {
   type: PropTypes.oneOf(["Skills", "Projects"]).isRequired,
