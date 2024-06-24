@@ -72,12 +72,26 @@ const Single = ({ item }) => {
     },
   };
 
+  const textContainerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        delay: 0.6,
+        ease: "easeInOut",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
   const buttonVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, delay: 0.6, ease: "easeInOut" },
+      transition: { duration: 0.6, delay: 0.8, ease: "easeInOut" },
     },
     hover: {
       scale: 1.1,
@@ -105,11 +119,18 @@ const Single = ({ item }) => {
               alt={`Video of ${item.title}`}
               loading="lazy"
               style={{ opacity, y: parallaxY }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeInOut" }}
             />
           </motion.div>
-          <motion.div className="textContainer" style={{ y }}>
-            <h2>{item.title}</h2>
-            <p>{item.desc}</p>
+          <motion.div
+            className="textContainer"
+            style={{ y }}
+            variants={textContainerVariants}
+          >
+            <motion.h2 variants={textContainerVariants}>{item.title}</motion.h2>
+            <motion.p variants={textContainerVariants}>{item.desc}</motion.p>
             {item.githubLink && (
               <motion.a
                 href={item.githubLink}
@@ -169,7 +190,7 @@ const MainProject = () => {
     visible: {
       opacity: 1,
       scaleX: 1,
-      transition: { duration: 1, ease: "easeInOut" },
+      transition: { duration: 1, ease: [0.6, 0.05, -0.01, 0.9] },
     },
   };
 
