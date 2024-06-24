@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Navbar, Sidebar } from "../../container";
 import PropTypes from "prop-types";
-import { Parallax, Skills, Hero } from "../../components";
+import { Parallax, Skills, Hero, MainProjects } from "../../components";
 
 function Dashboard({ isDarkMode, setIsDarkMode }) {
   return (
@@ -28,7 +28,9 @@ function Dashboard({ isDarkMode, setIsDarkMode }) {
           type="Projects"
         />
       </section>
-      <section id="Projects">{/* <ProjectsCoverFlow /> */}</section>
+      <section id="Projects">
+        <MainProjects />
+      </section>
 
       <section id="Coming Soon">
         <div>
