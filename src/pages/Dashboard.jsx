@@ -31,8 +31,11 @@ function Dashboard({ isDarkMode, setIsDarkMode }) {
       <section id="Projects">
         <MainProjects />
       </section>
+      <section></section>
+      <section></section>
+      {/* <section></section> */}
 
-      <section id="Coming Soon">
+      <section id="ComingSoon">
         <div className="comingsoon">
           <h1>Coming Soon</h1>
           <p>More projects and features are coming soon...</p>
@@ -46,4 +49,5 @@ Dashboard.propTypes = {
   isDarkMode: PropTypes.bool.isRequired,
   setIsDarkMode: PropTypes.func.isRequired,
 };
+
 export default Dashboard;
