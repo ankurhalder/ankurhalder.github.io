@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import PropTypes from "prop-types";
 import { motion, useScroll, useSpring } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const items = [
   {
@@ -31,7 +32,7 @@ const items = [
 
 const Single = ({ item }) => {
   const ref = useRef();
-
+  const { ref: inViewRef, inView } = useInView({ triggerOnce: true });
   const { scrollYProgress } = useScroll({
     target: ref,
   });
@@ -61,11 +62,11 @@ const Single = ({ item }) => {
   };
 
   return (
-    <article>
+    <article ref={inViewRef}>
       <motion.div
         className="container"
         initial="hidden"
-        animate="visible"
+        animate={inView ? "visible" : "hidden"}
         variants={containerVariants}
       >
         <div className="wrapper">
