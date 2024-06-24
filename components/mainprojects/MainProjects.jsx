@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useRef } from "react";
 import PropTypes from "prop-types";
 import {
@@ -47,10 +46,15 @@ const Single = ({ item }) => {
     target: ref,
   });
 
+  // Motion values for dynamic animations
   const y = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
   });
+
+  // Motion value and transform for parallax effect
+  const parallaxY = useMotionValue(0);
+  const opacity = useTransform(parallaxY, [-200, 0], [0, 1]);
 
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -97,11 +101,12 @@ const Single = ({ item }) => {
             ref={ref}
             variants={videoVariants}
           >
-            <video
+            <motion.video
               controls
               src={item.video}
               alt={`Video of ${item.title}`}
               loading="lazy"
+              style={{ opacity, y: parallaxY }}
             />
           </motion.div>
           <motion.div className="textContainer" style={{ y }}>
@@ -156,6 +161,7 @@ const MainProject = () => {
     offset: ["end end", "start start"],
   });
 
+  // Motion values for dynamic animations
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
