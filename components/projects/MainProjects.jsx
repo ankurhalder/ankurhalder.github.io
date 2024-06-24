@@ -84,7 +84,7 @@ Single.propTypes = {
   }).isRequired,
 };
 
-const Portfolio = () => {
+const MainProjects = () => {
   const ref = useRef();
 
   const { scrollYProgress } = useScroll({
@@ -98,7 +98,7 @@ const Portfolio = () => {
   });
 
   return (
-    <div className="portfolio none" ref={ref}>
+    <div className="main-project none" ref={ref}>
       <div className="progress">
         <h1>Featured Projects</h1>
         <motion.div style={{ scaleX }} className="progressBar"></motion.div>
@@ -110,4 +110,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default MainProjects;
