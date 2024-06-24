@@ -32,7 +32,10 @@ const items = [
 
 const Single = ({ item }) => {
   const ref = useRef();
-  const { ref: inViewRef, inView } = useInView({ triggerOnce: true });
+  const { ref: inViewRef, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
   const { scrollYProgress } = useScroll({
     target: ref,
   });
@@ -62,13 +65,13 @@ const Single = ({ item }) => {
   };
 
   return (
-    <article ref={inViewRef}>
-      <motion.div
-        className="container"
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        variants={containerVariants}
-      >
+    <motion.section
+      ref={inViewRef}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={containerVariants}
+    >
+      <div className="container none">
         <div className="wrapper">
           <motion.div
             className="videoContainer"
@@ -83,9 +86,7 @@ const Single = ({ item }) => {
             />
           </motion.div>
           <motion.div className="textContainer" style={{ y }}>
-            <header>
-              <h2>{item.title}</h2>
-            </header>
+            <h2>{item.title}</h2>
             <p>{item.desc}</p>
             {item.githubLink && (
               <motion.a
@@ -97,6 +98,7 @@ const Single = ({ item }) => {
                 <button>See Github</button>
               </motion.a>
             )}
+
             {item.demoLink && (
               <motion.a
                 href={item.demoLink}
@@ -109,8 +111,8 @@ const Single = ({ item }) => {
             )}
           </motion.div>
         </div>
-      </motion.div>
-    </article>
+      </div>
+    </motion.section>
   );
 };
 
@@ -144,7 +146,7 @@ const MainProject = () => {
   };
 
   return (
-    <main className="main-project" ref={ref}>
+    <div className="main-project none" ref={ref}>
       <div className="progress">
         <h1>Featured Projects</h1>
         <motion.div
@@ -158,7 +160,7 @@ const MainProject = () => {
       {items.map((item) => (
         <Single item={item} key={item.id} />
       ))}
-    </main>
+    </div>
   );
 };
 
