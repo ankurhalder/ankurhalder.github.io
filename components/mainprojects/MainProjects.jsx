@@ -99,19 +99,6 @@ const Single = ({ item }) => {
       variants={containerVariants}
       className="singleProject"
     >
-      <motion.h1
-        className="projectsTitle"
-        ref={ref}
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-        transition={{
-          duration: 1,
-          ease: "easeOut",
-        }}
-      >
-        Featured Projects
-      </motion.h1>
-
       <div className="container none">
         <div className="wrapper">
           <motion.div
@@ -178,15 +165,18 @@ Single.propTypes = {
 
 const MainProject = () => {
   const ref = useRef();
-
+  const { ref: inViewRef, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["end start", "start start"],
+    offset: ["end end", "start start"],
   });
 
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 500,
-    damping: 10,
+    damping: 30,
   });
 
   const progressBarVariants = {
@@ -200,18 +190,35 @@ const MainProject = () => {
 
   return (
     <div className="main-project" ref={ref}>
-      <div className="progress">
-        <motion.div
-          style={{ scaleX }}
-          className="progressBar"
-          initial="hidden"
-          animate="visible"
-          variants={progressBarVariants}
-        />
+      <div className="progress-wrapper">
+        <div className="progress">
+          <motion.h1
+            ref={inViewRef}
+            className="projectsTitle"
+            // ref={ref}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={
+              inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+            }
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+          >
+            Featured Projects
+          </motion.h1>
+          <motion.div
+            style={{ scaleX }}
+            className="progressBar"
+            initial="hidden"
+            animate="visible"
+            variants={progressBarVariants}
+          />
+        </div>
+        {items.map((item) => (
+          <Single item={item} key={item.id} />
+        ))}
       </div>
-      {items.map((item) => (
-        <Single item={item} key={item.id} />
-      ))}
     </div>
   );
 };

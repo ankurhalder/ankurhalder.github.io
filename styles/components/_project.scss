@@ -1,15 +1,17 @@
 .main-project {
   position: relative;
-
-  .progress {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    .progressBar {
-      height: 7px;
-      background-color: #4caf50;
+  .progress-wrapper {
+    .progress {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      .progressBar {
+        height: 7px;
+        background-color: #4caf50;
+      }
     }
   }
+
   .singleProject {
     .projectsTitle {
       @include flex-container(row, nowrap, center, center);
