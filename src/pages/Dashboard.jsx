@@ -28,11 +28,16 @@ function Dashboard({ isDarkMode, setIsDarkMode }) {
           type="Projects"
         />
       </section>
-      <section id="Projects">
+      <section
+        id="Projects"
+        style={{
+          height: "310dvh",
+        }}
+      >
         <MainProjects />
       </section>
-      <section></section>
-      <section></section>
+      {/* <section></section>
+      <section></section> */}
       {/* <section></section> */}
 
       <section id="ComingSoon">
