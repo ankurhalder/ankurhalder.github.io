@@ -10,8 +10,9 @@
         @include flex-container(row, nowrap, center, center);
         font-family: var(--font-blackpast);
         font-size: var(--font-6);
-        margin: 1% 0 0 0;
-        letter-spacing: 2px;
+        color: var(--text-color-1);
+        margin: 1.5% 0 0 0;
+        letter-spacing: 3px;
         font-weight: 400;
       }
       .progressBar {
