@@ -99,53 +99,53 @@ const Single = ({ item }) => {
       variants={containerVariants}
       className="singleProject"
     >
-      <div className="container">
-        <div className="wrapper">
-          <motion.div
-            className="videoContainer"
-            ref={ref}
-            variants={videoVariants}
-          >
-            <motion.video
-              autoPlay
-              muted
-              loop
-              src={item.video}
-              alt={`Video of ${item.title}`}
-              loading="lazy"
-              style={{ opacity, y: parallaxY }}
-              poster={item.poster}
-            />
-          </motion.div>
-          <motion.div className="textContainer" style={{ y }}>
-            <h2>{item.title}</h2>
-            <h3>{item.subTitle}</h3>
-            <p>{item.desc}</p>
-            {item.githubLink && (
-              <motion.a
-                href={item.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                variants={buttonVariants}
-                whileHover="hover"
-              >
-                <button>See Github</button>
-              </motion.a>
-            )}
-            {item.demoLink && (
-              <motion.a
-                href={item.demoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                variants={buttonVariants}
-                whileHover="hover"
-              >
-                <button>See Demo</button>
-              </motion.a>
-            )}
-          </motion.div>
-        </div>
+      {/* <div className="container"> */}
+      <div className="wrapper">
+        <motion.div
+          className="videoContainer"
+          ref={ref}
+          variants={videoVariants}
+        >
+          <motion.video
+            autoPlay
+            muted
+            loop
+            src={item.video}
+            alt={`Video of ${item.title}`}
+            loading="lazy"
+            style={{ opacity, y: parallaxY }}
+            poster={item.poster}
+          />
+        </motion.div>
+        <motion.div className="textContainer" style={{ y }}>
+          <h2>{item.title}</h2>
+          <h3>{item.subTitle}</h3>
+          <p>{item.desc}</p>
+          {item.githubLink && (
+            <motion.a
+              href={item.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              variants={buttonVariants}
+              whileHover="hover"
+            >
+              <button>See Github</button>
+            </motion.a>
+          )}
+          {item.demoLink && (
+            <motion.a
+              href={item.demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              variants={buttonVariants}
+              whileHover="hover"
+            >
+              <button>See Demo</button>
+            </motion.a>
+          )}
+        </motion.div>
       </div>
+      {/* </div> */}
     </motion.section>
   );
 };
