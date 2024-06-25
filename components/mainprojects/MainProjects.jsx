@@ -121,28 +121,31 @@ const Single = ({ item }) => {
           <h2>{item.title}</h2>
           <h3>{item.subTitle}</h3>
           <p>{item.desc}</p>
-          {item.githubLink && (
-            <motion.a
-              href={item.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              variants={buttonVariants}
-              whileHover="hover"
-            >
-              <button>See Github</button>
-            </motion.a>
-          )}
-          {item.demoLink && (
-            <motion.a
-              href={item.demoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              variants={buttonVariants}
-              whileHover="hover"
-            >
-              <button>See Demo</button>
-            </motion.a>
-          )}
+
+          <div className="button-container">
+            {item.githubLink && (
+              <motion.a
+                href={item.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={buttonVariants}
+                whileHover="hover"
+              >
+                <button>See Github</button>
+              </motion.a>
+            )}
+            {item.demoLink && (
+              <motion.a
+                href={item.demoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={buttonVariants}
+                whileHover="hover"
+              >
+                <button>See Demo</button>
+              </motion.a>
+            )}
+          </div>
         </motion.div>
       </div>
       {/* </div> */}

@@ -58,12 +58,8 @@
 
       .textContainer {
         flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+        @include flex-container(column, nowrap, center, center);
         gap: 1.5rem;
-
         @media (max-width: 768px) {
           align-items: center;
           text-align: center;
@@ -103,28 +99,31 @@
             font-size: 1.4rem;
           }
         }
+        .button-container {
+          @include flex-container(row, nowrap, center, center);
+          gap: 1rem;
+          button {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            color: white;
+            background-color: #4caf50;
+            border: none;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
 
-        button {
-          font-family: "Montserrat", sans-serif;
-          font-size: 1.6rem;
-          letter-spacing: 1px;
-          color: white;
-          background-color: #4caf50;
-          border: none;
-          padding: 1rem 2rem;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
+            &:hover {
+              background-color: #45a049;
+            }
 
-          &:hover {
-            background-color: #45a049;
-          }
-
-          @media (max-width: 768px) {
-            font-size: 1.4rem;
+            @media (max-width: 768px) {
+              font-size: 1.4rem;
+            }
           }
         }
       }
+      // }
     }
-    // }
   }
 }
