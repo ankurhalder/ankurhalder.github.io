@@ -98,6 +98,7 @@ const Single = ({ item }) => {
       animate={inView ? "visible" : "hidden"}
       variants={containerVariants}
     >
+      <h1>Featured Projects</h1>
       <div className="container none">
         <div className="wrapper">
           <motion.div
@@ -197,8 +198,6 @@ const MainProject = () => {
           />
         </div>
       </div>
-      {/* ok so keep the progress bar as it is its good but it here the "featured project"  it should only be visible to all the Single component*/}
-      <h1>Featured Projects</h1>
       {items.map((item) => (
         <Single item={item} key={item.id} />
       ))}
