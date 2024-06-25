@@ -131,7 +131,6 @@ const Single = ({ item }) => {
                 <button>See Github</button>
               </motion.a>
             )}
-
             {item.demoLink && (
               <motion.a
                 href={item.demoLink}
@@ -186,17 +185,20 @@ const MainProject = () => {
   };
 
   return (
-    <div className="main-project none" ref={ref}>
-      <div className="progress">
-        <h1>Featured Projects</h1>
-        <motion.div
-          style={{ scaleX }}
-          className="progressBar"
-          initial="hidden"
-          animate="visible"
-          variants={progressBarVariants}
-        />
+    <div className="main-project" ref={ref}>
+      <div className="progress-wrapper">
+        <div className="progress">
+          <motion.div
+            style={{ scaleX }}
+            className="progressBar"
+            initial="hidden"
+            animate="visible"
+            variants={progressBarVariants}
+          />
+        </div>
       </div>
+      {/* ok so keep the progress bar as it is its good but it here the "featured project"  it should only be visible to all the Single component*/}
+      <h1>Featured Projects</h1>
       {items.map((item) => (
         <Single item={item} key={item.id} />
       ))}

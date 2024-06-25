@@ -1,17 +1,25 @@
 .main-project {
   position: relative;
 
+  .progress-wrapper {
+    position: sticky;
+    top: 0;
+    // background: white;
+    z-index: 1000;
+  }
+
   .progress {
     position: sticky;
     top: 0;
-    left: 0;
+    background: white;
+    z-index: 1000;
     text-align: center;
-    padding-top: 20px;
+    // padding-top: 20px;
 
     h1 {
       font-weight: 600;
-      font-family: "Montserrat", sans-serif; /* Update to a modern font */
-      color: #333; /* Darker color for better readability */
+      font-family: "Montserrat", sans-serif;
+      color: #333;
       font-size: 2.5rem;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -24,7 +32,7 @@
 
     .progressBar {
       height: 5px;
-      background-color: #4caf50; /* Green progress bar */
+      background-color: #4caf50;
 
       @media (max-width: 768px) {
         height: 3px;
@@ -86,7 +94,7 @@
         }
 
         h2 {
-          font-family: "Montserrat", sans-serif; /* Update font */
+          font-family: "Montserrat", sans-serif;
           font-size: 2.5rem;
           font-weight: 600;
           color: #333;
@@ -121,18 +129,18 @@
         }
 
         button {
-          font-family: "Montserrat", sans-serif; /* Update font */
+          font-family: "Montserrat", sans-serif;
           font-size: 1.6rem;
           letter-spacing: 1px;
           color: white;
-          background-color: #4caf50; /* Green button */
+          background-color: #4caf50;
           border: none;
           padding: 1rem 2rem;
           cursor: pointer;
           transition: background-color 0.3s ease;
 
           &:hover {
-            background-color: #45a049; /* Darker green on hover */
+            background-color: #45a049;
           }
 
           @media (max-width: 768px) {
