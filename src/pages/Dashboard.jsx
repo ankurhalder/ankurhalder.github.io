@@ -31,7 +31,7 @@ function Dashboard({ isDarkMode, setIsDarkMode }) {
       <section
         id="Projects"
         style={{
-          height: "310dvh",
+          height: "305dvh",
         }}
       >
         <MainProjects />
