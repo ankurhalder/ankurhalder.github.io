@@ -99,7 +99,6 @@ const Single = ({ item }) => {
       variants={containerVariants}
       className="singleProject"
     >
-      {/* <div className="container"> */}
       <div className="wrapper">
         <motion.div
           className="videoContainer"
@@ -130,6 +129,16 @@ const Single = ({ item }) => {
                 rel="noopener noreferrer"
                 variants={buttonVariants}
                 whileHover="hover"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setTimeout(() => {
+                    window.open(
+                      item.githubLink,
+                      "_blank",
+                      "noopener noreferrer"
+                    );
+                  }, 300);
+                }}
               >
                 <button>See Github</button>
               </motion.a>
@@ -141,6 +150,12 @@ const Single = ({ item }) => {
                 rel="noopener noreferrer"
                 variants={buttonVariants}
                 whileHover="hover"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setTimeout(() => {
+                    window.open(item.demoLink, "_blank", "noopener noreferrer");
+                  }, 300);
+                }}
               >
                 <button>See Demo</button>
               </motion.a>
@@ -148,7 +163,6 @@ const Single = ({ item }) => {
           </div>
         </motion.div>
       </div>
-      {/* </div> */}
     </motion.section>
   );
 };
