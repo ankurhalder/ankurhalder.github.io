@@ -103,22 +103,24 @@
           @include flex-container(row, nowrap, center, center);
           gap: 1rem;
           button {
-            font-family: "Montserrat", sans-serif;
-            font-size: 1.6rem;
-            letter-spacing: 1px;
-            color: white;
-            background-color: #4caf50;
-            border: none;
-            padding: 1rem 2rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-
+            transition: all 0.2s ease-in-out;
+            background-color: #3b82f6;
+            color: #ffffff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            border-color: #2563eb;
+            border-style: solid;
+            border-width: 0px 0px 4px 0px;
             &:hover {
-              background-color: #45a049;
+              filter: brightness(1.1);
+              transform: translateY(-1px);
+              border-width: 0px 0px 6px 0px;
             }
-
-            @media (max-width: 768px) {
-              font-size: 1.4rem;
+            &:active {
+              filter: brightness(0.9);
+              transform: translateY(2px);
+              border-width: 0px 0px 2px 0px;
             }
           }
         }
