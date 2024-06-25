@@ -191,21 +191,21 @@ const MainProject = () => {
   return (
     <div className="main-project" ref={ref}>
       <div className="progress-wrapper">
-        <motion.h1
-          ref={inViewRef}
-          className="projectsTitle"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={
-            inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
-          }
-          transition={{
-            duration: 1,
-            ease: "easeOut",
-          }}
-        >
-          Featured Projects
-        </motion.h1>
         <div className="progress">
+          <motion.h1
+            ref={inViewRef}
+            className="projectsTitle"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={
+              inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+            }
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+          >
+            Featured Projects
+          </motion.h1>
           <motion.div
             style={{ scaleX }}
             className="progressBar"
