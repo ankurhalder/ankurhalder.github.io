@@ -1,143 +1,128 @@
 .main-project {
   position: relative;
 
-  .progress-wrapper {
+  .progress {
     position: sticky;
     top: 0;
     z-index: 1000;
-  }
-
-  .progress {
-    text-align: center;
-    h1 {
-      font-weight: 600;
-      font-family: "Montserrat", sans-serif;
-      color: #333;
-      font-size: 2.5rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-
-      @media (max-width: 768px) {
-        font-size: 1.8rem;
-      }
-    }
-
     .progressBar {
-      height: 5px;
+      height: 7px;
       background-color: #4caf50;
-
-      @media (max-width: 768px) {
-        height: 3px;
-      }
     }
   }
-
-  .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-
-    .wrapper {
+  .singleProject {
+    .projectsTitle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      overflow: hidden;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      gap: 2rem;
-      max-width: 1366px;
-      margin: 0 auto;
-      padding: 3rem;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
 
-      @media (max-width: 768px) {
-        flex-direction: column;
-        padding: 2rem;
-      }
-
-      .videoContainer {
-        flex: 1;
-        height: 100%;
-
-        video {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 10px;
-
-          @media (max-width: 768px) {
-            object-fit: contain;
-          }
-        }
-      }
-
-      .textContainer {
-        flex: 1;
+      .wrapper {
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap: 1.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        max-width: 1366px;
+        margin: 0 auto;
+        padding: 3rem;
 
         @media (max-width: 768px) {
-          align-items: center;
-          text-align: center;
+          flex-direction: column;
+          padding: 2rem;
         }
 
-        h2 {
-          font-family: "Montserrat", sans-serif;
-          font-size: 2.5rem;
-          font-weight: 600;
-          color: #333;
-          letter-spacing: 1px;
-          margin-bottom: 0.5rem;
+        .videoContainer {
+          flex: 1;
+          height: 100%;
 
-          @media (max-width: 768px) {
-            font-size: 2rem;
+          video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+
+            @media (max-width: 768px) {
+              object-fit: contain;
+            }
           }
         }
 
-        h3 {
-          font-size: 1.8rem;
-          font-weight: 500;
-          color: #666;
-          margin-bottom: 1rem;
+        .textContainer {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 1.5rem;
 
           @media (max-width: 768px) {
-            font-size: 1.5rem;
-          }
-        }
-
-        p {
-          color: #666;
-          font-size: 1.6rem;
-          line-height: 1.6;
-          margin-bottom: 1.5rem;
-
-          @media (max-width: 768px) {
-            font-size: 1.4rem;
-          }
-        }
-
-        button {
-          font-family: "Montserrat", sans-serif;
-          font-size: 1.6rem;
-          letter-spacing: 1px;
-          color: white;
-          background-color: #4caf50;
-          border: none;
-          padding: 1rem 2rem;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-
-          &:hover {
-            background-color: #45a049;
+            align-items: center;
+            text-align: center;
           }
 
-          @media (max-width: 768px) {
-            font-size: 1.4rem;
+          h2 {
+            font-family: "Montserrat", sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #333;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+
+            @media (max-width: 768px) {
+              font-size: 2rem;
+            }
+          }
+
+          h3 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #666;
+            margin-bottom: 1rem;
+
+            @media (max-width: 768px) {
+              font-size: 1.5rem;
+            }
+          }
+
+          p {
+            color: #666;
+            font-size: 1.6rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+
+            @media (max-width: 768px) {
+              font-size: 1.4rem;
+            }
+          }
+
+          button {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            color: white;
+            background-color: #4caf50;
+            border: none;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+              background-color: #45a049;
+            }
+
+            @media (max-width: 768px) {
+              font-size: 1.4rem;
+            }
           }
         }
       }

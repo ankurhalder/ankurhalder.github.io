@@ -97,8 +97,21 @@ const Single = ({ item }) => {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       variants={containerVariants}
+      className="singleProject"
     >
-      <h1>Featured Projects</h1>
+      <motion.h1
+        className="projectsTitle"
+        ref={ref}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+        transition={{
+          duration: 1,
+          ease: "easeOut",
+        }}
+      >
+        Featured Projects
+      </motion.h1>
+
       <div className="container none">
         <div className="wrapper">
           <motion.div
@@ -168,12 +181,12 @@ const MainProject = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["end end", "start start"],
+    offset: ["end start", "start start"],
   });
 
   const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
+    stiffness: 500,
+    damping: 10,
   });
 
   const progressBarVariants = {
@@ -187,16 +200,14 @@ const MainProject = () => {
 
   return (
     <div className="main-project" ref={ref}>
-      <div className="progress-wrapper">
-        <div className="progress">
-          <motion.div
-            style={{ scaleX }}
-            className="progressBar"
-            initial="hidden"
-            animate="visible"
-            variants={progressBarVariants}
-          />
-        </div>
+      <div className="progress">
+        <motion.div
+          style={{ scaleX }}
+          className="progressBar"
+          initial="hidden"
+          animate="visible"
+          variants={progressBarVariants}
+        />
       </div>
       {items.map((item) => (
         <Single item={item} key={item.id} />
