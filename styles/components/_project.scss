@@ -12,9 +12,12 @@
   }
   .singleProject {
     .projectsTitle {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-container(row, nowrap, center, center);
+      font-family: var(--font-blackpast);
+      font-size: var(--font-6);
+      margin: 1% 0 0 0;
+      letter-spacing: 2px;
+      font-weight: 400;
     }
     .container {
       overflow: hidden;
