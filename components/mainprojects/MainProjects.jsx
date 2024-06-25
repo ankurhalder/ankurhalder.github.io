@@ -99,7 +99,7 @@ const Single = ({ item }) => {
       variants={containerVariants}
       className="singleProject"
     >
-      <div className="container none">
+      <div className="container">
         <div className="wrapper">
           <motion.div
             className="videoContainer"
@@ -189,7 +189,7 @@ const MainProject = () => {
   };
 
   return (
-    <div className="main-project" ref={ref}>
+    <div className="main-project none" ref={ref}>
       <div className="progress-wrapper">
         <div className="progress">
           <motion.h1
