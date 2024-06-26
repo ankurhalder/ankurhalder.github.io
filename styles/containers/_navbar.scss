@@ -105,7 +105,7 @@
         content: "";
         height: 8px;
         width: 8px;
-        background: #fff;
+        background: var(--background);
         bottom: 18px;
         left: 50%;
         transform: translate(-50%) rotate(45deg);
