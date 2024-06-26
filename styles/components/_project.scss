@@ -94,11 +94,14 @@
           @include flex-container(row, nowrap, center, center);
           gap: 1.5rem;
           button {
+            font-family: var(--font-tektur);
+            font-size: var(--font-12);
+            letter-spacing: 3px;
             cursor: pointer;
             transition: all 0.1s ease-in-out;
             background-color: #3b82f6;
             color: #ffffff;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.6rem;
             border-radius: 0.5rem;
             border-color: #2563eb;
             border-style: solid;
