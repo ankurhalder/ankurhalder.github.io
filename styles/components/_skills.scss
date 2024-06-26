@@ -146,6 +146,11 @@
           width: 120px;
           height: 40px;
         }
+        @media screen and (max-width: 300px) {
+          width: 100px;
+          height: 40px;
+          font-size: var(--font-14);
+        }
       }
 
       h1 {
@@ -271,6 +276,11 @@
           font-size: var(--font-13);
           letter-spacing: 1px;
           padding: 0;
+        }
+        @media screen and (max-width: 300px) {
+          width: 100px;
+          height: 40px;
+          font-size: var(--font-14);
         }
       }
     }
