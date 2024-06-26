@@ -21,6 +21,8 @@
           font-size: var(--font-8);
         }
         @media (max-width: $breakpoint-large-tablet) {
+          font-size: var(--font-6);
+          margin: 2% 0 0 0;
         }
         @media (max-width: $breakpoint-tablet) {
         }
@@ -31,7 +33,7 @@
       }
       .progressBar {
         height: 5px;
-        background-color: #4caf50;
+        background-color: var(--progress-green);
         @media (max-width: $breakpoint-desktop-wide) {
         }
         @media (max-width: $breakpoint-desktop) {

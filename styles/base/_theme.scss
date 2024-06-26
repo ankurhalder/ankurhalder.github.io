@@ -14,6 +14,7 @@
     --shadow-medium: rgba(0, 0, 0, 0.5);
     --shadow-medium-inverse: rgba(255, 255, 255, 0.5);
     --link-color: aqua;
+    --progress-green: #0044ff;
   }
 
   .theme-light {
@@ -30,5 +31,6 @@
     --shadow-medium: rgba(225, 225, 225, 0.5);
     --shadow-medium-inverse: rgba(0, 0, 0, 0.5);
     --link-color: #0072ff;
+    --progress-green: #0072ff;
   }
 }
