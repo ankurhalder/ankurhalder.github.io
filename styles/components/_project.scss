@@ -28,7 +28,7 @@
       @include flex-container(row, nowrap, center, center);
       max-width: max(1566px, 60%);
       margin: 1% auto 1% auto;
-      gap: 1%;
+      gap: 2vw;
       // @media (max-width: $breakpoint-desktop-wide) {
       // }
       // @media (max-width: $breakpoint-desktop) {
