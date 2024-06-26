@@ -177,7 +177,7 @@
         }
       }
 
-      button {
+      .box {
         width: 300px;
         height: 100px;
         border-radius: 50px;
@@ -188,8 +188,63 @@
         font-family: var(--font-tektur);
         letter-spacing: 2px;
         font-weight: 400;
-        box-shadow: 0 0 5px var(--blue-2) inset, 0 0 10px var(--blue-2) inset,
-          0 0 20px var(--blue-2) inset;
+        transform: perspective(500px) rotateY(-15deg);
+        text-shadow: 6px 3px 2px var(--shadow-low);
+        box-shadow: 2px 0 0 5px var(--shadow-low);
+        transition: 0.5s;
+        position: relative;
+        overflow: hidden;
+        &:hover {
+          transform: perspective(500px) rotateY(15deg);
+          text-shadow: -6px 3px 2px var(--shadow-low);
+          box-shadow: -2px 0 0 5px var(--shadow-low);
+          &::before {
+            left: 100%;
+          }
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          width: 300px;
+          height: 100px;
+          border-radius: 50px;
+          top: -1%;
+          background: linear-gradient(
+            to right,
+            transparent,
+            white,
+            transparent
+          );
+          left: -100%;
+          transition: 0.5s;
+          @media (max-width: $breakpoint-desktop-wide) {
+            width: 290px;
+            height: 95px;
+          }
+          @media (max-width: $breakpoint-desktop) {
+            width: 250px;
+            height: 80px;
+          }
+          @media (max-width: $breakpoint-large-tablet) {
+          }
+          @media (max-width: $breakpoint-tablet) {
+            max-width: 250px;
+            max-height: 80px;
+            top: unset;
+            bottom: 0;
+          }
+          @media (max-width: $breakpoint-phone) {
+            max-width: 200px;
+            max-height: 70px;
+          }
+          @media screen and (max-width: 1000px) and (max-height: 450px) {
+            width: 150px;
+            height: 40px;
+            font-size: var(--font-13);
+            letter-spacing: 1px;
+            padding: 0;
+          }
+        }
         @media (max-width: $breakpoint-desktop-wide) {
           width: 290px;
           height: 95px;
@@ -216,14 +271,6 @@
           font-size: var(--font-13);
           letter-spacing: 1px;
           padding: 0;
-        }
-
-        &:hover {
-          box-shadow: 0 0 5px var(--yellow-2) inset,
-            0 0 10px var(--yellow-2) inset, 0 0 20px var(--yellow-2) inset;
-          background-color: var(--yellow-2);
-          color: var(--text-color);
-          transition: all 0.5s ease-in-out;
         }
       }
     }

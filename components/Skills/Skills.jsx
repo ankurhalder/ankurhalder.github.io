@@ -120,16 +120,18 @@ const Skills = () => {
             <span>Skills</span>
           </motion.h1>
           <a href="/ankurhalder.pdf" target="_blank" rel="noopener noreferrer">
-            <motion.button
-              aria-label="Download My CV"
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={
                 titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
               transition={{ duration: 0.4, delay: 0.8 }}
+              className="button-container"
             >
-              Download My CV
-            </motion.button>
+              <button className="box" aria-label="Download My CV">
+                Download My CV
+              </button>
+            </motion.div>
           </a>
         </div>
       </div>
