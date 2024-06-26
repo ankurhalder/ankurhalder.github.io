@@ -133,6 +133,7 @@
           gap: 1vh;
         }
         @media screen and (max-width: 1000px) and (max-height: 450px) {
+          gap: 1.5vh;
         }
         h2 {
           font-family: var(--font-lighters);
@@ -155,6 +156,7 @@
             font-size: var(--font-5);
           }
           @media screen and (max-width: 1000px) and (max-height: 450px) {
+            font-size: var(--font-8);
           }
         }
 
@@ -179,6 +181,7 @@
             font-size: var(--font-7);
           }
           @media screen and (max-width: 1000px) and (max-height: 450px) {
+            font-size: var(--font-9);
           }
         }
 
@@ -215,6 +218,9 @@
             line-height: 1.5;
           }
           @media screen and (max-width: 1000px) and (max-height: 450px) {
+            font-size: var(--font-11);
+            letter-spacing: 1px;
+            line-height: 1.5;
           }
         }
         .button-container {
@@ -266,6 +272,8 @@
               font-size: var(--font-11);
             }
             @media screen and (max-width: 1000px) and (max-height: 450px) {
+              padding: 0.5rem 1rem;
+              font-size: var(--font-13);
             }
             &:hover {
               filter: brightness(1.1);

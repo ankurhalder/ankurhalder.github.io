@@ -23,6 +23,9 @@
     @media (max-width: $breakpoint-phone) {
       width: 300px;
     }
+    @media screen and (max-width: 1000px) and (max-height: 450px) {
+      width: 300px;
+    }
     h1 {
       position: relative;
       text-align: center;
