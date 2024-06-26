@@ -16,7 +16,7 @@
         font-weight: 400;
       }
       .progressBar {
-        height: 7px;
+        height: 5px;
         background-color: #4caf50;
       }
     }
@@ -66,42 +66,33 @@
         }
 
         h2 {
-          font-family: "Montserrat", sans-serif;
-          font-size: 2.5rem;
-          font-weight: 600;
-          color: #333;
-          letter-spacing: 1px;
-          margin-bottom: 0.5rem;
-
-          @media (max-width: 768px) {
-            font-size: 2rem;
-          }
+          font-family: var(--font-lighters);
+          font-size: var(--font-6);
+          font-weight: 400;
+          color: var(--text-color-1);
+          letter-spacing: 2px;
         }
 
         h3 {
-          font-size: 1.8rem;
-          font-weight: 500;
-          color: #666;
-          margin-bottom: 1rem;
-
-          @media (max-width: 768px) {
-            font-size: 1.5rem;
-          }
+          font-family: var(--font-elianto);
+          font-size: var(--font-8);
+          font-weight: 400;
+          color: var(--text-color-4);
+          letter-spacing: 2px;
         }
 
         p {
-          color: #666;
-          font-size: 1.6rem;
-          line-height: 1.6;
-          margin-bottom: 1.5rem;
-
-          @media (max-width: 768px) {
-            font-size: 1.4rem;
-          }
+          font-family: var(--font-roboto);
+          font-size: var(--font-10);
+          font-weight: 400;
+          color: var(--text-color-3);
+          letter-spacing: 2px;
+          line-height: 1.5;
+          text-align: justify;
         }
         .button-container {
           @include flex-container(row, nowrap, center, center);
-          gap: 1rem;
+          gap: 1.5rem;
           button {
             cursor: pointer;
             transition: all 0.1s ease-in-out;
