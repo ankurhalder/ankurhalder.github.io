@@ -64,6 +64,7 @@
         gap: 1vw;
       }
       @media (max-width: $breakpoint-large-tablet) {
+        @include flex-container(column, nowrap, center, center);
         max-width: max(850px, 60%);
       }
       @media (max-width: $breakpoint-tablet) {

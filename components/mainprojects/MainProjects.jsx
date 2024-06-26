@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import {
   motion,
@@ -91,6 +91,17 @@ const Single = ({ item }) => {
     },
   };
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1000);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <motion.section
       ref={inViewRef}
@@ -100,68 +111,145 @@ const Single = ({ item }) => {
       className="singleProject"
     >
       <div className="wrapper">
-        <motion.div
-          className="videoContainer"
-          ref={ref}
-          variants={videoVariants}
-        >
-          <motion.video
-            autoPlay
-            muted
-            loop
-            src={item.video}
-            alt={`Video of ${item.title}`}
-            loading="lazy"
-            style={{ opacity, y: parallaxY }}
-            poster={item.poster}
-          />
-        </motion.div>
-        <motion.div className="textContainer" style={{ y }}>
-          <h2>{item.title}</h2>
-          <h3>{item.subTitle}</h3>
-          <p>{item.desc}</p>
+        {isMobile ? (
+          <>
+            <motion.div className="textContainer" style={{ y }}>
+              <h2>{item.title}</h2>
+              <h3>{item.subTitle}</h3>
+              <p>{item.desc}</p>
 
-          <div className="button-container">
-            {item.githubLink && (
-              <motion.a
-                href={item.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                variants={buttonVariants}
-                whileHover="hover"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setTimeout(() => {
-                    window.open(
-                      item.githubLink,
-                      "_blank",
-                      "noopener noreferrer"
-                    );
-                  }, 300);
-                }}
-              >
-                <button>See Github</button>
-              </motion.a>
-            )}
-            {item.demoLink && (
-              <motion.a
-                href={item.demoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                variants={buttonVariants}
-                whileHover="hover"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setTimeout(() => {
-                    window.open(item.demoLink, "_blank", "noopener noreferrer");
-                  }, 300);
-                }}
-              >
-                <button>See Demo</button>
-              </motion.a>
-            )}
-          </div>
-        </motion.div>
+              <div className="button-container">
+                {item.githubLink && (
+                  <motion.a
+                    href={item.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variants={buttonVariants}
+                    whileHover="hover"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setTimeout(() => {
+                        window.open(
+                          item.githubLink,
+                          "_blank",
+                          "noopener noreferrer"
+                        );
+                      }, 300);
+                    }}
+                  >
+                    <button>See Github</button>
+                  </motion.a>
+                )}
+                {item.demoLink && (
+                  <motion.a
+                    href={item.demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variants={buttonVariants}
+                    whileHover="hover"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setTimeout(() => {
+                        window.open(
+                          item.demoLink,
+                          "_blank",
+                          "noopener noreferrer"
+                        );
+                      }, 300);
+                    }}
+                  >
+                    <button>See Demo</button>
+                  </motion.a>
+                )}
+              </div>
+            </motion.div>
+            <motion.div
+              className="videoContainer"
+              ref={ref}
+              variants={videoVariants}
+            >
+              <motion.video
+                autoPlay
+                muted
+                loop
+                src={item.video}
+                alt={`Video of ${item.title}`}
+                loading="lazy"
+                style={{ opacity, y: parallaxY }}
+                poster={item.poster}
+              />
+            </motion.div>
+          </>
+        ) : (
+          <>
+            <motion.div
+              className="videoContainer"
+              ref={ref}
+              variants={videoVariants}
+            >
+              <motion.video
+                autoPlay
+                muted
+                loop
+                src={item.video}
+                alt={`Video of ${item.title}`}
+                loading="lazy"
+                style={{ opacity, y: parallaxY }}
+                poster={item.poster}
+              />
+            </motion.div>
+            <motion.div className="textContainer" style={{ y }}>
+              <h2>{item.title}</h2>
+              <h3>{item.subTitle}</h3>
+              <p>{item.desc}</p>
+
+              <div className="button-container">
+                {item.githubLink && (
+                  <motion.a
+                    href={item.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variants={buttonVariants}
+                    whileHover="hover"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setTimeout(() => {
+                        window.open(
+                          item.githubLink,
+                          "_blank",
+                          "noopener noreferrer"
+                        );
+                      }, 300);
+                    }}
+                  >
+                    <button>See Github</button>
+                  </motion.a>
+                )}
+                {item.demoLink && (
+                  <motion.a
+                    href={item.demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variants={buttonVariants}
+                    whileHover="hover"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setTimeout(() => {
+                        window.open(
+                          item.demoLink,
+                          "_blank",
+                          "noopener noreferrer"
+                        );
+                      }, 300);
+                    }}
+                  >
+                    <button>See Demo</button>
+                  </motion.a>
+                )}
+              </div>
+            </motion.div>
+          </>
+        )}
       </div>
     </motion.section>
   );
