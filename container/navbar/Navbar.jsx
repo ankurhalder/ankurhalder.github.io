@@ -121,36 +121,61 @@ function Navbar({ isDarkMode, setIsDarkMode }) {
               href: "https://github.com/ankurhalder",
               imgSrc: "/social/github.svg",
               alt: "github",
+              tooltip: "Github",
             },
             {
               href: "https://www.linkedin.com/in/ankurhalder",
               imgSrc: "/social/linkedin.svg",
               alt: "linkedin",
+              tooltip: "LinkedIn",
             },
             {
               href: "https://www.facebook.com/ankur.roxx.9",
               imgSrc: "/social/facebook.svg",
               alt: "facebook",
+              tooltip: "Facebook",
             },
             {
               href: "https://www.instagram.com/halder_ankur",
               imgSrc: "/social/instagram.svg",
               alt: "instagram",
+              tooltip: "Instagram",
             },
           ].map((social, index) => (
-            <motion.a
-              key={index}
-              href={social.href}
-              target="_blank"
-              variants={socialVariants}
-              whileHover="hover"
-              initial="initial"
-              animate={socialControls}
-              custom={index}
-              aria-label={social.alt}
-            >
-              <img src={social.imgSrc} alt={social.alt} />
-            </motion.a>
+            <Fragment key={index}>
+              {/* <span className="tooltip">{social.tooltip}</span>
+              <motion.a
+                key={index}
+                href={social.href}
+                target="_blank"
+                variants={socialVariants}
+                whileHover="hover"
+                initial="initial"
+                animate={socialControls}
+                custom={index}
+                aria-label={social.alt}
+              >
+                <img src={social.imgSrc} alt={social.alt} />
+              </motion.a> */}
+              <motion.a
+                key={index}
+                href={social.href}
+                target="_blank"
+                variants={socialVariants}
+                whileHover="hover"
+                initial="initial"
+                animate={socialControls}
+                custom={index}
+                aria-label={social.alt}
+              >
+                <ul className="nav-wrapper">
+                  <li className={`icon ${social.tooltip}`}>
+                    <span className="tooltip">{social.tooltip}</span>
+                    <img src={social.imgSrc} alt={social.alt} />
+                  </li>
+                </ul>
+              </motion.a>
+            </Fragment>
           ))}
         </div>
       </div>
