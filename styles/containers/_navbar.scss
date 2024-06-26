@@ -33,16 +33,19 @@
 
   .social {
     @include flex-container(row, nowrap, center, center);
-    gap: 20px;
+    gap: 30px;
     margin: 0 3% 0 0;
     @media (max-width: $breakpoint-desktop-wide) {
       margin: 0 4% 0 0;
     }
     @media (max-width: $breakpoint-desktop) {
+      gap: 25px;
     }
     @media (max-width: $breakpoint-large-tablet) {
+      gap: 20px;
     }
     @media (max-width: $breakpoint-tablet) {
+      gap: 15px;
       margin: 0 5% 0 0;
     }
     @media (max-width: $breakpoint-phone) {
@@ -65,7 +68,7 @@
           transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
         .tooltip {
-          position: absolute;
+          position: fixed;
           top: 0;
           font-family: var(--font-elianto);
           font-size: var(--font-13);
@@ -111,9 +114,9 @@
       .nav-wrapper .icon:hover .tooltip {
         top: 45px;
         opacity: 1;
-        right: -12.5px;
+        left: -20px;
         visibility: visible;
-        pointer-events: auto;
+        // pointer-events: auto;
       }
     }
   }
