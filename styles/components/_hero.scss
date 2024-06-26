@@ -142,11 +142,16 @@
           border-radius: 10px;
           background-color: transparent;
           transform: perspective(200px) rotateX(15deg);
-          // box-shadow: rgba(63, 94, 251, 0.2) 0px 40px 29px 0px;
+          box-shadow: var(--shadow-low-inverse) 0px 1px 1px 0px;
           will-change: transform;
           transition: all 0.3s;
-          // border-bottom: 2px solid rgba(70, 135, 252, 1);
           cursor: pointer;
+          &.cvButton {
+            transform: perspective(200px) rotateX(15deg) translateY(-2px);
+          }
+          &.contactButton {
+            transform: perspective(200px) rotateX(15deg) translateY(-2px);
+          }
           &:hover {
             transform: perspective(180px) rotateX(30deg) translateY(2px);
           }

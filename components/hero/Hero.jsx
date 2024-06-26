@@ -147,9 +147,10 @@ const Hero = () => {
               rel="noopener noreferrer"
             >
               <motion.button
-              // variants={buttonVariants}
-              // whileHover="hover"
-              // whileTap={{ scale: 0.95 }}
+                // variants={buttonVariants}
+                // whileHover="hover"
+                // whileTap={{ scale: 0.95 }}
+                className="cvButton"
               >
                 Download My CV
               </motion.button>
@@ -159,6 +160,7 @@ const Hero = () => {
               // variants={buttonVariants}
               // whileHover="hover"
               // whileTap={{ scale: 0.95 }}
+              className="contactButton"
             >
               Contact Me
             </motion.button>
