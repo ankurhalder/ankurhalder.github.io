@@ -147,18 +147,18 @@ const Hero = () => {
               rel="noopener noreferrer"
             >
               <motion.button
-                variants={buttonVariants}
-                whileHover="hover"
-                whileTap={{ scale: 0.95 }}
+              // variants={buttonVariants}
+              // whileHover="hover"
+              // whileTap={{ scale: 0.95 }}
               >
                 Download My CV
               </motion.button>
             </a>
             <motion.button
               onDoubleClick={contactMeHandler}
-              variants={buttonVariants}
-              whileHover="hover"
-              whileTap={{ scale: 0.95 }}
+              // variants={buttonVariants}
+              // whileHover="hover"
+              // whileTap={{ scale: 0.95 }}
             >
               Contact Me
             </motion.button>
