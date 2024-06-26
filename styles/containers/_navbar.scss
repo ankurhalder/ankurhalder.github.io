@@ -61,28 +61,18 @@
       .nav-wrapper {
         .icon {
           position: relative;
-          background: #fff;
-          border-radius: 50%;
-          width: 50px;
-          height: 50px;
-          font-size: 18px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
           cursor: pointer;
           transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
         .tooltip {
           position: absolute;
           top: 0;
-          font-size: 14px;
-          background: #fff;
-          color: black;
-          padding: 5px 8px;
+          font-family: var(--font-elianto);
+          font-size: var(--font-13);
+          background: var(--background);
+          color: var(--text-color-inverse);
+          padding: 2px 8px;
           border-radius: 5px;
-          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
           opacity: 0;
           pointer-events: none;
           transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -113,42 +103,17 @@
         height: 8px;
         width: 8px;
         background: #fff;
-        bottom: 30px;
+        bottom: 18px;
         left: 50%;
         transform: translate(-50%) rotate(45deg);
         transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       }
       .nav-wrapper .icon:hover .tooltip {
-        top: 65px;
+        top: 45px;
         opacity: 1;
+        right: -12.5px;
         visibility: visible;
         pointer-events: auto;
-      }
-
-      .nav-wrapper .icon:hover span,
-      .nav-wrapper .icon:hover .tooltip {
-        text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
-      }
-
-      .nav-wrapper .facebook:hover,
-      .nav-wrapper .facebook:hover .tooltip,
-      .nav-wrapper .facebook:hover .tooltip::before {
-        background: #1877f2;
-        color: #fff;
-      }
-
-      .nav-wrapper .twitter:hover,
-      .nav-wrapper .twitter:hover .tooltip,
-      .nav-wrapper .twitter:hover .tooltip::before {
-        background: #1da1f2;
-        color: #fff;
-      }
-
-      .nav-wrapper .instagram:hover,
-      .nav-wrapper .instagram:hover .tooltip,
-      .nav-wrapper .instagram:hover .tooltip::before {
-        background: #e4405f;
-        color: #fff;
       }
     }
   }
