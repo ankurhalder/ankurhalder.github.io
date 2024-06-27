@@ -30,10 +30,34 @@
     font-family: var(--font-elianto);
     font-size: var(--font-5);
     color: var(--text-color-1);
+    @media (max-width: $breakpoint-desktop-wide) {
+    }
+    @media (max-width: $breakpoint-desktop) {
+    }
+    @media (max-width: $breakpoint-large-tablet) {
+    }
+    @media (max-width: $breakpoint-tablet) {
+    }
+    @media (max-width: $breakpoint-phone) {
+    }
+    @media screen and (max-width: 1000px) and (max-height: 450px) {
+    }
     .handwave {
       max-width: 4vw;
       height: auto;
       object-fit: cover;
+      @media (max-width: $breakpoint-desktop-wide) {
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
+      }
+      @media screen and (max-width: 1000px) and (max-height: 450px) {
+      }
     }
   }
 
@@ -46,13 +70,49 @@
     letter-spacing: 2px;
     text-align: justify;
     margin: 5vh 0 0 0;
+    @media (max-width: $breakpoint-desktop-wide) {
+    }
+    @media (max-width: $breakpoint-desktop) {
+    }
+    @media (max-width: $breakpoint-large-tablet) {
+    }
+    @media (max-width: $breakpoint-tablet) {
+    }
+    @media (max-width: $breakpoint-phone) {
+    }
+    @media screen and (max-width: 1000px) and (max-height: 450px) {
+    }
   }
 
   .cards-container {
     margin: 5vh 0 0 0;
+    @media (max-width: $breakpoint-desktop-wide) {
+    }
+    @media (max-width: $breakpoint-desktop) {
+    }
+    @media (max-width: $breakpoint-large-tablet) {
+    }
+    @media (max-width: $breakpoint-tablet) {
+    }
+    @media (max-width: $breakpoint-phone) {
+    }
+    @media screen and (max-width: 1000px) and (max-height: 450px) {
+    }
     .cards {
       @include flex-container(row, nowrap, center, center);
       gap: 2vw;
+      @media (max-width: $breakpoint-desktop-wide) {
+      }
+      @media (max-width: $breakpoint-desktop) {
+      }
+      @media (max-width: $breakpoint-large-tablet) {
+      }
+      @media (max-width: $breakpoint-tablet) {
+      }
+      @media (max-width: $breakpoint-phone) {
+      }
+      @media screen and (max-width: 1000px) and (max-height: 450px) {
+      }
       .card {
         background-color: var(--background-1);
         box-shadow: 0px 10px 20px var(--shadow-medium);
@@ -61,13 +121,49 @@
         max-width: 250px;
         max-height: 300px;
         padding: 30px;
+        @media (max-width: $breakpoint-desktop-wide) {
+        }
+        @media (max-width: $breakpoint-desktop) {
+        }
+        @media (max-width: $breakpoint-large-tablet) {
+        }
+        @media (max-width: $breakpoint-tablet) {
+        }
+        @media (max-width: $breakpoint-phone) {
+        }
+        @media screen and (max-width: 1000px) and (max-height: 450px) {
+        }
         .card-inner {
           @include flex-container(column, nowrap, center, center);
           gap: 2vh;
+          @media (max-width: $breakpoint-desktop-wide) {
+          }
+          @media (max-width: $breakpoint-desktop) {
+          }
+          @media (max-width: $breakpoint-large-tablet) {
+          }
+          @media (max-width: $breakpoint-tablet) {
+          }
+          @media (max-width: $breakpoint-phone) {
+          }
+          @media screen and (max-width: 1000px) and (max-height: 450px) {
+          }
           .card-icon {
             max-width: 100px;
             height: auto;
             object-fit: contain;
+            @media (max-width: $breakpoint-desktop-wide) {
+            }
+            @media (max-width: $breakpoint-desktop) {
+            }
+            @media (max-width: $breakpoint-large-tablet) {
+            }
+            @media (max-width: $breakpoint-tablet) {
+            }
+            @media (max-width: $breakpoint-phone) {
+            }
+            @media screen and (max-width: 1000px) and (max-height: 450px) {
+            }
           }
 
           .card-title {
@@ -78,6 +174,18 @@
             margin: 2vh 0 0 0;
             letter-spacing: 2px;
             color: var(--text-color-inverse-1);
+            @media (max-width: $breakpoint-desktop-wide) {
+            }
+            @media (max-width: $breakpoint-desktop) {
+            }
+            @media (max-width: $breakpoint-large-tablet) {
+            }
+            @media (max-width: $breakpoint-tablet) {
+            }
+            @media (max-width: $breakpoint-phone) {
+            }
+            @media screen and (max-width: 1000px) and (max-height: 450px) {
+            }
           }
         }
       }
