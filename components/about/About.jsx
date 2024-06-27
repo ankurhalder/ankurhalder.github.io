@@ -3,28 +3,31 @@ import { Fragment } from "react";
 function About() {
   const cardData = [
     {
-      1: {
-        src: "frontend-dev.svg",
-        alt: "Frontend Developer",
-        title: "Frontend Developer",
-      },
-      2: {
-        src: "backend-dev.svg",
-        alt: "Backend Developer",
-        title: "Backend Developer",
-      },
-      3: {
-        src: "database.svg",
-        alt: "Database Engineer",
-        title: "Database Engineer",
-      },
-      4: {
-        src: "ui.svg",
-        alt: "UI/UX Designer",
-        title: "UI/UX Designer",
-      },
+      id: 1,
+      src: "frontend-dev.svg",
+      alt: "Frontend Developer",
+      title: "Frontend Developer",
+    },
+    {
+      id: 2,
+      src: "backend-dev.svg",
+      alt: "Backend Developer",
+      title: "Backend Developer",
+    },
+    {
+      id: 3,
+      src: "database.svg",
+      alt: "Database Engineer",
+      title: "Database Engineer",
+    },
+    {
+      id: 4,
+      src: "ui.svg",
+      alt: "UI/UX Designer",
+      title: "UI/UX Designer",
     },
   ];
+
   return (
     <Fragment>
       <article className="about-section">
@@ -47,7 +50,12 @@ function About() {
         </p>
 
         <div className="cards">
-          <div className="card"></div>
+          {cardData.map((card) => (
+            <div className="card" key={card.id}>
+              <img src={card.src} alt={card.alt} />
+              <h3>{card.title}</h3>
+            </div>
+          ))}
         </div>
       </article>
     </Fragment>
