@@ -4,6 +4,24 @@
   height: 100dvh;
   text-align: center;
   position: relative;
+  @media (max-width: $breakpoint-desktop-wide) {
+    max-width: max(1300px, 60%);
+  }
+  @media (max-width: $breakpoint-desktop) {
+    max-width: max(1150px, 60%);
+  }
+  @media (max-width: $breakpoint-large-tablet) {
+    max-width: max(900px, 60%);
+  }
+  @media (max-width: $breakpoint-tablet) {
+    max-width: max(500px, 60%);
+  }
+  @media (max-width: $breakpoint-phone) {
+    max-width: max(300px, 60%);
+  }
+  @media screen and (max-width: 1000px) and (max-height: 450px) {
+    max-width: max(800px, 60%);
+  }
   .intro {
     @include flex-container(row, nowrap, center, center);
     margin: 10vh 0 2vh 0;
