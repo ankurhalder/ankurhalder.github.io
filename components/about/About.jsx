@@ -28,14 +28,14 @@ const About = () => {
     hidden: {
       opacity: 0,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.2,
         delayChildren: 0.5,
       },
     },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.3,
         delayChildren: 0.5,
       },
     },
@@ -50,7 +50,7 @@ const About = () => {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 0.8,
+        duration: 1,
         type: "spring",
         stiffness: 50,
       },
