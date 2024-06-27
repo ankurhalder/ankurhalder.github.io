@@ -51,7 +51,12 @@ function About() {
 
         <div className="cards">
           {cardData.map((card) => (
-            <div className="card" key={card.id}>
+            <div
+              className={`card card-${card.title
+                .toLowerCase()
+                .replace(/\s+/g, "-")}`}
+              key={card.id}
+            >
               <img src={card.src} alt={card.alt} />
               <h3>{card.title}</h3>
             </div>
