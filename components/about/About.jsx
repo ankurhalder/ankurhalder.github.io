@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import { Fragment } from "react";
 const services = [
   {
     id: 1,
@@ -24,6 +24,37 @@ const services = [
 ];
 
 const About = () => {
+  const textContainerVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+        staggerChildren: 0.3,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
+  const textVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.8,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -58,50 +89,66 @@ const About = () => {
   };
 
   return (
-    <div className="about-section">
-      <h2 className="section-title">Hello, I`&apos;`m Ankur Halder 👋</h2>
-      <p className="about-description">
-        I am a dedicated software developer proficient in the MERN stack, Django
-        (full stack, REST API, ORM), Python (OOP), JavaScript (OOP), Java (OOP),
-        and Next.js (full stack), with a strong focus on creating robust and
-        efficient solutions. Currently pursuing a B.Tech in Computer Science at
-        the University Of Engineering & Management, New Town, I bring a solid
-        foundation in data structures and algorithms to my work.
-      </p>
-      <p className="about-description">
-        My educational journey includes Senior Secondary studies in Science and
-        Secondary education, providing me with a comprehensive academic
-        background. Beyond coding, I find joy in exploring diverse interests
-        like watching anime, discovering new movies and TV series, and diving
-        into captivating science fiction and space exploration topics.
-      </p>
-
-      <div className="cards">
+    <Fragment>
+      <article className="about-section">
         <motion.div
-          variants={containerVariants}
+          className="text-container"
+          variants={textContainerVariants}
           initial="hidden"
           animate="visible"
-          className="card-grid"
         >
-          {services.map((service) => (
+          <motion.div className="animated-text" variants={textVariants}>
+            <h2 className="section-title">Hello, I`&apos;`m Ankur Halder 👋</h2>
+          </motion.div>
+          <motion.div className="animated-text" variants={textVariants}>
+            <p className="about-description">
+              I am a dedicated software developer proficient in the MERN stack,
+              Django (full stack, REST API, ORM), Python (OOP), JavaScript
+              (OOP), Java (OOP), and Next.js (full stack), with a strong focus
+              on creating robust and efficient solutions. Currently pursuing a
+              B.Tech in Computer Science at the University Of Engineering &
+              Management, New Town, I bring a solid foundation in data
+              structures and algorithms to my work.
+            </p>
+          </motion.div>
+          <motion.div className="animated-text" variants={textVariants}>
+            <p className="about-description">
+              My educational journey includes Senior Secondary studies in
+              Science and Secondary education, providing me with a comprehensive
+              academic background. Beyond coding, I find joy in exploring
+              diverse interests like watching anime, discovering new movies and
+              TV series, and diving into captivating science fiction and space
+              exploration topics.
+            </p>
+          </motion.div>
+          <div className="cards">
             <motion.div
-              key={service.id}
-              className="card"
-              variants={cardVariants}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className="card-grid"
             >
-              <div className="card-inner">
-                <img
-                  src={service.icon}
-                  alt={service.title}
-                  className="card-icon"
-                />
-                <h3 className="card-title">{service.title}</h3>
-              </div>
+              {services.map((service) => (
+                <motion.div
+                  key={service.id}
+                  className="card"
+                  variants={cardVariants}
+                >
+                  <div className="card-inner">
+                    <img
+                      src={service.icon}
+                      alt={service.title}
+                      className="card-icon"
+                    />
+                    <h3 className="card-title">{service.title}</h3>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
+          </div>
         </motion.div>
-      </div>
-    </div>
+      </article>
+    </Fragment>
   );
 };
 
