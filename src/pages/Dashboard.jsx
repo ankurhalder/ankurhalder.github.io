@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Navbar, Sidebar } from "../../container";
 import PropTypes from "prop-types";
-import { Parallax, Skills, Hero, MainProjects } from "../../components";
+import { Parallax, Skills, Hero, MainProjects, About } from "../../components";
 
 function Dashboard({ isDarkMode, setIsDarkMode }) {
   return (
@@ -10,6 +10,9 @@ function Dashboard({ isDarkMode, setIsDarkMode }) {
       <section id="Homepage">
         <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         <Hero />
+      </section>
+      <section id="About">
+        <About />
       </section>
       <section>
         <Parallax
