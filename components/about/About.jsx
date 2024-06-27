@@ -1,31 +1,35 @@
 import { Fragment, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
+import PropTypes from "prop-types";
 const services = [
   {
     id: 1,
     title: "Frontend Developer",
-    icon: "/about/frontend-dev.svg",
+    icon: "/about/frontend-light.svg",
+    darkModeIcon: "/about/frontend-dark.svg",
   },
   {
     id: 2,
     title: "Backend Developer",
-    icon: "/about/backend-dev.svg",
+    icon: "/about/backend-light.svg",
+    darkModeIcon: "/about/backend-dark.svg",
   },
   {
     id: 3,
     title: "Database Engineer",
-    icon: "/about/database.svg",
+    icon: "/about/database-light.svg",
+    darkModeIcon: "/about/database-dark.svg",
   },
   {
     id: 4,
     title: "UI/UX Designer",
-    icon: "/about/ui.svg",
+    icon: "/about/ui-light.svg",
+    darkModeIcon: "/about/ui-dark.svg",
   },
 ];
 
-const About = () => {
+const About = ({ isDarkMode }) => {
   const { ref: textRef, inView: textInView } = useInView({
     threshold: 0.1,
     triggerOnce: false,
@@ -191,7 +195,7 @@ const About = () => {
                 >
                   <div className="card-inner">
                     <img
-                      src={service.icon}
+                      src={isDarkMode ? service.darkModeIcon : service.icon}
                       alt={service.title}
                       className="card-icon"
                     />
@@ -205,6 +209,10 @@ const About = () => {
       </article>
     </Fragment>
   );
+};
+
+About.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired,
 };
 
 export default About;

@@ -12,7 +12,7 @@ function Dashboard({ isDarkMode, setIsDarkMode }) {
         <Hero />
       </section>
       <section id="About">
-        <About />
+        <About isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       </section>
       <section>
         <Parallax
