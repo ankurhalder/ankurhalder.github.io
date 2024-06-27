@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 function About() {
   const cardData = [
@@ -29,11 +29,24 @@ function About() {
     },
   ];
 
+  // Controls for animations
+  const controls = useAnimation();
+
+  // Function to start animations
+  const startAnimation = async () => {
+    await controls.start("visible");
+  };
+
   // Variant for staggered animation
   const containerVariants = {
+    hidden: {
+      opacity: 0,
+    },
     visible: {
+      opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        delay: 0.5, // Delay before animating
+        staggerChildren: 0.2, // Stagger animation
       },
     },
   };
@@ -42,16 +55,16 @@ function About() {
   const cardVariants = {
     hidden: {
       opacity: 0,
-      y: -50,
-      rotateX: -90,
+      x: -50, // Initial position outside viewport (left)
+      rotateY: -90, // Start with a 90-degree rotation (facing away)
     },
     visible: {
       opacity: 1,
-      y: 0,
-      rotateX: 0,
+      x: 0, // Move to the original position (center)
+      rotateY: 0, // Rotate back to 0 degrees
       transition: {
         duration: 0.8,
-        ease: "easeInOut",
+        ease: "easeOut",
       },
     },
   };
@@ -82,6 +95,7 @@ function About() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
+          onAnimationStart={startAnimation}
         >
           {cardData.map((card) => (
             <motion.div
@@ -92,7 +106,7 @@ function About() {
               variants={cardVariants}
               whileHover={{
                 scale: 1.05,
-                rotateX: -10,
+                rotateY: -10,
                 boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)",
               }}
             >
