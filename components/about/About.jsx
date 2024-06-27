@@ -26,34 +26,13 @@ const services = [
 ];
 
 const About = () => {
-  // Intersection observer hook for text animations
-  const { ref: textRef, inView: textInView } = useInView({
-    threshold: 0.1,
-    triggerOnce: false,
-  });
-
-  // Controls for text animations
-  const textControls = useAnimation();
-
-  // Animate text when in view
-  useEffect(() => {
-    if (textInView) {
-      textControls.start("visible");
-    } else {
-      textControls.start("hidden");
-    }
-  }, [textInView, textControls]);
-
-  // Intersection observer hook for card animations
   const { ref: cardRef, inView: cardInView } = useInView({
     threshold: 0.1,
     triggerOnce: false,
   });
 
-  // Controls for card animations
   const cardControls = useAnimation();
 
-  // Animate cards when in view
   useEffect(() => {
     if (cardInView) {
       cardControls.start("visible");
@@ -61,57 +40,6 @@ const About = () => {
       cardControls.start("hidden");
     }
   }, [cardInView, cardControls]);
-
-  // Animation variants
-  const textContainerVariants = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-        staggerChildren: 0.3,
-        delayChildren: 0.5,
-      },
-    },
-  };
-
-  const textVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0.8,
-      y: 20,
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const h2Variants = {
-    hidden: {
-      opacity: 0,
-      y: 20,
-      scale: 0.8,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 1,
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-  };
 
   const containerVariants = {
     hidden: {
@@ -149,17 +77,11 @@ const About = () => {
   return (
     <Fragment>
       <article className="about-section">
-        <motion.div
-          className="text-container"
-          variants={textContainerVariants}
-          initial="hidden"
-          animate={textControls}
-          ref={textRef}
-        >
-          <motion.div className="animated-text" variants={h2Variants}>
+        <motion.div className="text-container">
+          <motion.div className="animated-text">
             <h2 className="section-title">Hello, I&apos;m Ankur Halder 👋</h2>
           </motion.div>
-          <motion.div className="animated-text" variants={textVariants}>
+          <motion.div className="animated-text">
             <p className="about-description">
               I am a dedicated software developer proficient in the MERN stack,
               Django (full stack, REST API, ORM), Python (OOP), JavaScript
@@ -170,7 +92,7 @@ const About = () => {
               structures and algorithms to my work.
             </p>
           </motion.div>
-          <motion.div className="animated-text" variants={textVariants}>
+          <motion.div className="animated-text">
             <p className="about-description">
               My educational journey includes Senior Secondary studies in
               Science and Secondary education, providing me with a comprehensive
