@@ -31,6 +31,8 @@
     font-size: var(--font-5);
     color: var(--text-color-1);
     @media (max-width: $breakpoint-desktop-wide) {
+      font-size: var(--font-6);
+      margin: 9vh 0 0 0;
     }
     @media (max-width: $breakpoint-desktop) {
     }
@@ -71,6 +73,8 @@
     text-align: justify;
     margin: 5vh 0 0 0;
     @media (max-width: $breakpoint-desktop-wide) {
+      font-size: var(--font-11);
+      margin: 4vh 0 0 0;
     }
     @media (max-width: $breakpoint-desktop) {
     }
@@ -87,6 +91,7 @@
   .cards-container {
     margin: 5vh 0 0 0;
     @media (max-width: $breakpoint-desktop-wide) {
+      margin: 4vh 0 0 0;
     }
     @media (max-width: $breakpoint-desktop) {
     }
@@ -122,6 +127,9 @@
         max-height: 300px;
         padding: 30px;
         @media (max-width: $breakpoint-desktop-wide) {
+          padding: 25px;
+          max-width: 230px;
+          max-height: 280px;
         }
         @media (max-width: $breakpoint-desktop) {
         }
@@ -153,6 +161,7 @@
             height: auto;
             object-fit: contain;
             @media (max-width: $breakpoint-desktop-wide) {
+              max-width: 90px;
             }
             @media (max-width: $breakpoint-desktop) {
             }
@@ -175,6 +184,7 @@
             letter-spacing: 2px;
             color: var(--text-color-inverse-1);
             @media (max-width: $breakpoint-desktop-wide) {
+              font-size: var(--font-11);
             }
             @media (max-width: $breakpoint-desktop) {
             }
