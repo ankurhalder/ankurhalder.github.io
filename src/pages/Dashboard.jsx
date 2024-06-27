@@ -45,8 +45,7 @@ function Dashboard({ isDarkMode, setIsDarkMode }) {
 
       <section id="ComingSoon">
         <div className="comingsoon">
-          <h1>Coming Soon</h1>
-          <p>More projects and features are coming soon...</p>
+          <span>More Content coming soon please stay tuned.</span>
         </div>
       </section>
     </Fragment>
