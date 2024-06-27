@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { motion } from "framer-motion";
 
 function About() {
   const cardData = [
@@ -28,6 +29,33 @@ function About() {
     },
   ];
 
+  // Variant for staggered animation
+  const containerVariants = {
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  // Variants for individual card animation
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: -50,
+      rotateX: -90,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <Fragment>
       <article className="about-section">
@@ -49,19 +77,30 @@ function About() {
           into captivating science fiction and space exploration topics.
         </p>
 
-        <div className="cards">
+        <motion.div
+          className="cards"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {cardData.map((card) => (
-            <div
+            <motion.div
               className={`card card-${card.title
                 .toLowerCase()
                 .replace(/\s+/g, "-")}`}
               key={card.id}
+              variants={cardVariants}
+              whileHover={{
+                scale: 1.05,
+                rotateX: -10,
+                boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)",
+              }}
             >
               <img src={card.src} alt={card.alt} />
               <h3>{card.title}</h3>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </article>
     </Fragment>
   );
