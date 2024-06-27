@@ -149,7 +149,7 @@ const About = () => {
           ref={textRef}
         >
           <motion.div variants={h2Variants}>
-            <h2 className="sectioe">Hello, I&apos;m Ankur Halder 👋</h2>
+            <h2 className="intro">Hello, I&apos;m Ankur Halder 👋</h2>
           </motion.div>
           <motion.div variants={textVariants}>
             <p className="about-description">
