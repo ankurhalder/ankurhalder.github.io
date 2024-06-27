@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const services = [
   {
@@ -25,6 +26,43 @@ const services = [
 ];
 
 const About = () => {
+  // Intersection observer hook for text animations
+  const { ref: textRef, inView: textInView } = useInView({
+    threshold: 0.1,
+    triggerOnce: false,
+  });
+
+  // Controls for text animations
+  const textControls = useAnimation();
+
+  // Animate text when in view
+  useEffect(() => {
+    if (textInView) {
+      textControls.start("visible");
+    } else {
+      textControls.start("hidden");
+    }
+  }, [textInView, textControls]);
+
+  // Intersection observer hook for card animations
+  const { ref: cardRef, inView: cardInView } = useInView({
+    threshold: 0.1,
+    triggerOnce: false,
+  });
+
+  // Controls for card animations
+  const cardControls = useAnimation();
+
+  // Animate cards when in view
+  useEffect(() => {
+    if (cardInView) {
+      cardControls.start("visible");
+    } else {
+      cardControls.start("hidden");
+    }
+  }, [cardInView, cardControls]);
+
+  // Animation variants
   const textContainerVariants = {
     hidden: {
       opacity: 0,
@@ -74,6 +112,7 @@ const About = () => {
       },
     },
   };
+
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -114,7 +153,8 @@ const About = () => {
           className="text-container"
           variants={textContainerVariants}
           initial="hidden"
-          animate="visible"
+          animate={textControls}
+          ref={textRef}
         >
           <motion.div className="animated-text" variants={h2Variants}>
             <h2 className="section-title">Hello, I&apos;m Ankur Halder 👋</h2>
@@ -144,8 +184,9 @@ const About = () => {
             <motion.div
               variants={containerVariants}
               initial="hidden"
-              animate="visible"
+              animate={cardControls}
               className="card-grid"
+              ref={cardRef}
             >
               {services.map((service) => (
                 <motion.div
