@@ -1,5 +1,5 @@
 .about-section {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
   text-align: center;
@@ -16,13 +16,15 @@
 
   .cards {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 40px;
+    margin: 0 auto;
   }
 
   .card-grid {
     display: grid;
+    max-height: 300px;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
   }

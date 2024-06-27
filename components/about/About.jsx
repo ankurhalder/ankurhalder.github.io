@@ -4,22 +4,22 @@ const services = [
   {
     id: 1,
     title: "Frontend Developer",
-    icon: "/public/about/frontend-dev.svg",
+    icon: "/about/frontend-dev.svg",
   },
   {
     id: 2,
     title: "Backend Developer",
-    icon: "/public/about/backend-dev.svg",
+    icon: "/about/backend-dev.svg",
   },
   {
     id: 3,
     title: "Database Engineer",
-    icon: "/public/about/database-eng.svg",
+    icon: "/about/database.svg",
   },
   {
     id: 4,
     title: "UI/UX Designer",
-    icon: "/public/about/ui-ux-designer.svg",
+    icon: "/about/ui.svg",
   },
 ];
 
