@@ -21,7 +21,7 @@
 
   .about-description {
     font-family: var(--font-roboto);
-    font-size: var(--font-11);
+    font-size: var(--font-10);
     color: var(--text-color-4);
     line-height: 1.7;
     font-weight: 400;
@@ -34,29 +34,33 @@
     margin: 5vh 0 0 0;
     .cards {
       @include flex-container(row, nowrap, center, center);
-      gap: 1.5vw;
+      gap: 2vw;
       .card {
         background-color: var(--background-1);
         box-shadow: 0px 10px 20px var(--shadow-medium);
         border-radius: 12px;
-        padding: 20px;
+        // padding: 35px;
         text-align: center;
-        max-width: 300px;
-        max-height: 350px;
+        width: 250px;
+        height: 300px;
+        padding: 30px;
         .card-inner {
-          @include flex-container(column, center, center, center);
+          @include flex-container(column, nowrap, center, center);
+          gap: 2vh;
           .card-icon {
             max-width: 100px;
-            max-height: 100px;
+            height: auto;
             object-fit: contain;
-            margin-bottom: 15px;
           }
 
           .card-title {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 0;
+            font-family: var(--font-roboto);
+            text-transform: uppercase;
+            font-size: var(--font-10);
+            font-weight: 400;
+            margin: 2vh 0 0 0;
+            letter-spacing: 2px;
+            color: var(--text-color-inverse-1);
           }
         }
       }
