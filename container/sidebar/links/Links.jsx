@@ -29,11 +29,11 @@ const itemVariants = {
 const Links = ({ closeSidebar }) => {
   const items = [
     "Homepage",
+    "About",
     "Skills",
     "Projects",
     "ComingSoon",
     "ComingSoon ",
-    "ComingSoon  ",
   ];
 
   return (
