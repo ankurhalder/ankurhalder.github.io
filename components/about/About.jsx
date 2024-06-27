@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Fragment } from "react";
+
 const services = [
   {
     id: 1,
@@ -55,6 +56,24 @@ const About = () => {
       },
     },
   };
+
+  const h2Variants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+      scale: 0.8,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 1,
+        type: "spring",
+        stiffness: 100,
+      },
+    },
+  };
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -97,8 +116,8 @@ const About = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.div className="animated-text" variants={textVariants}>
-            <h2 className="section-title">Hello, I`&apos;`m Ankur Halder 👋</h2>
+          <motion.div className="animated-text" variants={h2Variants}>
+            <h2 className="section-title">Hello, I&apos;m Ankur Halder 👋</h2>
           </motion.div>
           <motion.div className="animated-text" variants={textVariants}>
             <p className="about-description">
