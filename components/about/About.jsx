@@ -26,6 +26,21 @@ const services = [
 ];
 
 const About = () => {
+  const { ref: textRef, inView: textInView } = useInView({
+    threshold: 0.1,
+    triggerOnce: false,
+  });
+
+  const textControls = useAnimation();
+
+  useEffect(() => {
+    if (textInView) {
+      textControls.start("visible");
+    } else {
+      textControls.start("hidden");
+    }
+  }, [textInView, textControls]);
+
   const { ref: cardRef, inView: cardInView } = useInView({
     threshold: 0.1,
     triggerOnce: false,
@@ -40,6 +55,56 @@ const About = () => {
       cardControls.start("hidden");
     }
   }, [cardInView, cardControls]);
+
+  const textContainerVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.2,
+        ease: "easeOut",
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const textVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.9,
+      y: 10,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.2,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const h2Variants = {
+    hidden: {
+      opacity: 0,
+      y: 10,
+      scale: 0.9,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.2,
+        type: "spring",
+        stiffness: 100,
+      },
+    },
+  };
 
   const containerVariants = {
     hidden: {
@@ -77,11 +142,17 @@ const About = () => {
   return (
     <Fragment>
       <article className="about-section">
-        <motion.div className="text-container">
-          <motion.div className="animated-text">
+        <motion.div
+          className="text-container"
+          variants={textContainerVariants}
+          initial="hidden"
+          animate={textControls}
+          ref={textRef}
+        >
+          <motion.div className="animated-text" variants={h2Variants}>
             <h2 className="section-title">Hello, I&apos;m Ankur Halder 👋</h2>
           </motion.div>
-          <motion.div className="animated-text">
+          <motion.div className="animated-text" variants={textVariants}>
             <p className="about-description">
               I am a dedicated software developer proficient in the MERN stack,
               Django (full stack, REST API, ORM), Python (OOP), JavaScript
@@ -92,7 +163,7 @@ const About = () => {
               structures and algorithms to my work.
             </p>
           </motion.div>
-          <motion.div className="animated-text">
+          <motion.div className="animated-text" variants={textVariants}>
             <p className="about-description">
               My educational journey includes Senior Secondary studies in
               Science and Secondary education, providing me with a comprehensive
