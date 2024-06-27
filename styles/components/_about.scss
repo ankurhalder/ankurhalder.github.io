@@ -45,6 +45,7 @@
       @include flex-container(column, nowrap, center, center);
     }
     @media screen and (max-width: 1000px) and (max-height: 450px) {
+      margin: 15vh 0 0 0;
     }
     .handwave {
       max-width: 4vw;
@@ -93,6 +94,8 @@
       text-align: center;
     }
     @media screen and (max-width: 1000px) and (max-height: 450px) {
+      font-size: var(--font-13);
+      line-height: 1.5;
     }
   }
 
@@ -159,6 +162,9 @@
         @media (max-width: $breakpoint-phone) {
         }
         @media screen and (max-width: 1000px) and (max-height: 450px) {
+          padding: 18px;
+          max-width: 150px;
+          max-height: 200px;
         }
         .card-inner {
           @include flex-container(column, nowrap, center, center);
@@ -175,6 +181,7 @@
             gap: 0;
           }
           @media screen and (max-width: 1000px) and (max-height: 450px) {
+            gap: 0;
           }
           .card-icon {
             max-width: 100px;
@@ -195,6 +202,7 @@
               max-width: 40px;
             }
             @media screen and (max-width: 1000px) and (max-height: 450px) {
+              max-width: 70px;
             }
           }
 
@@ -220,6 +228,8 @@
               margin: none;
             }
             @media screen and (max-width: 1000px) and (max-height: 450px) {
+              font-size: var(--font-12);
+              margin: none;
             }
           }
         }
