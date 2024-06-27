@@ -4,25 +4,25 @@ function About() {
   const cardData = [
     {
       id: 1,
-      src: "frontend-dev.svg",
+      src: "/about/frontend-dev.svg",
       alt: "Frontend Developer",
       title: "Frontend Developer",
     },
     {
       id: 2,
-      src: "backend-dev.svg",
+      src: "/about/backend-dev.svg",
       alt: "Backend Developer",
       title: "Backend Developer",
     },
     {
       id: 3,
-      src: "database.svg",
+      src: "/about/database.svg",
       alt: "Database Engineer",
       title: "Database Engineer",
     },
     {
       id: 4,
-      src: "ui.svg",
+      src: "/about/ui.svg",
       alt: "UI/UX Designer",
       title: "UI/UX Designer",
     },
