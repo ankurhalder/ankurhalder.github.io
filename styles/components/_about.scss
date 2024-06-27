@@ -1,48 +1,61 @@
 .about-section {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  color: #333;
+  padding: 40px 20px;
+  text-align: center;
 
   .section-title {
     font-size: 2rem;
     margin-bottom: 20px;
-    text-align: center;
   }
 
   .about-description {
-    font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 20px;
   }
 
   .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
-    justify-items: center;
   }
 
   .card {
-    background-color: #f4f4f4;
-    border: 1px solid #ccc;
+    background-color: #f3f4f6;
     padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 
-    img {
-      max-width: 100px;
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    .card-inner {
+      text-align: center;
+    }
+
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
       margin-bottom: 10px;
     }
 
-    h3 {
+    .card-title {
       font-size: 1.2rem;
-      margin: 0;
-    }
-
-    &:hover {
-      transform: translateY(-5px);
+      color: #333;
     }
   }
 }
