@@ -3,9 +3,9 @@ import { Fragment } from "react";
 function About() {
   return (
     <Fragment>
-      <article>
-        <h2>Hello, I`&apos;`m Ankur Halder 👋</h2>
-        <p>
+      <article className="about-section">
+        <h2 className="section-title">Hello, I&apos;m Ankur Halder 👋</h2>
+        <p className="about-description">
           I am a dedicated software developer proficient in the MERN stack,
           Django (full stack, REST API, ORM), Python (OOP), JavaScript (OOP),
           Java (OOP), and Next.js (full stack), with a strong focus on creating
@@ -14,7 +14,7 @@ function About() {
           Town, I bring a solid foundation in data structures and algorithms to
           my work.
         </p>
-        <p>
+        <p className="about-description">
           My educational journey includes Senior Secondary studies in Science
           and Secondary education, providing me with a comprehensive academic
           background. Beyond coding, I find joy in exploring diverse interests
