@@ -143,16 +143,15 @@ const About = () => {
     <Fragment>
       <article className="about-section">
         <motion.div
-          className="text-container"
           variants={textContainerVariants}
           initial="hidden"
           animate={textControls}
           ref={textRef}
         >
-          <motion.div className="animated-text" variants={h2Variants}>
-            <h2 className="section-title">Hello, I&apos;m Ankur Halder 👋</h2>
+          <motion.div variants={h2Variants}>
+            <h2 className="sectioe">Hello, I&apos;m Ankur Halder 👋</h2>
           </motion.div>
-          <motion.div className="animated-text" variants={textVariants}>
+          <motion.div variants={textVariants}>
             <p className="about-description">
               I am a dedicated software developer proficient in the MERN stack,
               Django (full stack, REST API, ORM), Python (OOP), JavaScript
@@ -163,7 +162,7 @@ const About = () => {
               structures and algorithms to my work.
             </p>
           </motion.div>
-          <motion.div className="animated-text" variants={textVariants}>
+          <motion.div variants={textVariants}>
             <p className="about-description">
               My educational journey includes Senior Secondary studies in
               Science and Secondary education, providing me with a comprehensive
