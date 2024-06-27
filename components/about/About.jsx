@@ -1,6 +1,30 @@
 import { Fragment } from "react";
 
 function About() {
+  const cardData = [
+    {
+      1: {
+        src: "frontend-dev.svg",
+        alt: "Frontend Developer",
+        title: "Frontend Developer",
+      },
+      2: {
+        src: "backend-dev.svg",
+        alt: "Backend Developer",
+        title: "Backend Developer",
+      },
+      3: {
+        src: "database.svg",
+        alt: "Database Engineer",
+        title: "Database Engineer",
+      },
+      4: {
+        src: "ui.svg",
+        alt: "UI/UX Designer",
+        title: "UI/UX Designer",
+      },
+    },
+  ];
   return (
     <Fragment>
       <article className="about-section">
@@ -21,6 +45,10 @@ function About() {
           like watching anime, discovering new movies and TV series, and diving
           into captivating science fiction and space exploration topics.
         </p>
+
+        <div className="cards">
+          <div className="card"></div>
+        </div>
       </article>
     </Fragment>
   );
