@@ -63,7 +63,7 @@ const About = () => {
     visible: {
       opacity: 1,
       transition: {
-        duration: 0.2,
+        duration: 0.3,
         ease: "easeOut",
         staggerChildren: 0.1,
         delayChildren: 0.2,
@@ -82,7 +82,7 @@ const About = () => {
       scale: 1,
       y: 0,
       transition: {
-        duration: 0.2,
+        duration: 0.3,
         ease: "easeOut",
       },
     },
@@ -99,7 +99,7 @@ const About = () => {
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.2,
+        duration: 0.3,
         type: "spring",
         stiffness: 100,
       },
@@ -173,12 +173,12 @@ const About = () => {
               exploration topics.
             </p>
           </motion.div>
-          <div className="cards">
+          <div className="cards-container">
             <motion.div
               variants={containerVariants}
               initial="hidden"
               animate={cardControls}
-              className="card-grid"
+              className="cards"
               ref={cardRef}
             >
               {services.map((service) => (

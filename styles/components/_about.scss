@@ -1,64 +1,53 @@
 .about-section {
-  overflow: hidden;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  text-align: center;
+  .text-container {
+    .animated-text {
+      h2.section-title {
+        font-size: 2rem;
+        color: #333;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-weight: bold;
+      }
 
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-
-  .about-description {
-    line-height: 1.6;
-    margin-bottom: 20px;
+      p.about-description {
+        font-size: 1.2rem;
+        color: #666;
+        text-align: center;
+        line-height: 1.6;
+      }
+    }
   }
 
   .cards {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-  }
-
-  .card-grid {
     display: grid;
-    max-height: 300px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-  }
+    grid-template-columns: repeat(auto-fit, minmax(750px, 1fr));
+    gap: 80rem;
+    justify-items: center;
+    margin-top: 2rem;
 
-  .card {
-    background-color: #f3f4f6;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    .card {
+      .card-inner {
+        background-color: #fff;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
 
-    &:hover {
-      transform: translateY(-10px);
-    }
+        .card-icon {
+          width: 80px;
+          height: 80px;
+        }
 
-    .card-inner {
-      text-align: center;
-    }
+        .card-title {
+          margin-top: 1rem;
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
 
-    .card-icon {
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
-      margin-bottom: 10px;
-    }
-
-    .card-title {
-      font-size: 1.2rem;
-      color: #333;
+        &:hover {
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+      }
     }
   }
 }
