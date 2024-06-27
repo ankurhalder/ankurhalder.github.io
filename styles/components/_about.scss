@@ -2,16 +2,21 @@
   margin: 0 auto;
   max-width: max(1500px, 60%);
   height: 100dvh;
-  // padding: 20px;
   text-align: center;
   position: relative;
   .intro {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    @include flex-container(row, nowrap, center, center);
+    margin: 10vh 0 2vh 0;
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-family: var(--font-elianto);
+    font-size: var(--font-5);
+    color: var(--text-color-1);
+    .handwave {
+      max-width: 4vw;
+      height: auto;
+      object-fit: cover;
+    }
   }
 
   .about-description {
