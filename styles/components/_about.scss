@@ -20,33 +20,34 @@
   }
 
   .about-description {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #666;
-    margin-bottom: 30px;
+    font-family: var(--font-roboto);
+    font-size: var(--font-11);
+    color: var(--text-color-4);
+    line-height: 1.7;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-align: justify;
+    margin: 5vh 0 0 0;
   }
 
   .cards-container {
+    margin: 5vh 0 0 0;
     .cards {
       @include flex-container(row, nowrap, center, center);
-      gap: 20px;
-      margin-top: 30px;
+      gap: 1.5vw;
       .card {
-        background-color: #ffffff;
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        background-color: var(--background-1);
+        box-shadow: 0px 10px 20px var(--shadow-medium);
         border-radius: 12px;
         padding: 20px;
         text-align: center;
         max-width: 300px;
         max-height: 350px;
         .card-inner {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-
+          @include flex-container(column, center, center, center);
           .card-icon {
-            width: 80px;
-            height: 80px;
+            max-width: 100px;
+            max-height: 100px;
             object-fit: contain;
             margin-bottom: 15px;
           }
